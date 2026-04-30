@@ -154,10 +154,19 @@ python -m matu.cp2_matu \
   --max_rank 50
 ```
 
-Then convert and evaluate the regenerated result:
+After CP-2 finishes, convert the generated fit curves into scalar uncertainty.
+This script reads `quick_start/generated/results/fit_dict_generated.pkl` and
+writes `quick_start/generated/results/uncertainty_generated.pkl`.
 
 ```bash
 python quick_start/code/03_fit_to_uncertainty_generated.py
+```
+
+Finally, evaluate the regenerated uncertainty against the included MATH labels.
+This checks the output of the optional regenerated pipeline, not the already
+provided reference result.
+
+```bash
 python quick_start/code/04_evaluate_generated_results.py
 ```
 
@@ -178,11 +187,23 @@ quick_start/generated/embeddings/user_embedding_matrices.pkl
 quick_start/generated/embeddings/assistant_embedding_matrices.pkl
 ```
 
-Then run CP-2, convert fit curves, and evaluate:
+After re-embedding, run CP-2 on the newly generated embeddings. This wrapper
+expects the files produced by `01_embed_reference_logs.py` and writes generated
+MATU scores under `quick_start/generated/results/`.
 
 ```bash
 python quick_start/code/02_run_cp2_from_generated_embeddings.py
+```
+
+Then convert the generated fit curves into scalar uncertainty:
+
+```bash
 python quick_start/code/03_fit_to_uncertainty_generated.py
+```
+
+Finally, evaluate the regenerated uncertainty against the included MATH labels:
+
+```bash
 python quick_start/code/04_evaluate_generated_results.py
 ```
 

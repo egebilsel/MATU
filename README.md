@@ -194,7 +194,10 @@ quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedd
 ```
 
 To run CP-2 from the extracted MATH reference embeddings without downloading an
-embedding model:
+embedding model, first run the CP-2 command below. This recomputes MATU fit
+curves from the extracted MATH embedding matrices and writes new generated
+outputs under `quick_start/generated/results/`. This step is optional because
+the public `fit_dict` is already included in `quick_start/results/`.
 
 ```bash
 mkdir -p quick_start/generated/results
@@ -205,14 +208,41 @@ python -m matu.cp2_matu \
   --out quick_start/generated/results/matu_scores.pkl \
   --legacy_fit_out quick_start/generated/results/fit_dict_generated.pkl \
   --max_rank 50
+```
 
+After CP-2 finishes, convert the generated fit curves into scalar uncertainty.
+This script reads `quick_start/generated/results/fit_dict_generated.pkl` and
+writes `quick_start/generated/results/uncertainty_generated.pkl`.
+
+```bash
 python quick_start/code/03_fit_to_uncertainty_generated.py
+```
+
+Finally, evaluate the regenerated uncertainty against the included MATH labels.
+This checks the output of the optional regenerated pipeline, not the already
+provided reference result.
+
+```bash
 python quick_start/code/04_evaluate_generated_results.py
 ```
 
 If you choose the re-embedding route, `01_embed_reference_logs.py` downloads or
 loads `Qwen/Qwen3-Embedding-0.6B`. A GPU is recommended for speed, but the
-provided result files let users skip that step entirely.
+provided result files let users skip that step entirely. This script reads the
+included MATH conversation log and writes fresh user/assistant embedding
+matrices under `quick_start/generated/embeddings/`.
+
+```bash
+python quick_start/code/01_embed_reference_logs.py
+```
+
+After re-embedding, run CP-2 on those newly generated embeddings. This wrapper
+expects the files produced by `01_embed_reference_logs.py` and writes generated
+MATU scores under `quick_start/generated/results/`.
+
+```bash
+python quick_start/code/02_run_cp2_from_generated_embeddings.py
+```
 
 ### Option B: Using the MATU CLI
 
