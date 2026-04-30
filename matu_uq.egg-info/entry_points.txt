@@ -1,3 +1,0 @@
-[console_scripts]
-matu = matu.cli:main
-matu-uq = matu.cli:main
