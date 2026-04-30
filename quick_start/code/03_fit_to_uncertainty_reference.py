@@ -24,9 +24,9 @@ def main() -> None:
         "-m",
         "matu.fit_to_uncertainty",
         "--fit_dict",
-        str(QUICK_START / "results" / "fit_dict_Math_Assistonly_qwen2.5_qwen3embedding.pkl"),
+        str(QUICK_START / "results" / "fit_dict_Math_qwen2.5_qwen3embedding.pkl"),
         "--out",
-        str(QUICK_START / "results" / "uncertainty_Math_Assistonly_qwen2.5.pkl"),
+        str(QUICK_START / "results" / "uncertainty_Math_qwen2.5.pkl"),
     ]
     subprocess.run(cmd, check=True, cwd=str(REPO_ROOT), env=env)
 

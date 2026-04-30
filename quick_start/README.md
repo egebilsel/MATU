@@ -3,6 +3,13 @@
 This folder contains ready-to-run MATU sample artifacts. You can get the main
 results immediately, or optionally regenerate intermediate files step by step.
 
+The quick start includes two settings:
+
+| Setting | Dataset | Agent Framework / Log Source | LLM | Included Artifacts |
+| --- | --- | --- | --- | --- |
+| MATH + Qwen2.5 | MATH | Included Qwen2.5 conversation logs with role-wise trajectories. | Qwen2.5-7B-Instruct | Conversation logs, MATH labels, Qwen3 role embeddings, MATU fit curves, scalar uncertainty, and SAUP-Multiple baseline scores. |
+| MMLU + AutoGen + Qwen2.5 | MMLU | Included AutoGen multi-agent logs with analyst, verifier, and star roles. | Qwen2.5-7B-Instruct | Conversation logs, MMLU labels, Qwen3 role embeddings, MATU fit curves, and SAUP-Multiple baseline scores. |
+
 The important point: **the logs, labels, fit dictionaries, scalar uncertainty,
 baseline scores, and zipped reference embeddings are already provided.** You do
 not need to re-embed logs or rerun CP-2 unless you want to inspect the pipeline
@@ -39,67 +46,40 @@ MATU_MODEL_CACHE=               # optional local HF cache/model path
 MATU_MAX_RANK=50
 ```
 
-The included reference evaluation does not require `OPENAI_API_KEY`.
+The included reference evaluation does not require `OPENAI_API_KEY`, a GPU, or
+any model downloads. `OPENAI_API_KEY` is only needed for optional OpenAI/CAMEL
+log generation; `MATU_MODEL_CACHE` is useful if you re-embed logs from a local
+Hugging Face cache or model path; `MATU_MAX_RANK` controls the optional CP-2
+wrappers.
 
 ## Included Files
 
 | File | Description |
 | --- | --- |
 | `data/conversation_logs_Math_qwen2.5.json` | Ready-to-use MATH repeated conversation logs. |
-| `data/conversation_logs_MMLU_Autogen_qwen2.5.json` | MMLU AutoGen conversation log sample for the paper-matching result. |
-| `data/embeddings_Math_qwen2.5_qwen3.zip` | Zipped Qwen3 user and assistant embedding matrices for MATH. |
+| `data/conversation_logs_MMLU_Autogen_qwen2.5.json` | MMLU AutoGen conversation log sample for the quick-start setting. |
+| `data/embeddings_Math_qwen2.5_qwen3.zip` | Zipped Qwen3 role embedding matrices for MATH. |
 | `data/embeddings_MMLU_Autogen_qwen2.5.zip` | Zipped AutoGen analyst, verifier, and star embedding matrices for MMLU. |
 | `data/embedding_metadata.json` | Embedding model metadata. |
-| `results/fit_dict_Math_Assistonly_qwen2.5_qwen3embedding.pkl` | Ready-to-use MATU fit curves for MATH. |
-| `results/uncertainty_Math_Assistonly_qwen2.5.pkl` | Ready-to-use scalar MATU uncertainty for MATH. |
+| `results/fit_dict_Math_qwen2.5_qwen3embedding.pkl` | Ready-to-use MATU fit curves for MATH. |
+| `results/uncertainty_Math_qwen2.5.pkl` | Ready-to-use scalar MATU uncertainty for MATH. |
 | `results/accuracy_dict_Math_qwen2.5.pkl` | MATH repeated-run correctness labels. |
 | `results/fit_dict_MMLU_Autogen_qwen2.5.pkl` | Ready-to-use MATU fit curves for MMLU AutoGen. |
 | `results/accuracy_dict_MMLU_Autogen_qwen2.5.pkl` | MMLU AutoGen repeated-run correctness labels. |
-| `results/saup_scores_Math_qwen2.5.pkl` | Ready-to-use SAUP-Multiple baseline scores. |
-
-## Fastest Result Check
-
-Run from the repository root:
-
-```bash
-python quick_start/code/04_evaluate_reference_results.py --sample all
-```
-
-This script loads the included result files and prints metrics. It does not
-download models, call APIs, regenerate embeddings, or rerun CP-2.
-
-Expected output:
-
-```text
-MATH + Qwen2.5-7B
-Tasks: 400
-Mean accuracy: 0.8383
-AUROC: 0.7205
-AUARC: 0.9017
-
-Paper Table 2: MMLU + AutoGen + Qwen2.5-7B
-Tasks: 400
-Mean accuracy: 0.7785
-AUROC: 0.7315
-AUARC: 0.8834
-```
-
-The MATH result was re-run for public release packaging, so it is close to but
-not bit-for-bit identical to the paper table. The MMLU AutoGen result uses the
-original paper artifact and matches Table 2 up to display rounding.
+| `results/saup_scores_Math_qwen2.5.pkl` | Ready-to-use MATH SAUP-Multiple baseline scores. |
+| `results/saup_scores_MMLU_Autogen_qwen2.5.pkl` | Ready-to-use MMLU AutoGen SAUP-Multiple baseline scores. |
 
 ## Quick-Start Workflow
 
 | Step | Command | What It Does | Required? | Output |
 | --- | --- | --- | --- | --- |
-| Read included MATU results | `python quick_start/code/04_evaluate_reference_results.py --sample all` | Loads provided MATU fit/uncertainty files and labels, then prints MATH and MMLU metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
-| Read included baseline | `python quick_start/code/05_evaluate_baselines.py` | Loads the provided SAUP-Multiple score file and evaluates it against MATH labels. | Optional. | Baseline AUROC/AUARC. |
-| Extract MATH reference embeddings | `python -m zipfile -e quick_start/data/embeddings_Math_qwen2.5_qwen3.zip quick_start/generated/reference_embeddings/math` | Unzips the included MATH raw embedding matrices. | Optional; only needed if you want to inspect embeddings or rerun CP-2 from them. | Two raw embedding `.pkl` files. |
-| Extract MMLU reference embeddings | `python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen` | Unzips the included MMLU AutoGen raw embedding matrices. | Optional; only for inspection/reuse. | Three raw embedding `.pkl` files. |
-| Re-embed MATH logs | `python quick_start/code/01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH conversation log. | Optional; zipped reference embeddings are already included. | `quick_start/generated/embeddings/*.pkl`. |
-| Run CP-2 from generated embeddings | `python quick_start/code/02_run_cp2_from_generated_embeddings.py` | Runs MATU/CP-2 on embeddings created by the previous step. | Optional; public fit curves are already in `results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
-| Convert generated fit curves | `python quick_start/code/03_fit_to_uncertainty_generated.py` | Converts generated fit curves to scalar MATU uncertainty. | Optional; only after generated CP-2. | `quick_start/generated/results/uncertainty_generated.pkl`. |
-| Evaluate generated run | `python quick_start/code/04_evaluate_generated_results.py` | Evaluates regenerated uncertainty against included MATH labels. | Optional; verifies a regenerated pipeline. | Console AUROC/AUARC. |
+| Unzip reference embeddings | `python -m zipfile -e ...` | Extracts packaged Qwen3 embedding matrices for inspection or CP-2 reruns. | Optional. | Raw embedding `.pkl` files under `quick_start/generated/reference_embeddings/`. |
+| 00: Generate logs | `python quick_start/code/00_generate_logs_*.py` | Collects new logs when users want to replace the included samples. | Optional; included logs are already in `data/`. | New logs under `quick_start/generated/`. |
+| 01: Embed logs | `python quick_start/code/01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH log. | Optional; reference embeddings are already zipped in `data/`. | `quick_start/generated/embeddings/*.pkl`. |
+| 02: Run CP-2 | `python -m matu.cp2_matu ...` or `python quick_start/code/02_run_cp2_from_generated_embeddings.py` | Recomputes MATU fit curves from extracted or regenerated embeddings. | Optional; reference fit curves are already in `results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
+| 03: Convert fit curves | `python quick_start/code/03_fit_to_uncertainty_*.py` | Converts MATU fit curves to scalar uncertainty. | Optional for included files; needed after generated CP-2. | Included or generated uncertainty `.pkl`. |
+| 04: Evaluate MATU | `python quick_start/code/04_evaluate_reference_results.py --sample all` | Loads included MATU results and labels, then prints MATH and MMLU metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
+| 05: Evaluate baselines | `python quick_start/code/05_evaluate_baselines.py --sample all` | Loads included SAUP-Multiple results for MATH and MMLU. | Optional comparison. | Console AUROC/AUARC. |
 
 ## Unzip Reference Embeddings
 
@@ -110,26 +90,33 @@ mkdir -p quick_start/generated/reference_embeddings/math
 mkdir -p quick_start/generated/reference_embeddings/mmlu_autogen_qwen
 ```
 
-Extract the MATH embeddings:
+Extract the MATH embeddings only if you want to inspect raw role-specific
+embeddings or rerun CP-2 from the provided matrices. The ready-to-use MATH fit
+curves are already in `quick_start/results/`.
 
 ```bash
+# MATH + Qwen2.5 + Qwen3 role embeddings
 python -m zipfile -e quick_start/data/embeddings_Math_qwen2.5_qwen3.zip quick_start/generated/reference_embeddings/math
 ```
 
-This creates:
+This creates one embedding-matrix collection for each included conversation
+role. These raw matrices are provided for inspection and reuse.
 
 ```text
 quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl
 quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl
 ```
 
-Extract the MMLU AutoGen embeddings:
+Extract the MMLU AutoGen embeddings if you want to inspect the role-wise
+matrices from the AutoGen setting. These files are not needed for the fastest
+result check because the reference fit curves are already included.
 
 ```bash
+# MMLU + AutoGen + Qwen2.5 + Qwen3 analyst/verifier/star embeddings
 python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen
 ```
 
-This creates:
+This creates one embedding-matrix collection for each AutoGen role:
 
 ```text
 quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_analyst_embedding_matrices_MMLU_HF_qwen2.5.pkl
@@ -137,46 +124,30 @@ quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_verifier_em
 quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedding_matrices_MMLU_HF_qwen2.5.pkl
 ```
 
-## Optional: Rerun CP-2 From Included Embeddings
+## 00: Optional Generate New Logs
 
-Use this path when you want to verify MATU/CP-2 from raw embeddings but do not
-want to download the embedding model. The public `fit_dict` is already provided,
-so this is not required for the fastest result check.
-
-```bash
-mkdir -p quick_start/generated/results
-python -m matu.cp2_matu \
-  --embeddings \
-  quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl \
-  quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl \
-  --out quick_start/generated/results/matu_scores.pkl \
-  --legacy_fit_out quick_start/generated/results/fit_dict_generated.pkl \
-  --max_rank 50
-```
-
-After CP-2 finishes, convert the generated fit curves into scalar uncertainty.
-This script reads `quick_start/generated/results/fit_dict_generated.pkl` and
-writes `quick_start/generated/results/uncertainty_generated.pkl`.
+The included logs are already available in `quick_start/data/`, so generation is
+not needed for the quick-start result. Run these only to collect new logs.
 
 ```bash
-python quick_start/code/03_fit_to_uncertainty_generated.py
+# 00: MATH + CAMEL/OpenAI example -> new logs under quick_start/generated/
+python quick_start/code/00_generate_logs_camel_gpt.py
+
+# 00: MATH + HF/Qwen example -> new logs under quick_start/generated/
+python quick_start/code/00_generate_logs_hf_qwen.py
 ```
 
-Finally, evaluate the regenerated uncertainty against the included MATH labels.
-This checks the output of the optional regenerated pipeline, not the already
-provided reference result.
+The CAMEL/OpenAI script needs `OPENAI_API_KEY`; the HF/Qwen script needs local
+model access.
 
-```bash
-python quick_start/code/04_evaluate_generated_results.py
-```
-
-## Optional: Re-Embed Logs From Scratch
+## 01: Optional Re-Embed Logs
 
 Use this path only if you want to verify the embedding stage itself. It loads or
 downloads `Qwen/Qwen3-Embedding-0.6B`; a GPU is faster, but the provided
 artifacts let users skip this step.
 
 ```bash
+# 01: MATH + Qwen2.5 logs -> fresh Qwen3 embeddings
 python quick_start/code/01_embed_reference_logs.py
 ```
 
@@ -187,67 +158,93 @@ quick_start/generated/embeddings/user_embedding_matrices.pkl
 quick_start/generated/embeddings/assistant_embedding_matrices.pkl
 ```
 
-After re-embedding, run CP-2 on the newly generated embeddings. This wrapper
-expects the files produced by `01_embed_reference_logs.py` and writes generated
-MATU scores under `quick_start/generated/results/`.
+## 02: Optional Rerun CP-2
+
+Use this path when you want to verify MATU/CP-2 from raw embeddings but do not
+want to download the embedding model. The public `fit_dict` is already provided,
+so this is not required for the fastest result check.
 
 ```bash
+# 02: MATH + extracted Qwen3 embeddings -> regenerated MATU fit curves
+mkdir -p quick_start/generated/results
+python -m matu.cp2_matu \
+  --embeddings \
+  quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl \
+  quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl \
+  --out quick_start/generated/results/matu_scores.pkl \
+  --legacy_fit_out quick_start/generated/results/fit_dict_generated.pkl \
+  --max_rank 50
+```
+
+If you ran Step `01`, use the wrapper below instead. It expects
+`quick_start/generated/embeddings/*.pkl` and writes the same generated CP-2
+outputs.
+
+```bash
+# 02: MATH + generated Qwen3 embeddings -> regenerated MATU fit curves
 python quick_start/code/02_run_cp2_from_generated_embeddings.py
 ```
 
-Then convert the generated fit curves into scalar uncertainty:
+## 03: Convert Fit Curves To Uncertainty
+
+The reference script rebuilds the included MATH uncertainty file in
+`quick_start/results/`. The generated script converts optional CP-2 outputs
+under `quick_start/generated/results/`.
 
 ```bash
+# 03: included MATH fit_dict -> included scalar uncertainty
+python quick_start/code/03_fit_to_uncertainty_reference.py
+
+# 03: regenerated MATH fit_dict -> regenerated scalar uncertainty
 python quick_start/code/03_fit_to_uncertainty_generated.py
 ```
 
-Finally, evaluate the regenerated uncertainty against the included MATH labels:
+## 04: Evaluate MATU
+
+The reference evaluator is the fastest check: it reads included `.pkl` files and
+does not download models, call APIs, regenerate embeddings, or rerun CP-2.
 
 ```bash
+# 04: included MATH + Qwen2.5 MATU result
+python quick_start/code/04_evaluate_reference_results.py --sample math-qwen
+
+# 04: included MMLU + AutoGen + Qwen2.5 MATU result
+python quick_start/code/04_evaluate_reference_results.py --sample mmlu-autogen-qwen
+
+# 04: both included MATU results
+python quick_start/code/04_evaluate_reference_results.py --sample all
+
+# 04: regenerated MATH MATU result from optional Steps 01-03
 python quick_start/code/04_evaluate_generated_results.py
 ```
 
-## Optional: Generate New Logs
+## 05: Evaluate Baselines
 
-The included logs are already available, so generation is not needed for the
-quick-start result. These scripts are examples for users who want to collect new
-conversation logs.
-
-CAMEL/OpenAI example:
+Evaluate the included SAUP-Multiple reference results:
 
 ```bash
-python quick_start/code/00_generate_logs_camel_gpt.py
-```
+# 05: included MATH + Qwen2.5 SAUP-Multiple baseline
+python quick_start/code/05_evaluate_baselines.py --sample math-qwen
 
-HF/Qwen example:
+# 05: included MMLU + AutoGen + Qwen2.5 SAUP-Multiple baseline
+python quick_start/code/05_evaluate_baselines.py --sample mmlu-autogen-qwen
 
-```bash
-python quick_start/code/00_generate_logs_hf_qwen.py
-```
-
-These write new files under:
-
-```text
-quick_start/generated/
-quick_start/generated/embeddings_from_camel_gpt_generation/
-quick_start/generated/embeddings_from_hf_qwen_generation/
-```
-
-## Baselines
-
-Evaluate the included SAUP-Multiple reference result:
-
-```bash
-python quick_start/code/05_evaluate_baselines.py
+# 05: both included SAUP-Multiple baselines
+python quick_start/code/05_evaluate_baselines.py --sample all
 ```
 
 Expected output:
 
 ```text
-SAUP-Multiple:
+MATH + Qwen2.5 + SAUP-Multiple:
   tasks: 400
   AUROC: 0.6097
   AUARC: 0.8722
+
+MMLU + AutoGen + Qwen2.5 + SAUP-Multiple:
+  tasks: 400
+  AUROC: 0.7417
+  AUARC: 0.8589
 ```
 
 EigV code is provided in the root baseline script. Its result file is not
@@ -259,3 +256,19 @@ python baselines/eigv.py \
   --mode final \
   --out quick_start/generated/results/eigv_final.pkl
 ```
+
+## Expected Results
+
+| Setting | Method | Source | AUROC | AUARC | Command |
+| --- | --- | --- | --- | --- | --- |
+| MATH + Qwen2.5 | MATU | Paper Table 1 | 0.7089 | 0.9064 | Paper reference. |
+| MATH + Qwen2.5 | MATU | Included quick-start artifact | 0.7205 | 0.9017 | `python quick_start/code/04_evaluate_reference_results.py --sample math-qwen` |
+| MATH + Qwen2.5 | SAUP-Multiple | Included quick-start baseline | 0.6097 | 0.8722 | `python quick_start/code/05_evaluate_baselines.py --sample math-qwen` |
+| MMLU + AutoGen + Qwen2.5 | MATU | Paper Table 2 | 0.7315 | 0.8833 | Paper reference. |
+| MMLU + AutoGen + Qwen2.5 | MATU | Included quick-start artifact | 0.7315 | 0.8834 | `python quick_start/code/04_evaluate_reference_results.py --sample mmlu-autogen-qwen` |
+| MMLU + AutoGen + Qwen2.5 | SAUP-Multiple | Included quick-start baseline | 0.7417 | 0.8589 | `python quick_start/code/05_evaluate_baselines.py --sample mmlu-autogen-qwen` |
+
+The MATH artifact was re-run for public release packaging, so it is close to
+but not bit-for-bit identical to the paper table. The MMLU AutoGen artifact is
+the original artifact used for the paper result, so it matches Table 2 up to
+display rounding.

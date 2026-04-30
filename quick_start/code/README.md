@@ -8,14 +8,15 @@ Run commands from the repository root.
 
 | Script | What It Does | Required? | Output |
 | --- | --- | --- | --- |
-| `04_evaluate_reference_results.py --sample all` | Loads included MATU result files and labels, then prints the MATH and MMLU quick-start metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
-| `05_evaluate_baselines.py` | Loads the included SAUP-Multiple baseline score file and evaluates it against MATH labels. | Optional. | Baseline AUROC/AUARC. |
-| `01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH conversation log. | Optional; zipped reference embeddings are already included. | `quick_start/generated/embeddings/*.pkl`. |
-| `02_run_cp2_from_generated_embeddings.py` | Runs CP-2/MATU on embeddings produced by `01_embed_reference_logs.py`. | Optional; included fit curves are already in `quick_start/results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
-| `03_fit_to_uncertainty_generated.py` | Converts generated fit curves into scalar MATU uncertainty. | Optional; only after generated CP-2. | `quick_start/generated/results/uncertainty_generated.pkl`. |
-| `04_evaluate_generated_results.py` | Evaluates regenerated uncertainty against included MATH labels. | Optional; verifies a regenerated pipeline run. | Console AUROC/AUARC. |
 | `00_generate_logs_camel_gpt.py` | Example CAMEL/OpenAI log collector. | Optional; included logs are already provided. | New logs under `quick_start/generated/`. |
 | `00_generate_logs_hf_qwen.py` | Example HF/Qwen log collector. | Optional; included logs are already provided. | New logs under `quick_start/generated/`. |
+| `01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH conversation log. | Optional; zipped reference embeddings are already included. | `quick_start/generated/embeddings/*.pkl`. |
+| `02_run_cp2_from_generated_embeddings.py` | Runs CP-2/MATU on embeddings produced by `01_embed_reference_logs.py`. | Optional; included fit curves are already in `quick_start/results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
+| `03_fit_to_uncertainty_reference.py` | Rebuilds the included MATH scalar uncertainty file from the included fit dictionary. | Optional; included uncertainty is already provided. | `quick_start/results/uncertainty_Math_qwen2.5.pkl`. |
+| `03_fit_to_uncertainty_generated.py` | Converts generated fit curves into scalar MATU uncertainty. | Optional; only after generated CP-2. | `quick_start/generated/results/uncertainty_generated.pkl`. |
+| `04_evaluate_reference_results.py --sample all` | Loads included MATU result files and labels, then prints the MATH and MMLU quick-start metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
+| `04_evaluate_generated_results.py` | Evaluates regenerated uncertainty against included MATH labels. | Optional; verifies a regenerated pipeline run. | Console AUROC/AUARC. |
+| `05_evaluate_baselines.py --sample all` | Loads the included SAUP-Multiple baseline score files and evaluates MATH plus MMLU AutoGen. | Optional. | Baseline AUROC/AUARC. |
 
 To inspect or reuse the included embedding archives:
 

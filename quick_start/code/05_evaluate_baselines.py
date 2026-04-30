@@ -1,11 +1,8 @@
-"""Evaluate the included SAUP-Multiple reference baseline.
-
-This quick start keeps only one baseline result to stay compact. EigV code is
-provided in ``baselines/eigv.py``; users can add EigV result files separately.
-"""
+"""Evaluate the included SAUP-Multiple quick-start baselines."""
 
 from __future__ import annotations
 
+import argparse
 import pickle
 from pathlib import Path
 
@@ -70,14 +67,34 @@ def evaluate(name: str, scores: dict, labels: dict, *, invert: bool = False) -> 
     print(f"  AUARC: {auarc(accuracy_arr, uncertainty_arr):.4f}")
 
 
-def main() -> None:
+def evaluate_math_qwen() -> None:
     labels = load_pickle(QUICK_START / "results" / "accuracy_dict_Math_qwen2.5.pkl")
     saup = load_pickle(QUICK_START / "results" / "saup_scores_Math_qwen2.5.pkl")
+    evaluate("MATH + Qwen2.5 + SAUP-Multiple", saup, labels, invert=True)
 
-    # The stored SAUP values are confidence-like in this experiment, so we use
-    # negative mean SAUP as uncertainty to match the paper-style direction:
-    # higher uncertainty should imply higher error probability.
-    evaluate("SAUP-Multiple", saup, labels, invert=True)
+
+def evaluate_mmlu_autogen_qwen() -> None:
+    labels = load_pickle(QUICK_START / "results" / "accuracy_dict_MMLU_Autogen_qwen2.5.pkl")
+    saup = load_pickle(QUICK_START / "results" / "saup_scores_MMLU_Autogen_qwen2.5.pkl")
+    evaluate("MMLU + AutoGen + Qwen2.5 + SAUP-Multiple", saup, labels, invert=True)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Evaluate included SAUP-Multiple quick-start baselines.")
+    parser.add_argument(
+        "--sample",
+        choices=["math-qwen", "mmlu-autogen-qwen", "all"],
+        default="all",
+        help="Baseline sample to evaluate.",
+    )
+    args = parser.parse_args()
+
+    if args.sample in {"math-qwen", "all"}:
+        evaluate_math_qwen()
+    if args.sample == "all":
+        print()
+    if args.sample in {"mmlu-autogen-qwen", "all"}:
+        evaluate_mmlu_autogen_qwen()
 
 
 if __name__ == "__main__":

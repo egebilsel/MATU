@@ -1,8 +1,8 @@
 """Evaluate included quick-start reference results.
 
 By default this evaluates the MATH + Qwen2.5 quick-start artifact. Use
-``--sample mmlu-autogen-qwen`` to evaluate the paper-matching MMLU + AutoGen +
-Qwen2.5 artifact from Table 2.
+``--sample mmlu-autogen-qwen`` to evaluate the included MMLU + AutoGen +
+Qwen2.5 artifact.
 """
 
 from __future__ import annotations
@@ -42,9 +42,9 @@ def save_pickle(obj: Any, path: Path) -> None:
 
 
 def evaluate_math_qwen() -> None:
-    fit_path = QUICK_START / "results" / "fit_dict_Math_Assistonly_qwen2.5_qwen3embedding.pkl"
+    fit_path = QUICK_START / "results" / "fit_dict_Math_qwen2.5_qwen3embedding.pkl"
     labels_path = QUICK_START / "results" / "accuracy_dict_Math_qwen2.5.pkl"
-    uncertainty_path = QUICK_START / "results" / "uncertainty_Math_Assistonly_qwen2.5.pkl"
+    uncertainty_path = QUICK_START / "results" / "uncertainty_Math_qwen2.5.pkl"
 
     if not uncertainty_path.exists():
         fit_dict = load_pickle(fit_path)
@@ -107,7 +107,7 @@ def evaluate_mmlu_autogen_qwen() -> None:
     uncertainty_scores = rank_counts - certainty_scores
     accuracies = np.asarray([label_accuracy(labels[key]) for key in keys], dtype=float)
 
-    print("Paper Table 2: MMLU + AutoGen + Qwen2.5-7B")
+    print("MMLU + AutoGen + Qwen2.5-7B")
     print(f"Tasks: {len(keys)}")
     print(f"Mean accuracy: {accuracies.mean():.4f}")
     print(f"AUROC: {paper_auroc(accuracies, certainty_scores):.4f}")
