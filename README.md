@@ -154,20 +154,6 @@ Set up the quick-start environment file:
 cp quick_start/.env.example quick_start/.env
 ```
 
-Most users only need the first two rows. The later rows are optional if you
-want to inspect or regenerate intermediate artifacts.
-
-| Step | Command | What It Does | Required? | Output |
-| --- | --- | --- | --- | --- |
-| Read included MATU results | `python quick_start/code/04_evaluate_reference_results.py --sample all` | Loads the provided `fit_dict`, uncertainty, and labels, then prints MATH and MMLU AUROC/AUARC. | Yes, for the fastest result check. | Console metrics matching the table below. |
-| Read included baseline | `python quick_start/code/05_evaluate_baselines.py` | Evaluates the provided SAUP-Multiple baseline scores for MATH. | Optional. | Baseline AUROC/AUARC. |
-| Extract reference embeddings | See unzip commands below. | Expands the zipped raw embedding matrices into `quick_start/generated/reference_embeddings/`. | Optional; only needed to inspect embeddings or rerun CP-2 without re-embedding. | Raw embedding `.pkl` files in `quick_start/generated/`. |
-| Run CP-2 from extracted MATH embeddings | See CP-2 command below. | Recomputes MATU fit curves from the extracted MATH embedding matrices. | Optional; the public `fit_dict` is already included. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
-| Re-embed MATH logs | `python quick_start/code/01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH conversation log. | Optional; zipped reference embeddings are already included. | `quick_start/generated/embeddings/*.pkl`. |
-| Run CP-2 from re-embedded logs | `python quick_start/code/02_run_cp2_from_generated_embeddings.py` | Runs CP-2 on embeddings produced by the previous step. | Optional; only run after re-embedding. | `quick_start/generated/results/fit_dict_generated.pkl`. |
-| Convert generated fit curves | `python quick_start/code/03_fit_to_uncertainty_generated.py` | Converts generated fit curves to scalar MATU uncertainty. | Optional; only run after generated CP-2. | `quick_start/generated/results/uncertainty_generated.pkl`. |
-| Evaluate generated run | `python quick_start/code/04_evaluate_generated_results.py` | Evaluates the regenerated uncertainty against included MATH labels. | Optional; verifies a regenerated pipeline run. | Console AUROC/AUARC. |
-
 Unzip the packaged embedding matrices:
 
 ```bash
