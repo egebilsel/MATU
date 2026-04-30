@@ -1,24 +1,21 @@
 # Quick Start Code
 
-These scripts make the quick start reproducible step by step.
+These scripts are small wrappers around the MATU package. The included result
+files already let users evaluate the quick-start samples, so most scripts are
+optional reproduction steps.
 
-They read local settings from `quick_start/.env`. Create it from
-`quick_start/.env.example` before running generation scripts.
+Run commands from the repository root.
 
-Run from the repository root:
-
-```bash
-python quick_start/code/04_evaluate_reference_results.py
-```
-
-This skips all earlier steps and evaluates the included reference MATU result.
-The same evaluator can also reproduce the paper-matching MMLU + AutoGen +
-Qwen2.5 result:
-
-```bash
-python quick_start/code/04_evaluate_reference_results.py --sample mmlu-autogen-qwen
-python quick_start/code/04_evaluate_reference_results.py --sample all
-```
+| Script | What It Does | Required? | Output |
+| --- | --- | --- | --- |
+| `04_evaluate_reference_results.py --sample all` | Loads included MATU result files and labels, then prints the MATH and MMLU quick-start metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
+| `05_evaluate_baselines.py` | Loads the included SAUP-Multiple baseline score file and evaluates it against MATH labels. | Optional. | Baseline AUROC/AUARC. |
+| `01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH conversation log. | Optional; zipped reference embeddings are already included. | `quick_start/generated/embeddings/*.pkl`. |
+| `02_run_cp2_from_generated_embeddings.py` | Runs CP-2/MATU on embeddings produced by `01_embed_reference_logs.py`. | Optional; included fit curves are already in `quick_start/results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
+| `03_fit_to_uncertainty_generated.py` | Converts generated fit curves into scalar MATU uncertainty. | Optional; only after generated CP-2. | `quick_start/generated/results/uncertainty_generated.pkl`. |
+| `04_evaluate_generated_results.py` | Evaluates regenerated uncertainty against included MATH labels. | Optional; verifies a regenerated pipeline run. | Console AUROC/AUARC. |
+| `00_generate_logs_camel_gpt.py` | Example CAMEL/OpenAI log collector. | Optional; included logs are already provided. | New logs under `quick_start/generated/`. |
+| `00_generate_logs_hf_qwen.py` | Example HF/Qwen log collector. | Optional; included logs are already provided. | New logs under `quick_start/generated/`. |
 
 To inspect or reuse the included embedding archives:
 
@@ -30,22 +27,5 @@ mkdir -p quick_start/generated/reference_embeddings/mmlu_autogen_qwen
 python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen
 ```
 
-To regenerate intermediate outputs:
-
-```bash
-python quick_start/code/01_embed_reference_logs.py
-python quick_start/code/02_run_cp2_from_generated_embeddings.py
-python quick_start/code/03_fit_to_uncertainty_generated.py
-python quick_start/code/04_evaluate_generated_results.py
-```
-
-The included reference embeddings in `quick_start/data/` are Qwen3 embeddings
-with shape `(num_steps, 1024)`, stored as zip archives rather than raw pickle
-files.
-
-Optional log generation examples:
-
-```bash
-python quick_start/code/00_generate_logs_camel_gpt.py
-python quick_start/code/00_generate_logs_hf_qwen.py
-```
+The included reference embeddings use `Qwen/Qwen3-Embedding-0.6B` and are
+stored as zip archives instead of raw pickle files.

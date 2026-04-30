@@ -20,17 +20,8 @@ jobs:
       - name: Install package
         run: python -m pip install -e ".[dev]"
 
-      - name: Run unit tests
-        run: python -m pytest -q
-
-      - name: Run syntax check
-        run: python -m compileall matu baselines examples
-
-      - name: Check CLI help
-        run: python -m matu.cli --help
-
-      - name: Check reference quick-start evaluation
-        run: python quick_start/code/04_evaluate_reference_results.py
+      - name: Run checks
+        run: make check
 
   docker-build:
     runs-on: ubuntu-latest
@@ -43,3 +34,9 @@ jobs:
 
       - name: Check Docker CLI
         run: docker run --rm matu-uq matu --help
+
+      - name: Check Docker quick-start evaluation
+        run: docker run --rm matu-uq make quick-eval
+
+      - name: Check Docker paper evaluation
+        run: docker run --rm matu-uq make paper-eval

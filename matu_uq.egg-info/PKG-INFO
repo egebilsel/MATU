@@ -1,7 +1,45 @@
+Metadata-Version: 2.4
+Name: matu-uq
+Version: 0.1.0
+Summary: Multi-Agent Tensor Uncertainty for LLM-based multi-agent systems
+Author: Tiejin Chen, Huaiyuan Yao, Jia Chen, Evangelos E. Papalexakis, Hua Wei
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/tiejin98/MATU
+Project-URL: Repository, https://github.com/tiejin98/MATU
+Project-URL: Issues, https://github.com/tiejin98/MATU/issues
+Keywords: uncertainty,multi-agent systems,large language models,tensor decomposition
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.24
+Requires-Dist: tqdm>=4.66
+Requires-Dist: tensorly>=0.8
+Requires-Dist: sentence-transformers>=2.6
+Requires-Dist: transformers>=4.40
+Requires-Dist: torch>=2.1
+Requires-Dist: scikit-learn>=1.3
+Requires-Dist: datasets>=2.18
+Requires-Dist: PyYAML>=6.0
+Provides-Extra: examples
+Requires-Dist: openai>=1.0; extra == "examples"
+Requires-Dist: camel-ai>=0.2.0; extra == "examples"
+Provides-Extra: dev
+Requires-Dist: build>=1.2; extra == "dev"
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: twine>=5.0; extra == "dev"
+Dynamic: license-file
+
 # MATU: Multi-Agent Tensor Uncertainty
 
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
-[![PyPI](https://img.shields.io/pypi/v/matu-uq.svg)](https://pypi.org/project/matu-uq/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI](https://github.com/tiejin98/MATU/actions/workflows/ci.yml/badge.svg)](https://github.com/tiejin98/MATU/actions/workflows/ci.yml)
 
@@ -43,21 +81,13 @@ camel-ai>=0.2.0
 
 ## Installation
 
-For package use:
+MATU is packaged from source as `matu-uq`. After installation, both command
+names are available:
 
 ```bash
-pip install matu-uq
+pip install -e .
 matu --help
 matu-uq --help
-```
-
-For the full quick start, clone the repository because the sample logs,
-reference scores, and embedding archives live in `quick_start/`:
-
-```bash
-git clone https://github.com/tiejin98/MATU.git
-cd MATU
-pip install -e .
 ```
 
 For development and tests:
@@ -123,10 +153,6 @@ re-run selected stages. The MATH sample uses Qwen2.5 conversation logs with
 Qwen3 embeddings. The MMLU sample uses the original AutoGen + Qwen2.5 artifact
 that matches Table 2 in the paper.
 
-All final and intermediate result files needed for the quick-start evaluations
-are already included. Re-embedding logs and re-running CP-2 are optional
-debugging/reproduction steps, not required for seeing the reported metrics.
-
 Raw embedding matrices are stored inside zip archives rather than committed as
 standalone `.pkl` files. Use `python -m zipfile -e ...` below; it works on
 Linux, macOS, and Windows without requiring a separate `unzip` executable.
@@ -154,21 +180,20 @@ Set up the quick-start environment file:
 cp quick_start/.env.example quick_start/.env
 ```
 
-Most users only need the first two rows. The later rows are optional if you
-want to inspect or regenerate intermediate artifacts.
+Directly evaluate the included MATU results without re-running embedding or
+CP-2:
 
-| Step | Command | What It Does | Required? | Output |
-| --- | --- | --- | --- | --- |
-| Read included MATU results | `python quick_start/code/04_evaluate_reference_results.py --sample all` | Loads the provided `fit_dict`, uncertainty, and labels, then prints MATH and MMLU AUROC/AUARC. | Yes, for the fastest result check. | Console metrics matching the table below. |
-| Read included baseline | `python quick_start/code/05_evaluate_baselines.py` | Evaluates the provided SAUP-Multiple baseline scores for MATH. | Optional. | Baseline AUROC/AUARC. |
-| Extract reference embeddings | See unzip commands below. | Expands the zipped raw embedding matrices into `quick_start/generated/reference_embeddings/`. | Optional; only needed to inspect embeddings or rerun CP-2 without re-embedding. | Raw embedding `.pkl` files in `quick_start/generated/`. |
-| Run CP-2 from extracted MATH embeddings | See CP-2 command below. | Recomputes MATU fit curves from the extracted MATH embedding matrices. | Optional; the public `fit_dict` is already included. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
-| Re-embed MATH logs | `python quick_start/code/01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH conversation log. | Optional; zipped reference embeddings are already included. | `quick_start/generated/embeddings/*.pkl`. |
-| Run CP-2 from re-embedded logs | `python quick_start/code/02_run_cp2_from_generated_embeddings.py` | Runs CP-2 on embeddings produced by the previous step. | Optional; only run after re-embedding. | `quick_start/generated/results/fit_dict_generated.pkl`. |
-| Convert generated fit curves | `python quick_start/code/03_fit_to_uncertainty_generated.py` | Converts generated fit curves to scalar MATU uncertainty. | Optional; only run after generated CP-2. | `quick_start/generated/results/uncertainty_generated.pkl`. |
-| Evaluate generated run | `python quick_start/code/04_evaluate_generated_results.py` | Evaluates the regenerated uncertainty against included MATH labels. | Optional; verifies a regenerated pipeline run. | Console AUROC/AUARC. |
+```bash
+python quick_start/code/04_evaluate_reference_results.py --sample all
+```
 
-Unzip the packaged embedding matrices:
+Evaluate the included SAUP-Multiple baseline:
+
+```bash
+python quick_start/code/05_evaluate_baselines.py
+```
+
+To inspect the packaged embedding matrices:
 
 ```bash
 mkdir -p quick_start/generated/reference_embeddings/math
@@ -210,9 +235,17 @@ python quick_start/code/03_fit_to_uncertainty_generated.py
 python quick_start/code/04_evaluate_generated_results.py
 ```
 
-If you choose the re-embedding route, `01_embed_reference_logs.py` downloads or
-loads `Qwen/Qwen3-Embedding-0.6B`. A GPU is recommended for speed, but the
-provided result files let users skip that step entirely.
+To re-embed the included MATH conversation logs from scratch, run:
+
+```bash
+python quick_start/code/01_embed_reference_logs.py
+python quick_start/code/02_run_cp2_from_generated_embeddings.py
+python quick_start/code/03_fit_to_uncertainty_generated.py
+python quick_start/code/04_evaluate_generated_results.py
+```
+
+The re-embedding step downloads or loads `Qwen/Qwen3-Embedding-0.6B`; a GPU is
+recommended but not required for small tests.
 
 ### Option B: Using the MATU CLI
 
@@ -432,12 +465,24 @@ For local outputs:
 docker run --rm -v "$(pwd)/outputs:/app/outputs" matu-uq matu --help
 ```
 
-## PyPI Package
+## PyPI Release
 
-MATU is available on PyPI:
+The package metadata is ready under the name `matu-uq`. The GitHub Actions
+workflow in [`.github/workflows/publish.yml`](.github/workflows/publish.yml)
+uses PyPI Trusted Publishing. Before the first release, configure PyPI with:
 
-```bash
-pip install matu-uq
+```text
+project name: matu-uq
+repository: tiejin98/MATU
+workflow: publish.yml
+environment: pypi
+```
+
+Then create a GitHub release. After the first successful PyPI upload, add the
+PyPI badge:
+
+```markdown
+[![PyPI](https://img.shields.io/pypi/v/matu-uq.svg)](https://pypi.org/project/matu-uq/)
 ```
 
 ## Project Structure
