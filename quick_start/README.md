@@ -73,61 +73,23 @@ wrappers.
 
 | Step | Command | What It Does | Required? | Output |
 | --- | --- | --- | --- | --- |
-| Unzip reference embeddings | `python -m zipfile -e ...` | Extracts packaged Qwen3 embedding matrices for inspection or CP-2 reruns. | Optional. | Raw embedding `.pkl` files under `quick_start/generated/reference_embeddings/`. |
 | 00: Generate logs | `python quick_start/code/00_generate_logs_*.py` | Collects new logs when users want to replace the included samples. | Optional; included logs are already in `data/`. | New logs under `quick_start/generated/`. |
-| 01: Embed logs | `python quick_start/code/01_embed_reference_logs.py` | Recomputes Qwen3 embeddings from the included MATH log. | Optional; reference embeddings are already zipped in `data/`. | `quick_start/generated/embeddings/*.pkl`. |
+| 01: Embed logs | `python quick_start/code/01_embed_reference_logs.py` or `python -m zipfile -e ...` | Recomputes Qwen3 embeddings from logs, or extracts the provided Step 01 embedding outputs. | Optional; reference embeddings are already zipped in `data/`. | `quick_start/generated/embeddings/*.pkl` or `quick_start/generated/reference_embeddings/*.pkl`. |
 | 02: Run CP-2 | `python -m matu.cp2_matu ...` or `python quick_start/code/02_run_cp2_from_generated_embeddings.py` | Recomputes MATU fit curves from extracted or regenerated embeddings. | Optional; reference fit curves are already in `results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
 | 03: Convert fit curves | `python quick_start/code/03_fit_to_uncertainty_*.py` | Converts MATU fit curves to scalar uncertainty. | Optional for included files; needed after generated CP-2. | Included or generated uncertainty `.pkl`. |
 | 04: Evaluate MATU | `python quick_start/code/04_evaluate_reference_results.py --sample all` | Loads included MATU results and labels, then prints MATH and MMLU metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
 | 05: Evaluate baselines | `python quick_start/code/05_evaluate_baselines.py --sample all` | Loads included SAUP-Multiple results for MATH and MMLU. | Optional comparison. | Console AUROC/AUARC. |
 
-## Unzip Reference Embeddings
-
-Create output folders first:
-
-```bash
-mkdir -p quick_start/generated/reference_embeddings/math
-mkdir -p quick_start/generated/reference_embeddings/mmlu_autogen_qwen
-```
-
-Extract the MATH embeddings only if you want to inspect raw role-specific
-embeddings or rerun CP-2 from the provided matrices. The ready-to-use MATH fit
-curves are already in `quick_start/results/`.
-
-```bash
-# MATH + Qwen2.5 + Qwen3 role embeddings
-python -m zipfile -e quick_start/data/embeddings_Math_qwen2.5_qwen3.zip quick_start/generated/reference_embeddings/math
-```
-
-This creates one embedding-matrix collection for each included conversation
-role. These raw matrices are provided for inspection and reuse.
-
-```text
-quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl
-quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl
-```
-
-Extract the MMLU AutoGen embeddings if you want to inspect the role-wise
-matrices from the AutoGen setting. These files are not needed for the fastest
-result check because the reference fit curves are already included.
-
-```bash
-# MMLU + AutoGen + Qwen2.5 + Qwen3 analyst/verifier/star embeddings
-python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen
-```
-
-This creates one embedding-matrix collection for each AutoGen role:
-
-```text
-quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_analyst_embedding_matrices_MMLU_HF_qwen2.5.pkl
-quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_verifier_embedding_matrices_MMLU_HF_qwen2.5.pkl
-quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedding_matrices_MMLU_HF_qwen2.5.pkl
-```
-
 ## 00: Optional Generate New Logs
 
 The included logs are already available in `quick_start/data/`, so generation is
 not needed for the quick-start result. Run these only to collect new logs.
+
+**Important:** `00_generate_logs_camel_gpt.py` requires `OPENAI_API_KEY` in
+`quick_start/.env` and the example dependencies from `pip install -e ".[examples]"`.
+`00_generate_logs_hf_qwen.py` requires local or downloadable
+Hugging Face model access through `MATU_QWEN_MODEL` and, if needed,
+`MATU_MODEL_CACHE`.
 
 ```bash
 # 00: MATH + CAMEL/OpenAI example -> new logs under quick_start/generated/
@@ -146,6 +108,10 @@ Use this path only if you want to verify the embedding stage itself. It loads or
 downloads `Qwen/Qwen3-Embedding-0.6B`; a GPU is faster, but the provided
 artifacts let users skip this step.
 
+**Important:** Step `01` loads `Qwen/Qwen3-Embedding-0.6B`. Make sure the core
+dependencies are installed, and set `MATU_MODEL_CACHE` in `quick_start/.env` if
+you want to use a local Hugging Face cache/model path.
+
 ```bash
 # 01: MATH + Qwen2.5 logs -> fresh Qwen3 embeddings
 python quick_start/code/01_embed_reference_logs.py
@@ -157,6 +123,32 @@ Output:
 quick_start/generated/embeddings/user_embedding_matrices.pkl
 quick_start/generated/embeddings/assistant_embedding_matrices.pkl
 ```
+
+If you do not want to recompute Step `01`, use the provided Step `01` embedding
+outputs instead. They are stored as zip archives so the repository does not
+carry large raw embedding `.pkl` files.
+
+```bash
+# 01: provided MATH + Qwen2.5 + Qwen3 role embeddings -> extracted Step 01 outputs
+mkdir -p quick_start/generated/reference_embeddings/math
+python -m zipfile -e quick_start/data/embeddings_Math_qwen2.5_qwen3.zip quick_start/generated/reference_embeddings/math
+
+# 01: provided MMLU + AutoGen + Qwen2.5 role embeddings -> extracted Step 01 outputs
+mkdir -p quick_start/generated/reference_embeddings/mmlu_autogen_qwen
+python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen
+```
+
+After extraction, the MATH archive provides one embedding-matrix file per
+conversation role:
+
+- User-role embeddings: `quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl`
+- Assistant-role embeddings: `quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl`
+
+The MMLU AutoGen archive provides one embedding-matrix file per AutoGen role:
+
+- Analyst-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_analyst_embedding_matrices_MMLU_HF_qwen2.5.pkl`
+- Verifier-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_verifier_embedding_matrices_MMLU_HF_qwen2.5.pkl`
+- Star-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedding_matrices_MMLU_HF_qwen2.5.pkl`
 
 ## 02: Optional Rerun CP-2
 

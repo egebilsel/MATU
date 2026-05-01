@@ -27,7 +27,8 @@ numpy>=1.24
 tqdm>=4.66
 tensorly>=0.8
 sentence-transformers>=2.6
-transformers>=4.40
+transformers>=4.40,<5
+accelerate>=0.30
 torch>=2.1
 scikit-learn>=1.3
 datasets>=2.18
@@ -152,47 +153,23 @@ standalone `.pkl` files. Use `python -m zipfile -e ...` below.
 Run commands from the repository root. The included reference evaluation reads files already stored in `quick_start/results/`, so it does not require API keys, GPUs, or model downloads. Create the quick-start environment file if you want to run the optional `00` and `01` scripts to read local settings consistently:
 `OPENAI_API_KEY` is only needed for OpenAI/CAMEL log generation,
 `MATU_MODEL_CACHE` can point to a local Hugging Face cache or model path, and
-`MATU_MAX_RANK` controls CP-2 wrapper scripts used for ``02`` scripts.
+`MATU_MAX_RANK` controls CP-2 wrapper scripts used for Step `02`.
 
 ```bash
 cp quick_start/.env.example quick_start/.env
 ```
 
-First unzip the packaged reference embeddings. This is optional for reading the
-included metrics, but it lets users inspect raw role-specific matrices or rerun
-CP-2 without downloading an embedding model.
-
-```bash
-# MATH + Qwen2.5 + Qwen3 role embeddings
-mkdir -p quick_start/generated/reference_embeddings/math
-python -m zipfile -e quick_start/data/embeddings_Math_qwen2.5_qwen3.zip quick_start/generated/reference_embeddings/math
-
-# MMLU + AutoGen + Qwen2.5 + Qwen3 analyst/verifier/star embeddings
-mkdir -p quick_start/generated/reference_embeddings/mmlu_autogen_qwen
-python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen
-```
-
-The MATH archive creates one embedding-matrix collection for each included
-conversation role:
-
-```text
-quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl
-quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl
-```
-
-The MMLU AutoGen archive creates one embedding-matrix collection for each
-AutoGen role:
-
-```text
-quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_analyst_embedding_matrices_MMLU_HF_qwen2.5.pkl
-quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_verifier_embedding_matrices_MMLU_HF_qwen2.5.pkl
-quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedding_matrices_MMLU_HF_qwen2.5.pkl
-```
-
 Step `00` is optional log generation. The public logs are already included in
 `quick_start/data/`, so users only run these scripts when they want to create
-new conversation logs. The CAMEL/OpenAI script needs `OPENAI_API_KEY`; the
-HF/Qwen script needs local model access.
+new conversation logs.
+
+**Important:** `00_generate_logs_camel_gpt.py` requires `OPENAI_API_KEY` in
+`quick_start/.env` and the example dependencies from `pip install -e ".[examples]"`.
+`00_generate_logs_hf_qwen.py` requires local or downloadable
+Hugging Face model access through `MATU_QWEN_MODEL` and, if needed,
+`MATU_MODEL_CACHE`. **GPU is required**.
+
+**You may skip this optional `00` step if you do not have API_key or GPU**
 
 ```bash
 # 00: MATH + CAMEL/OpenAI example -> new logs under quick_start/generated/
@@ -204,12 +181,41 @@ python quick_start/code/00_generate_logs_hf_qwen.py
 
 Step `01` is optional re-embedding. It reads the included MATH conversation log
 and writes fresh Qwen3 role embeddings under `quick_start/generated/embeddings/`.
-Skip this step if you use the zipped reference embeddings from the unzip step.
+
+**Important:** Step `01` loads `Qwen/Qwen3-Embedding-0.6B`. Make sure set `MATU_MODEL_CACHE` in `quick_start/.env` if
+you want to use a local Hugging Face cache/model path.
+Skip this step if you use the provided zipped Step `01` outputs below.
 
 ```bash
 # 01: MATH + Qwen2.5 logs -> fresh Qwen3 embeddings
 python quick_start/code/01_embed_reference_logs.py
 ```
+
+If you do not want to recompute Step `01`, use the provided Step `01` embedding
+outputs instead. They are stored as zip archives so the repository does not
+carry large raw embedding `.pkl` files.
+
+```bash
+# 01: provided MATH + Qwen2.5 + Qwen3 role embeddings -> extracted Step 01 outputs
+mkdir -p quick_start/generated/reference_embeddings/math
+python -m zipfile -e quick_start/data/embeddings_Math_qwen2.5_qwen3.zip quick_start/generated/reference_embeddings/math
+
+# 01: provided MMLU + AutoGen + Qwen2.5 role embeddings -> extracted Step 01 outputs
+mkdir -p quick_start/generated/reference_embeddings/mmlu_autogen_qwen
+python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen
+```
+
+After extraction, the MATH archive provides one embedding-matrix file per
+conversation role:
+
+- User-role embeddings: `quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl`
+- Assistant-role embeddings: `quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl`
+
+The MMLU AutoGen archive provides one embedding-matrix file per AutoGen role:
+
+- Analyst-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_analyst_embedding_matrices_MMLU_HF_qwen2.5.pkl`
+- Verifier-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_verifier_embedding_matrices_MMLU_HF_qwen2.5.pkl`
+- Star-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedding_matrices_MMLU_HF_qwen2.5.pkl`
 
 Step `02` reruns CP-2. If you only unzipped the reference embeddings and do not
 want to download an embedding model, use the direct CP-2 command below. It
@@ -443,7 +449,7 @@ MoreHopQA, and HumanEval/EvalPlus. Source links and download snippets are in
 | Stage | Hardware | Estimated Time |
 | --- | --- | --- |
 | Direct quick-start evaluation | CPU only | Seconds |
-| Unzip reference embeddings | CPU only | Seconds |
+| Step 01 provided embedding unzip | CPU only | Seconds |
 | Re-embedding sample logs | GPU recommended, CPU possible | Minutes, depending on hardware |
 | CP-2 on quick-start embeddings | CPU possible, GPU not required | Minutes to longer for rank 50 |
 | Optional CAMEL/GPT log generation | CPU plus OpenAI API key | API dependent |
