@@ -74,8 +74,8 @@ wrappers.
 | Step | Command | What It Does | Required? | Output |
 | --- | --- | --- | --- | --- |
 | 00: Generate logs | `python quick_start/code/00_generate_logs_*.py` | Collects new logs when users want to replace the included samples. | Optional; included logs are already in `data/`. | New logs under `quick_start/generated/`. |
-| 01: Embed logs | `python quick_start/code/01_embed_reference_logs.py` or `python -m zipfile -e ...` | Recomputes Qwen3 embeddings from logs, or extracts the provided Step 01 embedding outputs. | Optional; reference embeddings are already zipped in `data/`. | `quick_start/generated/embeddings/*.pkl` or `quick_start/generated/reference_embeddings/*.pkl`. |
-| 02: Run CP-2 | `python -m matu.cp2_matu ...` or `python quick_start/code/02_run_cp2_from_generated_embeddings.py` | Recomputes MATU fit curves from extracted or regenerated embeddings. | Optional; reference fit curves are already in `results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
+| 01: Embed logs | `python quick_start/code/01_embed_reference_logs.py` | Stages the provided MATH embeddings by default, or recomputes Qwen3 embeddings when external model settings are enabled. | Optional; reference embeddings are already zipped in `data/`. | `quick_start/generated/embeddings/*.pkl`. |
+| 02: Run CP-2 | `python quick_start/code/02_run_cp2_from_generated_embeddings.py --embedding-source provided` | Recomputes MATU fit curves from provided, generated, or explicitly passed embeddings. | Optional; reference fit curves are already in `results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
 | 03: Convert fit curves | `python quick_start/code/03_fit_to_uncertainty_*.py` | Converts MATU fit curves to scalar uncertainty. | Optional for included files; needed after generated CP-2. | Included or generated uncertainty `.pkl`. |
 | 04: Evaluate MATU | `python quick_start/code/04_evaluate_reference_results.py --sample all` | Loads included MATU results and labels, then prints MATH and MMLU metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
 | 05: Evaluate baselines | `python quick_start/code/05_evaluate_baselines.py --sample all` | Loads included SAUP-Multiple results for MATH and MMLU. | Optional comparison. | Console AUROC/AUARC. |
@@ -104,16 +104,18 @@ model access.
 
 ## 01: Optional Re-Embed Logs
 
-Use this path only if you want to verify the embedding stage itself. It loads or
-downloads `Qwen/Qwen3-Embedding-0.6B`; a GPU is faster, but the provided
-artifacts let users skip this step.
+Use this path when you want a script to prepare Step `01` outputs. By default,
+it stages the provided MATH embeddings into `quick_start/generated/embeddings/`
+without downloading a model. Set `MATU_RUN_EXTERNAL=1` or `MATU_MODEL_CACHE` if
+you want to recompute embeddings with `Qwen/Qwen3-Embedding-0.6B`; a GPU is
+faster for that path.
 
-**Important:** Step `01` loads `Qwen/Qwen3-Embedding-0.6B`. Make sure the core
-dependencies are installed, and set `MATU_MODEL_CACHE` in `quick_start/.env` if
-you want to use a local Hugging Face cache/model path.
+**Important:** Recomputing Step `01` loads `Qwen/Qwen3-Embedding-0.6B`. Make
+sure the core dependencies are installed, and set `MATU_MODEL_CACHE` in
+`quick_start/.env` if you want to use a local Hugging Face cache/model path.
 
 ```bash
-# 01: MATH + Qwen2.5 logs -> fresh Qwen3 embeddings
+# 01: provided MATH + Qwen3 embeddings -> staged Step 01 outputs
 python quick_start/code/01_embed_reference_logs.py
 ```
 
@@ -124,22 +126,10 @@ quick_start/generated/embeddings/user_embedding_matrices.pkl
 quick_start/generated/embeddings/assistant_embedding_matrices.pkl
 ```
 
-If you do not want to recompute Step `01`, use the provided Step `01` embedding
-outputs instead. They are stored as zip archives so the repository does not
-carry large raw embedding `.pkl` files.
-
-```bash
-# 01: provided MATH + Qwen2.5 + Qwen3 role embeddings -> extracted Step 01 outputs
-mkdir -p quick_start/generated/reference_embeddings/math
-python -m zipfile -e quick_start/data/embeddings_Math_qwen2.5_qwen3.zip quick_start/generated/reference_embeddings/math
-
-# 01: provided MMLU + AutoGen + Qwen2.5 role embeddings -> extracted Step 01 outputs
-mkdir -p quick_start/generated/reference_embeddings/mmlu_autogen_qwen
-python -m zipfile -e quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip quick_start/generated/reference_embeddings/mmlu_autogen_qwen
-```
-
-After extraction, the MATH archive provides one embedding-matrix file per
-conversation role:
+The provided Step `01` embedding outputs are stored as zip archives so the
+repository does not carry large raw embedding `.pkl` files. When Step `02`
+stages the MATH archive with `--embedding-source provided`, or when you extract
+the archive manually, the role files are:
 
 - User-role embeddings: `quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl`
 - Assistant-role embeddings: `quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl`
@@ -157,24 +147,24 @@ want to download the embedding model. The public `fit_dict` is already provided,
 so this is not required for the fastest result check.
 
 ```bash
-# 02: MATH + extracted Qwen3 embeddings -> regenerated MATU fit curves
-mkdir -p quick_start/generated/results
-python -m matu.cp2_matu \
-  --embeddings \
-  quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl \
-  quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl \
-  --out quick_start/generated/results/matu_scores.pkl \
-  --legacy_fit_out quick_start/generated/results/fit_dict_generated.pkl \
+# 02: provided MATH + Qwen3 embeddings -> regenerated MATU fit curves
+python quick_start/code/02_run_cp2_from_generated_embeddings.py \
+  --embedding-source provided \
   --max_rank 50
 ```
 
-If you ran Step `01`, use the wrapper below instead. It expects
-`quick_start/generated/embeddings/*.pkl` and writes the same generated CP-2
-outputs.
+If you recomputed or staged Step `01` into `quick_start/generated/embeddings/`,
+use the generated source. To pass your own embedding files, use `--embeddings`
+with one pickle per role.
 
 ```bash
 # 02: MATH + generated Qwen3 embeddings -> regenerated MATU fit curves
-python quick_start/code/02_run_cp2_from_generated_embeddings.py
+python quick_start/code/02_run_cp2_from_generated_embeddings.py \
+  --embedding-source generated
+
+# 02: custom role embeddings -> regenerated MATU fit curves
+python quick_start/code/02_run_cp2_from_generated_embeddings.py \
+  --embeddings path/to/user_embedding_matrices.pkl path/to/assistant_embedding_matrices.pkl
 ```
 
 ## 03: Convert Fit Curves To Uncertainty
