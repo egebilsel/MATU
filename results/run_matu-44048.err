@@ -1,0 +1,73 @@
+
+EnvironmentLocationNotFound: Not a conda environment: /dl_scratch2/ege/ege/envs/matu_uq
+
+Traceback (most recent call last):
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/04_evaluate_reference_results.py", line 16, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/05_evaluate_baselines.py", line 9, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py", line 32, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/01_embed_reference_logs.py", line 45, in <module>
+    main()
+    ~~~~^^
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/01_embed_reference_logs.py", line 41, in main
+    subprocess.run(cmd, check=True, cwd=str(REPO_ROOT), env=env)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ege/miniconda3/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/ege/miniconda3/bin/python', '-m', 'matu.embed_logs', '--logs', '/dl_scratch2/ege/ege/repos/MATU/quick_start/data/conversation_logs_Math_qwen2.5.json', '--out_dir', '/dl_scratch2/ege/ege/repos/MATU/quick_start/generated/embeddings', '--roles', 'user', 'assistant', '--model', 'Qwen/Qwen3-Embedding-0.6B']' returned non-zero exit status 1.
+Missing embedding pickle(s):
+  - /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/embeddings/user_embedding_matrices.pkl
+  - /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/embeddings/assistant_embedding_matrices.pkl
+Run quick_start/code/01_embed_reference_logs.py, use --embedding-source provided, or pass explicit --embeddings paths.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/fit_to_uncertainty.py", line 25, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/03_fit_to_uncertainty_generated.py", line 35, in <module>
+    main()
+    ~~~~^^
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/03_fit_to_uncertainty_generated.py", line 31, in main
+    subprocess.run(cmd, check=True, cwd=str(REPO_ROOT), env=env)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ege/miniconda3/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/ege/miniconda3/bin/python', '-m', 'matu.fit_to_uncertainty', '--fit_dict', '/dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/fit_dict_generated.pkl', '--out', '/dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/uncertainty_generated.pkl']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/fit_to_uncertainty.py", line 25, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+Traceback (most recent call last):
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/04_evaluate_generated_results.py", line 54, in <module>
+    main()
+    ~~~~^^
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/04_evaluate_generated_results.py", line 24, in main
+    subprocess.run(
+    ~~~~~~~~~~~~~~^
+        [
+        ^
+    ...<10 lines>...
+        env=env,
+        ^^^^^^^^
+    )
+    ^
+  File "/home/ege/miniconda3/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['/home/ege/miniconda3/bin/python', '-m', 'matu.fit_to_uncertainty', '--fit_dict', '/dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/fit_dict_generated.pkl', '--out', '/dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/uncertainty_generated.pkl']' returned non-zero exit status 1.
