@@ -9,7 +9,7 @@
 #SBATCH --time=1-00:00:00
 
 source ~/miniconda3/etc/profile.d/conda.sh
-conda activate /dl_scratch2/ege/ege/envs/matu_uq/
+conda activate /dl_scratch2/ege/ege/envs/matu-uq/
 
 # HF modelleri /home yerine dl_scratch2'ye insin
 export HF_HOME=/dl_scratch2/ege/hf_cache
