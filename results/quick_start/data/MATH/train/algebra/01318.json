@@ -1,0 +1,1 @@
+{"problem": "Machiavelli added together $1+3i$ and $2-4i$. What number did he get?", "solution": "Adding together the real part and imaginary parts separately, we have $(1+2)+(3-4)i=\\boxed{3-i}$."}

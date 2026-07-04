@@ -1,0 +1,11 @@
+=== Step 00: Generate Logs (GPU) ===
+Saved logs to quick_start/generated/conversation_logs_hf_qwen.json
+
+=== Step 01: Embed Logs (GPU) ===
+
+=== Step 02: CP-2 Tensor Decomposition (CPU) ===
+
+=== Step 03: Fit to Uncertainty ===
+
+=== Step 04: Evaluate Generated ===
+MATU GENERATION AND PIPELINE DONE!

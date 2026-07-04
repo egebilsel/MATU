@@ -1,0 +1,1 @@
+{"problem": "Let $a,$ $b,$ and $c$ be the roots of $x^3 - 3x - 5 = 0.$  Find $abc.$", "solution": "By Vieta's formulas, $abc = \\boxed{5}.$"}

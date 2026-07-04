@@ -1,0 +1,1 @@
+{"problem": "Evaluate $531^2 - 2\\cdot 531\\cdot 530 + 530^2$.", "solution": "We see that $531^2 - 2\\cdot 531\\cdot530 + 530^2 = (531-530)^2 = 1^2 = \\boxed{1}$."}

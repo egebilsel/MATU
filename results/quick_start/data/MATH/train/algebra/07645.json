@@ -1,0 +1,1 @@
+{"problem": "Consider the function $g(x) = 3$.  Find $g(2)$.", "solution": "Because $g(x) = 3$, no matter what we input to $g$, the output is 3.  So, $g(2) = \\boxed{3}$."}

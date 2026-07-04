@@ -1,0 +1,1 @@
+{"problem": "If $\\frac{x}{y}= 2$ and $\\frac{z}{x}= 4$, what is the value of $\\frac{z}{y}$?", "solution": "$\\frac z y=\\frac z x\\cdot\\frac x y=4\\cdot2=\\boxed{8}$."}

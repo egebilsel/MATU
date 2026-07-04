@@ -1,0 +1,1 @@
+{"problem": "What number is a multiple of every integer?", "solution": "For every integer $x$, $\\boxed{0} = 0 \\cdot x$ is a multiple of $x$."}

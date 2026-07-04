@@ -1,0 +1,1 @@
+{"problem": "Simplify: $\\frac{18!}{16!}$", "solution": "We can express $\\frac{18!}{16!}$ as $\\frac{18\\cdot17\\cdot16!}{16!}$. To simplify this expression, we can cancel $16!$ from the numerator and denominator, leaving us with $18\\cdot17$, or $\\boxed{306}$."}

@@ -1,0 +1,1 @@
+{"problem": "Two positive integers each have a units digit of 2 when expressed in base 4.  Find the units digit of their product when expressed in base 4.", "solution": "Since $2_4 \\cdot 2_4 = 10_4$, the units digit is $\\boxed{0}$."}

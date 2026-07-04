@@ -1,0 +1,1 @@
+{"problem": "Factor $t^2-121$.", "solution": "We have $t^2 -121 = t^2 - 11^2 = \\boxed{(t-11)(t+11)}$."}

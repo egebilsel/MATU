@@ -1,0 +1,1 @@
+{"problem": "Determine the number of ways to arrange the letters of the word TEPEE.", "solution": "First we count the arrangements if the three E's are unique, which is $5!$. Then since the E's are not unique, we divide by $3!$ for the arrangements of E, for an answer of $\\dfrac{5!}{3!} = \\boxed{20}$."}

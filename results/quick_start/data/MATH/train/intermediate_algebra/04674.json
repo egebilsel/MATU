@@ -1,0 +1,1 @@
+{"problem": "Find $|3-2i|\\cdot |3+2i|$.", "solution": "We have $|3-2i|\\cdot |3+2i| = |(3-2i)(3+2i)| = |9 + 4| = \\boxed{13}$."}

@@ -1,0 +1,1 @@
+{"problem": "Determine the number of ways to arrange the letters of the word CIRCLE.", "solution": "There are two C's and six total letters, so the answer is $\\dfrac{6!}{2!} = \\boxed{360}$."}

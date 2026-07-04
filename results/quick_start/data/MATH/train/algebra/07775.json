@@ -1,0 +1,1 @@
+{"problem": "Find $\\left\\lceil \\sqrt[3]{-25}\\right\\rceil$.", "solution": "We notice that $-27 = (-3)^3 < -25 < -8 = (-2)^3$. Thus, $-3 < \\sqrt[3]{-25} < -2$. The ceiling of this value will be the smallest integer greater than $\\sqrt[3]{-25}$, which is $\\boxed{-2}$."}

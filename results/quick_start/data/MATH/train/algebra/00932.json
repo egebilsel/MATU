@@ -1,0 +1,1 @@
+{"problem": "The first and thirteenth terms of an arithmetic sequence are $\\frac79$ and $\\frac45$, respectively. What is the seventh term?", "solution": "Since the seventh term is halfway between the first term and thirteenth term, it is simply the average of these terms, or \\[\\frac{7/9 + 4/5}{2} = \\boxed{\\frac{71}{90}}.\\]"}

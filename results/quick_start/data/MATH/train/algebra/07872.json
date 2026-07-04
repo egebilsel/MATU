@@ -1,0 +1,1 @@
+{"problem": "Evaluate $(x+ y)(x-y)$ when $x= 15$ and $y= 5$.", "solution": "We have $(x+y)(x-y) = (15+5)(15-5) = (20)(10) = \\boxed{200}$."}

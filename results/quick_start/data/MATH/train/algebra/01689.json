@@ -1,0 +1,1 @@
+{"problem": "Evaluate $\\log_7\\sqrt7$.", "solution": "We have $7^\\frac12=\\sqrt7$, so $\\log_7 \\sqrt7 = \\boxed{\\frac12}$."}

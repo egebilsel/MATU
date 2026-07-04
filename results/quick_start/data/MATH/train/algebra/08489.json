@@ -1,0 +1,1 @@
+{"problem": "Rationalize the denominator: $\\frac{5}{\\sqrt{3}}$ .", "solution": "Multiplying both the numerator and the denominator of the fraction by $\\sqrt{3}$, we get: $$\\frac{5}{\\sqrt{3}} = \\frac{5}{\\sqrt{3}} \\cdot \\frac{\\sqrt{3}}{\\sqrt{3}} = \\boxed{\\frac{5\\sqrt{3}}{3}}.$$"}

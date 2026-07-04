@@ -1,0 +1,1 @@
+{"problem": "Compute $e^{\\pi i}.$", "solution": "We have that $e^{\\pi i} = \\cos \\pi + i \\sin \\pi = \\boxed{-1}.$"}

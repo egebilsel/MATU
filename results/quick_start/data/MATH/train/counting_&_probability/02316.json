@@ -1,0 +1,1 @@
+{"problem": "What is the value of $\\sqrt{3! \\cdot 3!}$ expressed as a positive integer?", "solution": "$\\sqrt{3!\\cdot3!}$ is equal to $\\sqrt{(3!)^2}=3!=3\\cdot2\\cdot1=\\boxed{6}$."}

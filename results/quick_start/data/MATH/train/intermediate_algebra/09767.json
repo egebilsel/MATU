@@ -1,0 +1,1 @@
+{"problem": "Find the sum of all the roots of\n\\[\\frac{x^2 - 13x + 22}{x^2 - 8x + 12} = 0.\\]", "solution": "The numerator and denominator factor as\n\\[\\frac{(x - 2)(x - 11)}{(x - 2)(x - 6)} = 0.\\]For $x = 2,$ the expression is undefined, so the only root is $x = \\boxed{11}.$"}

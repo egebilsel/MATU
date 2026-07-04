@@ -1,0 +1,36 @@
+=== Step 04: Evaluate Reference (saniyeler) ===
+MATH + Qwen2.5-7B
+Tasks: 400
+Mean accuracy: 0.8383
+AUROC: 0.7205
+AUARC: 0.9017
+
+MMLU + AutoGen + Qwen2.5-7B
+Tasks: 400
+Mean accuracy: 0.7785
+AUROC: 0.7315
+AUARC: 0.8834
+
+=== Step 05: Evaluate Baselines (saniyeler) ===
+MATH + Qwen2.5 + SAUP-Multiple:
+  tasks: 400
+  AUROC: 0.6097
+  AUARC: 0.8722
+
+MMLU + AutoGen + Qwen2.5 + SAUP-Multiple:
+  tasks: 400
+  AUROC: 0.7417
+  AUARC: 0.8589
+
+=== Step 01: Embed Logs (GPU, dakikalar) ===
+
+=== Step 02: CP-2 (CPU, dakikalar-saat) ===
+
+=== Step 03: Fit to Uncertainty ===
+
+=== Step 04: Evaluate Generated ===
+Tasks: 400
+Mean accuracy: 0.8383
+AUROC: 0.7520
+AUARC: 0.9136
+MATU PIPELINE DONE!

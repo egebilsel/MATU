@@ -1,0 +1,1 @@
+{"problem": "What is the least integer greater than $\\sqrt{300}$?", "solution": "Since $17^2=289<300$ and $18^2=324>300$, the least integer greater than $\\sqrt{300}$ is $\\boxed{18}$."}

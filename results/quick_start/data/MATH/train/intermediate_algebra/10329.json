@@ -1,0 +1,1 @@
+{"problem": "If $|z| = 5$, what is $|\\overline{z}^2|$?", "solution": "We have that\n\\[|\\overline{z}^2| = |\\overline{z}|^2 = |z|^2 = \\boxed{25}.\\]"}

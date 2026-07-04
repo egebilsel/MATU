@@ -1,0 +1,1 @@
+{"problem": "Evaluate $\\lceil 8.8 \\rceil+\\lceil -8.8 \\rceil$.", "solution": "The smallest integer greater than $8.8$ is $9$. The smallest integer greater than $-8.8$ is $-8$. Therefore, the answer is $9-8= \\boxed{1}$."}
