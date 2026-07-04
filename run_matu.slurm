@@ -1,22 +1,22 @@
 #!/bin/bash
 #SBATCH --nodes=1
 #SBATCH -J matu-pipeline
-#SBATCH --chdir=/dl_scratch2/ege/MATU
+#SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
 #SBATCH --nodelist=adep1
 #SBATCH --gres=gpu:1
-#SBATCH --output=/dl_scratch2/ege/matu-%j.out
-#SBATCH --error=/dl_scratch2/ege/matu-%j.err
+#SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/run_matu-%j.out
+#SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/run_matu-%j.err
 #SBATCH --time=1-00:00:00
 
 source ~/.bashrc
-conda activate /dl_scratch2/ege/envs/matu-uq
+conda activate /dl_scratch2/ege/ege/envs/matu_uq/
 
 # HF modelleri /home yerine dl_scratch2'ye insin
 export HF_HOME=/dl_scratch2/ege/hf_cache
 export HUGGINGFACE_HUB_CACHE=$HF_HOME/hub
 export TRANSFORMERS_CACHE=$HF_HOME/transformers
 
-cd /dl_scratch2/ege/MATU
+cd /dl_scratch2/ege/ege/repos/MATU
 
 echo "=== Step 04: Evaluate Reference (saniyeler) ==="
 python quick_start/code/04_evaluate_reference_results.py --sample all
