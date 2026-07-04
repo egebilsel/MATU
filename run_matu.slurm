@@ -8,7 +8,7 @@
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/run_matu-%j.err
 #SBATCH --time=1-00:00:00
 
-source ~/.bashrc
+source ~/miniconda3/etc/profile.d/conda.sh
 conda activate /dl_scratch2/ege/ege/envs/matu_uq/
 
 # HF modelleri /home yerine dl_scratch2'ye insin
