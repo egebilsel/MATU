@@ -1,0 +1,1 @@
+{"problem": "Determine the number of ways to arrange the letters of the word PARABOLA.", "solution": "There are three A's and eight total letters, so the answer is $\\dfrac{8!}{3!} = \\boxed{6720}$."}

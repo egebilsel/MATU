@@ -1,0 +1,1 @@
+{"problem": "Simplify the following:$$\\frac{3}{\\sqrt{27}}$$", "solution": "We have:\n\n$\\frac{3}{\\sqrt{27}}=\\frac{3\\sqrt{3}}{\\sqrt{81}}=\\frac{3\\sqrt{3}}{9}=\\boxed{\\frac{\\sqrt{3}}{3}}$."}

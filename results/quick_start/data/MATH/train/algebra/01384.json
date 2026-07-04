@@ -1,0 +1,1 @@
+{"problem": "Kyle knows that $4 = 2^{5r+1}$. What is the value of $r$? Express your answer as a common fraction.", "solution": "Replacing the $4$ with $2^2$ we have $2^2 = 2^{5r+1}$, so $2=5r+1$.  Solve for $r$ to get $r=\\boxed{\\frac{1}{5}}$"}

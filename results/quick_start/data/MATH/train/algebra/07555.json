@@ -1,0 +1,1 @@
+{"problem": "Evaluate $\\log_{\\sqrt8}(64\\sqrt{8})$.", "solution": "Let $x=\\log_{\\sqrt8}(64\\sqrt{8})$. In exponential form this is $64\\sqrt8=(\\sqrt8)^{x}$. Since $64\\sqrt{8}$ can be written as $(\\sqrt{8})^5$, we have $(\\sqrt{8})^5=(\\sqrt{8})^x$. Therefore, $x=\\boxed{5}$."}

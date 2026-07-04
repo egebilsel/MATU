@@ -1,0 +1,1 @@
+{"problem": "Solve  \\[\\frac{x^2+2x+3}{x+4}=x+5\\]for $x$.", "solution": "Cross-multiplication gives  \\[x^2+2x+3=(x+4)(x+5)=x^2+9x+20.\\]Therefore \\[0=7x+17\\]and $x=\\boxed{-\\frac{17}7}$."}

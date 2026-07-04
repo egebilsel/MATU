@@ -1,0 +1,1 @@
+{"problem": "How many positive divisors do 840, 960, and 1200 have in common?", "solution": "The GCD of 840, 960, and 1200 is 120. Since 120 has 16 positive divisors, 840, 960, and 1200 have $\\boxed{16}$ common positive divisors."}

@@ -1,0 +1,1 @@
+{"problem": "Compute $\\arccos \\left( -\\frac{1}{2} \\right).$  Express your answer in radians.", "solution": "Since $\\cos \\frac{2 \\pi}{3} = -\\frac{1}{2},$ $\\arccos \\left( -\\frac{1}{2} \\right) = \\boxed{\\frac{2 \\pi}{3}}.$"}

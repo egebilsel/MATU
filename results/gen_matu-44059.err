@@ -1,0 +1,39 @@
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:34<00:34, 34.76s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:54<00:00, 25.72s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:54<00:00, 27.08s/it]
+Problems:   0%|          | 0/5 [00:00<?, ?it/s]Problems:  20%|██        | 1/5 [01:33<06:13, 93.42s/it]Problems:  40%|████      | 2/5 [12:41<21:35, 431.69s/it]Problems:  60%|██████    | 3/5 [23:13<17:26, 523.10s/it]Problems:  80%|████████  | 4/5 [27:46<07:04, 424.43s/it]Problems: 100%|██████████| 5/5 [34:23<00:00, 414.31s/it]Problems: 100%|██████████| 5/5 [34:23<00:00, 412.66s/it]
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+WARNING:sentence_transformers.util.decorators:The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+INFO:sentence_transformers.base.model:Loading SentenceTransformer model from Qwen/Qwen3-Embedding-0.6B.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:sentence_transformers.base.model:Loaded 1 prompt with these keys: ['query']
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:59: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  dim = int(model.get_sentence_embedding_dimension() or 0)
+Embedding tasks:   0%|          | 0/5 [00:00<?, ?it/s]Embedding tasks:  20%|██        | 1/5 [00:01<00:07,  1.82s/it]Embedding tasks:  40%|████      | 2/5 [00:03<00:05,  1.88s/it]Embedding tasks:  60%|██████    | 3/5 [00:05<00:03,  1.76s/it]Embedding tasks:  80%|████████  | 4/5 [00:06<00:01,  1.46s/it]Embedding tasks: 100%|██████████| 5/5 [00:07<00:00,  1.38s/it]Embedding tasks: 100%|██████████| 5/5 [00:07<00:00,  1.52s/it]
+INFO:__main__:Saved user embeddings to quick_start/generated/embeddings/user_embedding_matrices.pkl
+INFO:__main__:Saved assistant embeddings to quick_start/generated/embeddings/assistant_embedding_matrices.pkl
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:114: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  "embedding_dim": int(model.get_sentence_embedding_dimension() or 0),
+INFO:__main__:Saved embedding metadata to quick_start/generated/embeddings/embedding_metadata.json
+MATU:   0%|          | 0/5 [00:00<?, ?it/s]MATU:  20%|██        | 1/5 [00:20<01:21, 20.33s/it]MATU:  40%|████      | 2/5 [00:34<00:50, 16.93s/it]MATU:  60%|██████    | 3/5 [00:49<00:31, 15.97s/it]MATU:  80%|████████  | 4/5 [01:03<00:15, 15.26s/it]MATU: 100%|██████████| 5/5 [01:18<00:00, 15.11s/it]MATU: 100%|██████████| 5/5 [01:18<00:00, 15.74s/it]
+INFO:__main__:Saved MATU scores to /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/matu_scores.pkl
+INFO:__main__:Saved legacy fit_dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/fit_dict_generated.pkl
+INFO:__main__:Saved uncertainty dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/uncertainty_generated.pkl
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/evaluate_uncertainty.py", line 140, in <module>
+    main()
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/evaluate_uncertainty.py", line 122, in main
+    raise ValueError("No overlapping keys between uncertainty and labels.")
+ValueError: No overlapping keys between uncertainty and labels.
+Traceback (most recent call last):
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/04_evaluate_generated_results.py", line 54, in <module>
+    main()
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/04_evaluate_generated_results.py", line 50, in main
+    subprocess.run(cmd, check=True, cwd=str(REPO_ROOT), env=env)
+  File "/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/dl_scratch2/ege/ege/envs/matu-uq/bin/python', '-m', 'matu.evaluate_uncertainty', '--uncertainty', '/dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/uncertainty_generated.pkl', '--labels', '/dl_scratch2/ege/ege/repos/MATU/quick_start/results/accuracy_dict_Math_qwen2.5.pkl', '--score_mode', 'raw']' returned non-zero exit status 1.

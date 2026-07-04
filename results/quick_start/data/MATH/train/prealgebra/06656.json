@@ -1,0 +1,1 @@
+{"problem": "What is the number of square meters in the area of a circle with diameter $6$ meters? Express your answer in terms of $\\pi$.", "solution": "If the diameter is 6 meters, the radius is 3 meters. Therefore, the area of the circle is $\\pi(3^2) = \\boxed{9 \\pi}$ square meters."}

@@ -1,0 +1,1 @@
+{"problem": "Solve  \\[\\frac{x-9}{x+1}=2\\]for $x$.", "solution": "Cross-multiplication gives  \\[x-9=2x+2.\\]Simplifying this expression tells us  \\[x=\\boxed{-11}.\\]"}

@@ -1,0 +1,1 @@
+{"problem": "Compute $(-144)\\div 9$.", "solution": "When $y$ is nonzero, we have $(-x)\\div y = -(x\\div y)$, so \\[(-144)\\div 9 = -(144\\div 9) = \\boxed{-16}.\\]"}

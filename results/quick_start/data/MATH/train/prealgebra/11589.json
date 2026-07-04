@@ -1,0 +1,1 @@
+{"problem": "Express the following as a common fraction in simplest form: $$\\frac{9 \\cdot 3 + 8}{4 \\cdot 3 + 8}.$$", "solution": "We observe our order of operations: \\begin{align*}\n\\frac{9 \\cdot 3 + 8}{4 \\cdot 3 + 8} &= \\frac{27 + 8}{12 + 8} \\\\\n&= \\frac{35}{20} = \\boxed{\\frac{7}{4}}.\n\\end{align*}"}

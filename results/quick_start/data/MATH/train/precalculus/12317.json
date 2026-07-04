@@ -1,0 +1,1 @@
+{"problem": "Compute $\\arctan \\sqrt{3}.$  Express your answer in radians.", "solution": "Since $\\tan \\frac{\\pi}{3} = \\sqrt{3},$ $\\arctan \\sqrt{3} = \\boxed{\\frac{\\pi}{3}}.$"}

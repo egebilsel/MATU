@@ -1,0 +1,1 @@
+{"problem": "What is the value of $\\sqrt{5^5+5^5+5^5+5^5+5^5}$?", "solution": "We have $\\sqrt{5^5+5^5+5^5+5^5+5^5} = \\sqrt{5\\cdot 5^5} = \\sqrt{5^6} = 5^3 = \\boxed{125}$."}

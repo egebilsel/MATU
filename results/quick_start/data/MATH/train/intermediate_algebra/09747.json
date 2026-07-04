@@ -1,0 +1,1 @@
+{"problem": "If $|z| = 1$, express $\\overline{z}$ as a simplified fraction in terms of $z$.", "solution": "Since $|z| = \\sqrt{z \\overline{z}}$, we have $z \\overline{z} = 1$. Thus $\\overline{z} = \\boxed{\\frac{1}{z}}$."}

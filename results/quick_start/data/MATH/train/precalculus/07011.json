@@ -1,0 +1,1 @@
+{"problem": "Compute $\\arcsin \\frac{1}{\\sqrt{2}}.$  Express your answer in radians.", "solution": "Since $\\sin \\frac{\\pi}{4} = \\frac{1}{\\sqrt{2}},$ $\\arcsin \\frac{1}{\\sqrt{2}} = \\boxed{\\frac{\\pi}{4}}.$"}

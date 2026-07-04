@@ -1,0 +1,1 @@
+{"problem": "Compute\n\\[\\begin{vmatrix} 0 & 1 \\\\ 3 & 5 \\end{vmatrix}.\\]", "solution": "We have that\n\\[\\begin{vmatrix} 0 & 1 \\\\ 3 & 5 \\end{vmatrix} = (0)(5) - (1)(3) = \\boxed{-3}.\\]"}

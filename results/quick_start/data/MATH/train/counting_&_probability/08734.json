@@ -1,0 +1,1 @@
+{"problem": "Determine the number of ways to arrange the letters of the word NINE.", "solution": "First we count the arrangements if the two N's are unique, which is 4!. Then since the N's are not unique, we divide by $2!$ for the arrangements of the N's, for an answer of $\\dfrac{4!}{2!} = \\boxed{12}$."}

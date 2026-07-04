@@ -1,0 +1,1 @@
+{"problem": "Johnny has 7 different colored marbles in his bag.  In how many ways can he choose three different marbles from his bag to play a game?", "solution": "He can choose 3 marbles from 7 distinct marbles in $\\binom{7}{3}=\\boxed{35}$ ways."}

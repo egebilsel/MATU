@@ -1,0 +1,1 @@
+{"problem": "Determine if the graph of the equation below is a parabola, circle, ellipse, hyperbola, point, line, two lines, or empty.\n\n$y^2 - x +5y - 25 = 0$", "solution": "We can rearrange this equation to $x = y^2 + 5y - 25$ which is a sideways-opening $\\boxed{\\text{parabola}}$."}
