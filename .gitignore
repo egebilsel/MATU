@@ -18,7 +18,6 @@ dist/
 
 # Large generated research artifacts
 outputs/
-results/
 *.pkl
 *.pickle
 *.pt
