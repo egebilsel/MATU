@@ -28,7 +28,7 @@ echo "=== Step 00: Generate Logs (GPU) ==="
 python examples/generate_logs_hf_qwen.py \
   --model "Qwen/Qwen2.5-3B-Instruct" \
   --data_root quick_start/data/MATH/test \
-  --max_items 5 \
+  --max_items 10 \
   --runs 10 \
   --out quick_start/generated/conversation_logs_hf_qwen.json
 
@@ -55,7 +55,13 @@ python quick_start/code/03_fit_to_uncertainty_generated.py
 
 echo ""
 echo "=== Step 04: Evaluate Generated ==="
-# Ürettiğimiz verilerin AUROC / AUARC gibi başarı ve belirsizlik skorlarını yazdıracak
-python quick_start/code/04_evaluate_generated_results.py
+# 1. Önce yapay zekanın cevaplarını matematiksel olarak puanla (accuracy_dict üret)
+python quick_start/code/grade_math.py
+
+# 2. Ürettiğimiz puanlama dosyasıyla AUROC skorlarını hesapla
+python -m matu.evaluate_uncertainty \
+  --uncertainty quick_start/generated/results/uncertainty_generated.pkl \
+  --labels quick_start/generated/results/accuracy_dict_generated.pkl \
+  --score_mode raw
 
 echo "MATU GENERATION AND PIPELINE DONE!"
