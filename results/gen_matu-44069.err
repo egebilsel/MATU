@@ -1,0 +1,23 @@
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:00<00:00,  1.26it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.77it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.66it/s]
+Problems:   0%|          | 0/10 [00:00<?, ?it/s]Problems:  10%|█         | 1/10 [01:40<15:07, 100.78s/it]Problems:  20%|██        | 2/10 [08:37<38:14, 286.80s/it]Problems:  30%|███       | 3/10 [17:55<47:53, 410.56s/it]Problems:  40%|████      | 4/10 [20:58<32:04, 320.71s/it]Problems:  50%|█████     | 5/10 [29:30<32:28, 389.68s/it]Problems:  60%|██████    | 6/10 [30:35<18:36, 279.11s/it]Problems:  70%|███████   | 7/10 [32:56<11:42, 234.01s/it]Problems:  80%|████████  | 8/10 [36:16<07:26, 223.12s/it]Problems:  90%|█████████ | 9/10 [39:24<03:32, 212.28s/it]Problems: 100%|██████████| 10/10 [40:26<00:00, 165.95s/it]Problems: 100%|██████████| 10/10 [40:26<00:00, 242.67s/it]
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+WARNING:sentence_transformers.util.decorators:The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+INFO:sentence_transformers.base.model:Loading SentenceTransformer model from Qwen/Qwen3-Embedding-0.6B.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:sentence_transformers.base.model:Loaded 1 prompt with these keys: ['query']
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:59: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  dim = int(model.get_sentence_embedding_dimension() or 0)
+Embedding tasks:   0%|          | 0/10 [00:00<?, ?it/s]Embedding tasks:  10%|█         | 1/10 [00:01<00:12,  1.44s/it]Embedding tasks:  20%|██        | 2/10 [00:02<00:10,  1.37s/it]Embedding tasks:  30%|███       | 3/10 [00:04<00:10,  1.46s/it]Embedding tasks:  40%|████      | 4/10 [00:05<00:07,  1.26s/it]Embedding tasks:  50%|█████     | 5/10 [00:06<00:06,  1.33s/it]Embedding tasks:  60%|██████    | 6/10 [00:07<00:04,  1.13s/it]Embedding tasks:  70%|███████   | 7/10 [00:08<00:03,  1.03s/it]Embedding tasks:  80%|████████  | 8/10 [00:09<00:02,  1.02s/it]Embedding tasks:  90%|█████████ | 9/10 [00:10<00:00,  1.02it/s]Embedding tasks: 100%|██████████| 10/10 [00:10<00:00,  1.11it/s]Embedding tasks: 100%|██████████| 10/10 [00:10<00:00,  1.09s/it]
+INFO:__main__:Saved user embeddings to quick_start/generated/embeddings/user_embedding_matrices.pkl
+INFO:__main__:Saved assistant embeddings to quick_start/generated/embeddings/assistant_embedding_matrices.pkl
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:114: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  "embedding_dim": int(model.get_sentence_embedding_dimension() or 0),
+INFO:__main__:Saved embedding metadata to quick_start/generated/embeddings/embedding_metadata.json
+MATU:   0%|          | 0/10 [00:00<?, ?it/s]MATU:  10%|█         | 1/10 [00:19<02:52, 19.21s/it]MATU:  20%|██        | 2/10 [00:33<02:12, 16.61s/it]MATU:  30%|███       | 3/10 [00:48<01:49, 15.63s/it]MATU:  40%|████      | 4/10 [01:03<01:31, 15.28s/it]MATU:  50%|█████     | 5/10 [01:17<01:14, 14.89s/it]MATU:  60%|██████    | 6/10 [01:32<00:59, 14.82s/it]MATU:  70%|███████   | 7/10 [01:46<00:44, 14.68s/it]MATU:  80%|████████  | 8/10 [02:01<00:29, 14.63s/it]MATU:  90%|█████████ | 9/10 [02:15<00:14, 14.61s/it]MATU: 100%|██████████| 10/10 [02:29<00:00, 14.55s/it]MATU: 100%|██████████| 10/10 [02:29<00:00, 15.00s/it]
+INFO:__main__:Saved MATU scores to /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/matu_scores.pkl
+INFO:__main__:Saved legacy fit_dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/fit_dict_generated.pkl
+INFO:__main__:Saved uncertainty dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/generated/results/uncertainty_generated.pkl

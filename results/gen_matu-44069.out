@@ -1,0 +1,28 @@
+=== Step 00: Generate Logs (GPU) ===
+Saved logs to quick_start/generated/conversation_logs_hf_qwen.json
+
+=== Step 01: Embed Logs (GPU) ===
+
+=== Step 02: CP-2 Tensor Decomposition (CPU) ===
+
+=== Step 03: Fit to Uncertainty ===
+
+=== Step 04: Evaluate Generated ===
+Loglar okunuyor...
+Soru: counting_&_probability_01904 | Doğru Bilme Sayısı: 5/10
+Soru: intermediate_algebra_10500 | Doğru Bilme Sayısı: 0/10
+Soru: geometry_02963 | Doğru Bilme Sayısı: 2/10
+Soru: intermediate_algebra_10161 | Doğru Bilme Sayısı: 9/10
+Soru: intermediate_algebra_09730 | Doğru Bilme Sayısı: 6/10
+Soru: prealgebra_06386 | Doğru Bilme Sayısı: 0/10
+Soru: number_theory_04868 | Doğru Bilme Sayısı: 9/10
+Soru: precalculus_12074 | Doğru Bilme Sayısı: 10/10
+Soru: algebra_00467 | Doğru Bilme Sayısı: 0/10
+Soru: prealgebra_06345 | Doğru Bilme Sayısı: 6/10
+
+Başarılı! accuracy_dict dosyası şuraya kaydedildi: quick_start/generated/results/accuracy_dict_generated.pkl
+Tasks: 10
+Mean accuracy: 0.4700
+AUROC: 0.5556
+AUARC: 0.4421
+MATU GENERATION AND PIPELINE DONE!
