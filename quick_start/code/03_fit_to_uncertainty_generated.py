@@ -19,14 +19,16 @@ def main() -> None:
     env = os.environ.copy()
     env["PYTHONPATH"] = str(REPO_ROOT) + os.pathsep + env.get("PYTHONPATH", "")
 
+    target_dir_name = sys.argv[1] if len(sys.argv) > 1 else "generated"
+    
     cmd = [
         sys.executable,
         "-m",
         "matu.fit_to_uncertainty",
         "--fit_dict",
-        str(QUICK_START / "generated" / "results" / "fit_dict_generated.pkl"),
+        str(QUICK_START / target_dir_name / "results" / "fit_dict_generated.pkl"),
         "--out",
-        str(QUICK_START / "generated" / "results" / "uncertainty_generated.pkl"),
+        str(QUICK_START / target_dir_name / "results" / "uncertainty_generated.pkl"),
     ]
     subprocess.run(cmd, check=True, cwd=str(REPO_ROOT), env=env)
 

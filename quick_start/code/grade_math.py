@@ -1,9 +1,12 @@
 import json, re, pickle
 from pathlib import Path
 
-logs_path = Path("quick_start/generated/conversation_logs_hf_qwen.json")
+import sys
+target_dir = sys.argv[1] if len(sys.argv) > 1 else "quick_start/generated"
+
+logs_path = Path(f"{target_dir}/conversation_logs_hf_qwen.json")
 math_data_dir = Path("quick_start/data/MATH/test")
-out_path = Path("quick_start/generated/results/accuracy_dict_generated.pkl")
+out_path = Path(f"{target_dir}/results/accuracy_dict_generated.pkl")
 
 print("Loglar okunuyor...")
 with open(logs_path, "r", encoding="utf-8") as f:
