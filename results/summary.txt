@@ -1,0 +1,14 @@
+run_metu-4450               -> var olan generationlarla çalıştırma
+
+gen_metu-44059              -> qwen 3b 5 generation (bunun sonucunda datasetin doğruları olmadığı için hata verdi ve bi modeül yazıldı)
+gen_metu-44069              -> qwen 3b 10 generation
+
+
+
+gen_3b_base-44131           -> input output dosya yapısı tutmadığından crashlendi (50 generation)
+resume_3b_base_44143        -> gen_3b_base-44131 generationları kullanılarak devam ettirildi
+
+gen_3b_evolved-44132        -> input output dosya yapısı tutmadığından crashlendi (50 generation)
+resume_3b_evolved_44144     -> gen_3b_evolved-44132 generationları kullanılarak devam ettirildi
+
+3b_results_majority_correct -> sonuçlar majority correct ile tkerar hesaplandı
