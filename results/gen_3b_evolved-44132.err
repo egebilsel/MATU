@@ -1,0 +1,70 @@
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]Fetching 2 files:  50%|█████     | 1/2 [04:11<04:11, 251.12s/it]Fetching 2 files: 100%|██████████| 2/2 [04:11<00:00, 125.56s/it]
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [01:39<01:39, 99.78s/it]Loading checkpoint shards: 100%|██████████| 2/2 [02:00<00:00, 53.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [02:00<00:00, 60.39s/it]
+Problems:   0%|          | 0/50 [00:00<?, ?it/s]Problems:   2%|▏         | 1/50 [06:23<5:12:54, 383.15s/it]Problems:   4%|▍         | 2/50 [12:49<5:08:10, 385.22s/it]Problems:   6%|▌         | 3/50 [24:32<6:55:29, 530.40s/it]Problems:   8%|▊         | 4/50 [34:56<7:14:54, 567.27s/it]Problems:  10%|█         | 5/50 [46:51<7:45:25, 620.57s/it]Problems:  12%|█▏        | 6/50 [50:39<5:57:05, 486.94s/it]Problems:  14%|█▍        | 7/50 [55:27<5:02:29, 422.09s/it]Problems:  16%|█▌        | 8/50 [1:04:43<5:25:18, 464.73s/it]Problems:  18%|█▊        | 9/50 [1:14:46<5:46:58, 507.77s/it]Problems:  20%|██        | 10/50 [1:21:04<5:11:44, 467.62s/it]Problems:  22%|██▏       | 11/50 [1:30:32<5:24:03, 498.55s/it]Problems:  24%|██▍       | 12/50 [1:33:45<4:16:53, 405.61s/it]Problems:  26%|██▌       | 13/50 [1:37:18<3:34:05, 347.17s/it]Problems:  28%|██▊       | 14/50 [1:41:42<3:13:08, 321.90s/it]Problems:  30%|███       | 15/50 [1:45:45<2:53:57, 298.21s/it]Problems:  32%|███▏      | 16/50 [1:51:48<3:00:02, 317.72s/it]Problems:  34%|███▍      | 17/50 [1:55:06<2:34:57, 281.73s/it]Problems:  36%|███▌      | 18/50 [1:58:25<2:16:57, 256.79s/it]Problems:  38%|███▊      | 19/50 [2:05:50<2:41:57, 313.48s/it]Problems:  40%|████      | 20/50 [2:11:04<2:36:44, 313.50s/it]Problems:  42%|████▏     | 21/50 [2:18:50<2:53:43, 359.44s/it]Problems:  44%|████▍     | 22/50 [2:23:32<2:36:51, 336.14s/it]Problems:  46%|████▌     | 23/50 [2:26:09<2:07:00, 282.25s/it]Problems:  48%|████▊     | 24/50 [2:30:56<2:02:59, 283.84s/it]Problems:  50%|█████     | 25/50 [2:37:43<2:13:37, 320.69s/it]Problems:  52%|█████▏    | 26/50 [2:45:19<2:24:32, 361.37s/it]Problems:  54%|█████▍    | 27/50 [2:49:35<2:06:20, 329.61s/it]Problems:  56%|█████▌    | 28/50 [2:54:38<1:57:55, 321.62s/it]Problems:  58%|█████▊    | 29/50 [3:04:39<2:21:56, 405.54s/it]Problems:  60%|██████    | 30/50 [3:06:35<1:46:14, 318.73s/it]Problems:  62%|██████▏   | 31/50 [3:09:55<1:29:40, 283.17s/it]Problems:  64%|██████▍   | 32/50 [3:21:20<2:01:06, 403.68s/it]Problems:  66%|██████▌   | 33/50 [3:26:59<1:48:50, 384.14s/it]Problems:  68%|██████▊   | 34/50 [3:35:00<1:50:11, 413.22s/it]Problems:  70%|███████   | 35/50 [3:37:11<1:22:08, 328.54s/it]Problems:  72%|███████▏  | 36/50 [3:44:54<1:26:04, 368.89s/it]Problems:  74%|███████▍  | 37/50 [3:47:18<1:05:19, 301.53s/it]Problems:  76%|███████▌  | 38/50 [3:53:29<1:04:27, 322.30s/it]Problems:  78%|███████▊  | 39/50 [4:01:28<1:07:42, 369.32s/it]Problems:  80%|████████  | 40/50 [4:03:42<49:46, 298.65s/it]  Problems:  82%|████████▏ | 41/50 [4:07:21<41:12, 274.76s/it]Problems:  84%|████████▍ | 42/50 [4:12:32<38:06, 285.84s/it]Problems:  86%|████████▌ | 43/50 [4:15:02<28:34, 244.86s/it]Problems:  88%|████████▊ | 44/50 [4:21:08<28:08, 281.34s/it]Problems:  90%|█████████ | 45/50 [4:24:16<21:06, 253.27s/it]Problems:  92%|█████████▏| 46/50 [4:31:15<20:12, 303.16s/it]Problems:  94%|█████████▍| 47/50 [4:38:42<17:18, 346.19s/it]Problems:  96%|█████████▌| 48/50 [4:44:30<11:33, 346.72s/it]Problems:  98%|█████████▊| 49/50 [4:50:58<05:59, 359.05s/it]Problems: 100%|██████████| 50/50 [4:59:04<00:00, 397.14s/it]Problems: 100%|██████████| 50/50 [4:59:04<00:00, 358.89s/it]
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+WARNING:sentence_transformers.util.decorators:The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+INFO:sentence_transformers.base.model:Loading SentenceTransformer model from Qwen/Qwen3-Embedding-0.6B.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:sentence_transformers.base.model:Loaded 1 prompt with these keys: ['query']
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:59: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  dim = int(model.get_sentence_embedding_dimension() or 0)
+Embedding tasks:   0%|          | 0/50 [00:00<?, ?it/s]Embedding tasks:   2%|▏         | 1/50 [00:01<01:29,  1.83s/it]Embedding tasks:   4%|▍         | 2/50 [00:03<01:15,  1.56s/it]Embedding tasks:   6%|▌         | 3/50 [00:04<01:17,  1.66s/it]Embedding tasks:   8%|▊         | 4/50 [00:06<01:14,  1.62s/it]Embedding tasks:  10%|█         | 5/50 [00:08<01:16,  1.69s/it]Embedding tasks:  12%|█▏        | 6/50 [00:09<01:02,  1.43s/it]Embedding tasks:  14%|█▍        | 7/50 [00:10<00:59,  1.39s/it]Embedding tasks:  16%|█▌        | 8/50 [00:12<00:59,  1.42s/it]Embedding tasks:  18%|█▊        | 9/50 [00:13<00:58,  1.44s/it]Embedding tasks:  20%|██        | 10/50 [00:14<00:54,  1.36s/it]Embedding tasks:  22%|██▏       | 11/50 [00:16<00:55,  1.42s/it]Embedding tasks:  24%|██▍       | 12/50 [00:17<00:48,  1.26s/it]Embedding tasks:  26%|██▌       | 13/50 [00:18<00:42,  1.15s/it]Embedding tasks:  28%|██▊       | 14/50 [00:19<00:40,  1.12s/it]Embedding tasks:  30%|███       | 15/50 [00:20<00:38,  1.09s/it]Embedding tasks:  32%|███▏      | 16/50 [00:21<00:38,  1.13s/it]Embedding tasks:  34%|███▍      | 17/50 [00:22<00:34,  1.05s/it]Embedding tasks:  36%|███▌      | 18/50 [00:23<00:32,  1.02s/it]Embedding tasks:  38%|███▊      | 19/50 [00:25<00:45,  1.46s/it]Embedding tasks:  40%|████      | 20/50 [00:26<00:41,  1.37s/it]Embedding tasks:  42%|████▏     | 21/50 [00:28<00:41,  1.42s/it]Embedding tasks:  44%|████▍     | 22/50 [00:29<00:36,  1.30s/it]Embedding tasks:  46%|████▌     | 23/50 [00:30<00:31,  1.16s/it]Embedding tasks:  48%|████▊     | 24/50 [00:31<00:29,  1.14s/it]Embedding tasks:  50%|█████     | 25/50 [00:32<00:29,  1.20s/it]Embedding tasks:  52%|█████▏    | 26/50 [00:34<00:29,  1.24s/it]Embedding tasks:  54%|█████▍    | 27/50 [00:35<00:27,  1.17s/it]Embedding tasks:  56%|█████▌    | 28/50 [00:36<00:25,  1.18s/it]Embedding tasks:  58%|█████▊    | 29/50 [00:37<00:27,  1.32s/it]Embedding tasks:  60%|██████    | 30/50 [00:38<00:23,  1.15s/it]Embedding tasks:  62%|██████▏   | 31/50 [00:39<00:20,  1.07s/it]Embedding tasks:  64%|██████▍   | 32/50 [00:41<00:22,  1.24s/it]Embedding tasks:  66%|██████▌   | 33/50 [00:42<00:21,  1.26s/it]Embedding tasks:  68%|██████▊   | 34/50 [00:43<00:20,  1.29s/it]Embedding tasks:  70%|███████   | 35/50 [00:44<00:17,  1.13s/it]Embedding tasks:  72%|███████▏  | 36/50 [00:46<00:17,  1.24s/it]Embedding tasks:  74%|███████▍  | 37/50 [00:46<00:14,  1.10s/it]Embedding tasks:  76%|███████▌  | 38/50 [00:48<00:13,  1.14s/it]Embedding tasks:  78%|███████▊  | 39/50 [00:49<00:13,  1.23s/it]Embedding tasks:  80%|████████  | 40/50 [00:50<00:11,  1.12s/it]Embedding tasks:  82%|████████▏ | 41/50 [00:51<00:09,  1.03s/it]Embedding tasks:  84%|████████▍ | 42/50 [00:52<00:08,  1.04s/it]Embedding tasks:  86%|████████▌ | 43/50 [00:53<00:06,  1.03it/s]Embedding tasks:  88%|████████▊ | 44/50 [00:54<00:06,  1.03s/it]Embedding tasks:  90%|█████████ | 45/50 [00:55<00:04,  1.03it/s]Embedding tasks:  92%|█████████▏| 46/50 [00:56<00:04,  1.04s/it]Embedding tasks:  94%|█████████▍| 47/50 [00:57<00:03,  1.09s/it]Embedding tasks:  96%|█████████▌| 48/50 [00:58<00:02,  1.10s/it]Embedding tasks:  98%|█████████▊| 49/50 [00:59<00:01,  1.12s/it]Embedding tasks: 100%|██████████| 50/50 [01:01<00:00,  1.26s/it]Embedding tasks: 100%|██████████| 50/50 [01:01<00:00,  1.23s/it]
+INFO:__main__:Saved user embeddings to quick_start/gen_3b_evolved/embeddings/user_embedding_matrices.pkl
+INFO:__main__:Saved assistant embeddings to quick_start/gen_3b_evolved/embeddings/assistant_embedding_matrices.pkl
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:114: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  "embedding_dim": int(model.get_sentence_embedding_dimension() or 0),
+INFO:__main__:Saved embedding metadata to quick_start/gen_3b_evolved/embeddings/embedding_metadata.json
+usage: 02_run_cp2_from_generated_embeddings.py [-h]
+                                               [--embedding-source {generated,provided}]
+                                               [--embeddings EMBEDDINGS [EMBEDDINGS ...]]
+                                               [--out OUT]
+                                               [--legacy-fit-out LEGACY_FIT_OUT]
+                                               [--min-rank MIN_RANK]
+                                               [--max-rank MAX_RANK]
+                                               [--max-iter MAX_ITER]
+                                               [--tol TOL] [--seed SEED]
+                                               [--combine-mode {interleave,concat_steps}]
+                                               [--no-normalize]
+02_run_cp2_from_generated_embeddings.py: error: argument --embedding-source/--embedding_source: invalid choice: 'gen_3b_evolved' (choose from 'generated', 'provided')
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/fit_to_uncertainty.py", line 75, in <module>
+    main()
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/fit_to_uncertainty.py", line 65, in main
+    fit_dict = load_pickle(args.fit_dict)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/fit_to_uncertainty.py", line 32, in load_pickle
+    with path.open("rb") as f:
+         ^^^^^^^^^^^^^^^
+  File "/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/dl_scratch2/ege/ege/repos/MATU/quick_start/gen_3b_evolved/results/fit_dict_generated.pkl'
+Traceback (most recent call last):
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/03_fit_to_uncertainty_generated.py", line 37, in <module>
+    main()
+  File "/dl_scratch2/ege/ege/repos/MATU/quick_start/code/03_fit_to_uncertainty_generated.py", line 33, in main
+    subprocess.run(cmd, check=True, cwd=str(REPO_ROOT), env=env)
+  File "/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/dl_scratch2/ege/ege/envs/matu-uq/bin/python', '-m', 'matu.fit_to_uncertainty', '--fit_dict', '/dl_scratch2/ege/ege/repos/MATU/quick_start/gen_3b_evolved/results/fit_dict_generated.pkl', '--out', '/dl_scratch2/ege/ege/repos/MATU/quick_start/gen_3b_evolved/results/uncertainty_generated.pkl']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/evaluate_uncertainty.py", line 140, in <module>
+    main()
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/evaluate_uncertainty.py", line 117, in main
+    uncertainty_dict = load_pickle(args.uncertainty)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/dl_scratch2/ege/ege/repos/MATU/matu/evaluate_uncertainty.py", line 18, in load_pickle
+    with path.open("rb") as f:
+         ^^^^^^^^^^^^^^^
+  File "/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'quick_start/gen_3b_evolved/results/uncertainty_generated.pkl'
