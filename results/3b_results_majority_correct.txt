@@ -1,0 +1,18 @@
+(matu-uq) ege@imagelabserver:/dl_scratch2/ege/ege/repos/MATU$ python -m matu.evaluate_uncertainty \
+  --uncertainty quick_start/gen_3b_base/results/uncertainty_generated.pkl \
+  --labels quick_start/gen_3b_base/results/accuracy_dict_generated.pkl \
+  --score_mode raw \
+  --error_rule majority_incorrect
+Tasks: 50
+Mean accuracy: 0.2640
+AUROC: 0.7368
+AUARC: 0.3174
+(matu-uq) ege@imagelabserver:/dl_scratch2/ege/ege/repos/MATU$ python -m matu.evaluate_uncertainty \
+  --uncertainty quick_start/gen_3b_evolved/results/uncertainty_generated.pkl \
+  --labels quick_start/gen_3b_evolved/results/accuracy_dict_generated.pkl \
+  --score_mode raw \
+  --error_rule majority_incorrect
+Tasks: 50
+Mean accuracy: 0.2920
+AUROC: 0.6038
+AUARC: 0.3250
