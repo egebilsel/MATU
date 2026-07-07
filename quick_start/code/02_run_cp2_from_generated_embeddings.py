@@ -43,12 +43,10 @@ def parse_args() -> argparse.Namespace:
         "--embedding-source",
         "--embedding_source",
         dest="embedding_source",
-        choices=["generated", "provided"],
         default="generated",
         help=(
-            "Embedding source to use when --embeddings is not set. "
-            "'generated' reads quick_start/generated/embeddings/*.pkl; "
-            "'provided' stages the packaged MATH embeddings from quick_start/data/."
+            "Embedding source directory name (e.g. 'generated' or 'gen_3b_base'). "
+            "'provided' stages the packaged MATH embeddings."
         ),
     )
     parser.add_argument(
@@ -118,10 +116,12 @@ def resolve_cli_path(path: Path) -> Path:
     return path if path.is_absolute() else (Path.cwd() / path).resolve()
 
 
-def generated_embeddings() -> list[Path]:
+def generated_embeddings(args: argparse.Namespace) -> list[Path]:
+    source_dir = args.embedding_source if args.embedding_source != "provided" else "generated"
+    emb_dir = QUICK_START / source_dir / "embeddings"
     return [
-        EMB_DIR / "user_embedding_matrices.pkl",
-        EMB_DIR / "assistant_embedding_matrices.pkl",
+        emb_dir / "user_embedding_matrices.pkl",
+        emb_dir / "assistant_embedding_matrices.pkl",
     ]
 
 
@@ -130,7 +130,7 @@ def resolve_embeddings(args: argparse.Namespace) -> list[Path]:
         return [resolve_cli_path(path) for path in args.embeddings]
     if args.embedding_source == "provided":
         return stage_provided_embeddings()
-    return generated_embeddings()
+    return generated_embeddings(args)
 
 
 def main() -> None:
@@ -153,6 +153,13 @@ def main() -> None:
         if args.legacy_fit_out is not None
         else None
     )
+
+    # Dynamic path override if custom source is used
+    if args.embedding_source != "generated" and args.embedding_source != "provided":
+        if "generated/results/matu_scores.pkl" in str(out_path):
+            out_path = resolve_cli_path(QUICK_START / args.embedding_source / "results" / "matu_scores.pkl")
+        if legacy_fit_out and "generated/results/fit_dict_generated.pkl" in str(legacy_fit_out):
+            legacy_fit_out = resolve_cli_path(QUICK_START / args.embedding_source / "results" / "fit_dict_generated.pkl")
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     if legacy_fit_out is not None:
