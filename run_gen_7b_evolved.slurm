@@ -26,7 +26,7 @@ echo "=== Step 00: Generate Logs (GPU) ==="
 python examples/generate_logs_hf_qwen.py \
   --model "andrewzh/Absolute_Zero_Reasoner-Coder-7b" \
   --data_root quick_start/data/MATH/test \
-  --max_items 50 \
+  --max_items 100 \
   --runs 10 \
   --seed 42 \
   --out quick_start/gen_7b_evolved/conversation_logs_hf_qwen.json
@@ -53,9 +53,19 @@ echo ""
 echo "=== Step 04: Evaluate Generated ==="
 python quick_start/code/grade_math.py quick_start/gen_7b_evolved
 
+echo "--- EVALUATION: ANY INCORRECT (STRICT) ---"
 python -m matu.evaluate_uncertainty \
   --uncertainty quick_start/gen_7b_evolved/results/uncertainty_generated.pkl \
   --labels quick_start/gen_7b_evolved/results/accuracy_dict_generated.pkl \
-  --score_mode raw
+  --score_mode raw \
+  --error_rule any_incorrect
+
+echo ""
+echo "--- EVALUATION: MAJORITY INCORRECT (RELAXED) ---"
+python -m matu.evaluate_uncertainty \
+  --uncertainty quick_start/gen_7b_evolved/results/uncertainty_generated.pkl \
+  --labels quick_start/gen_7b_evolved/results/accuracy_dict_generated.pkl \
+  --score_mode raw \
+  --error_rule majority_incorrect
 
 echo "MATU GENERATION AND PIPELINE DONE FOR 7b_evolved!"
