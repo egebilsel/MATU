@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH -J matu-3b_evolved
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=adep1
+#SBATCH --nodelist=adep2
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/gen_3b_evolved-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/gen_3b_evolved-%j.err
@@ -26,7 +26,7 @@ echo "=== Step 00: Generate Logs (GPU) ==="
 python examples/generate_logs_hf_qwen.py \
   --model "andrewzh/Absolute_Zero_Reasoner-Coder-3b" \
   --data_root quick_start/data/MATH/test \
-  --max_items 1 \
+  --max_items 100 \
   --runs 10 \
   --seed 42 \
   --out quick_start/gen_3b_evolved/conversation_logs_hf_qwen.json
