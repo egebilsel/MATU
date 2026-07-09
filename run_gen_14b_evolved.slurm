@@ -6,7 +6,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/gen_14b_evolved-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/gen_14b_evolved-%j.err
-#SBATCH --time=2-00:00:00
+#SBATCH --time=3-00:00:00
 
 # 1. Environment ve Cache Ayarları
 source ~/miniconda3/etc/profile.d/conda.sh

@@ -2,11 +2,11 @@
 #SBATCH --nodes=1
 #SBATCH -J matu-14b_base
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=adep2
+#SBATCH --nodelist=romer3
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/gen_14b_base-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/gen_14b_base-%j.err
-#SBATCH --time=2-00:00:00
+#SBATCH --time=3-00:00:00
 
 # 1. Environment ve Cache Ayarları
 source ~/miniconda3/etc/profile.d/conda.sh
