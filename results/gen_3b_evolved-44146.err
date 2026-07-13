@@ -1,0 +1,27 @@
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [13:18<13:18, 798.79s/it]Loading checkpoint shards: 100%|██████████| 2/2 [13:43<00:00, 343.33s/it]Loading checkpoint shards: 100%|██████████| 2/2 [13:43<00:00, 411.65s/it]
+Problems:   0%|          | 0/1 [00:00<?, ?it/s]Problems: 100%|██████████| 1/1 [09:12<00:00, 552.47s/it]Problems: 100%|██████████| 1/1 [09:12<00:00, 552.47s/it]
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+WARNING:sentence_transformers.util.decorators:The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+INFO:sentence_transformers.base.model:Loading SentenceTransformer model from Qwen/Qwen3-Embedding-0.6B.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:sentence_transformers.base.model:Loaded 1 prompt with these keys: ['query']
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:59: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  dim = int(model.get_sentence_embedding_dimension() or 0)
+Embedding tasks:   0%|          | 0/1 [00:00<?, ?it/s]Embedding tasks: 100%|██████████| 1/1 [00:01<00:00,  1.78s/it]Embedding tasks: 100%|██████████| 1/1 [00:01<00:00,  1.78s/it]
+INFO:__main__:Saved user embeddings to quick_start/gen_3b_evolved/embeddings/user_embedding_matrices.pkl
+INFO:__main__:Saved assistant embeddings to quick_start/gen_3b_evolved/embeddings/assistant_embedding_matrices.pkl
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:114: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  "embedding_dim": int(model.get_sentence_embedding_dimension() or 0),
+INFO:__main__:Saved embedding metadata to quick_start/gen_3b_evolved/embeddings/embedding_metadata.json
+MATU:   0%|          | 0/1 [00:00<?, ?it/s]MATU: 100%|██████████| 1/1 [00:28<00:00, 28.30s/it]MATU: 100%|██████████| 1/1 [00:28<00:00, 28.30s/it]
+INFO:__main__:Saved MATU scores to /dl_scratch2/ege/ege/repos/MATU/quick_start/gen_3b_evolved/results/matu_scores.pkl
+INFO:__main__:Saved legacy fit_dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/gen_3b_evolved/results/fit_dict_generated.pkl
+INFO:__main__:Saved uncertainty dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/gen_3b_evolved/results/uncertainty_generated.pkl
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/sklearn/metrics/_ranking.py:469: UndefinedMetricWarning: Only one class is present in y_true. ROC AUC score is not defined in that case.
+  warnings.warn(

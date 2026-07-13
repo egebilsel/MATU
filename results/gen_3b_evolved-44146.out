@@ -1,0 +1,26 @@
+=== Step 00: Generate Logs (GPU) ===
+Saved logs to quick_start/gen_3b_evolved/conversation_logs_hf_qwen.json
+
+=== Step 01: Embed Logs (GPU) ===
+
+=== Step 02: CP-2 Tensor Decomposition (CPU) ===
+
+=== Step 03: Fit to Uncertainty ===
+
+=== Step 04: Evaluate Generated ===
+Loglar okunuyor...
+Soru: counting_&_probability_01904 | Doğru Bilme Sayısı: 6/10
+
+Başarılı! accuracy_dict dosyası şuraya kaydedildi: quick_start/gen_3b_evolved/results/accuracy_dict_generated.pkl
+--- EVALUATION: ANY INCORRECT (STRICT) ---
+Tasks: 1
+Mean accuracy: 0.6000
+AUROC: nan
+AUARC: 0.0000
+
+--- EVALUATION: MAJORITY INCORRECT (RELAXED) ---
+Tasks: 1
+Mean accuracy: 0.6000
+AUROC: nan
+AUARC: 0.0000
+MATU GENERATION AND PIPELINE DONE FOR 3b_evolved!

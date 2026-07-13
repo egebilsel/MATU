@@ -1,0 +1,125 @@
+=== Step 00: Generate Logs (GPU) ===
+Saved logs to quick_start/gen_7b_base/conversation_logs_hf_qwen.json
+
+=== Step 01: Embed Logs (GPU) ===
+
+=== Step 02: CP-2 Tensor Decomposition (CPU) ===
+
+=== Step 03: Fit to Uncertainty ===
+
+=== Step 04: Evaluate Generated ===
+Loglar okunuyor...
+Soru: counting_&_probability_01904 | Doğru Bilme Sayısı: 3/10
+Soru: intermediate_algebra_10500 | Doğru Bilme Sayısı: 0/10
+Soru: geometry_02963 | Doğru Bilme Sayısı: 0/10
+Soru: intermediate_algebra_10161 | Doğru Bilme Sayısı: 3/10
+Soru: intermediate_algebra_09730 | Doğru Bilme Sayısı: 6/10
+Soru: prealgebra_06386 | Doğru Bilme Sayısı: 1/10
+Soru: number_theory_04868 | Doğru Bilme Sayısı: 6/10
+Soru: precalculus_12074 | Doğru Bilme Sayısı: 6/10
+Soru: algebra_00467 | Doğru Bilme Sayısı: 0/10
+Soru: prealgebra_06345 | Doğru Bilme Sayısı: 5/10
+Soru: intermediate_algebra_04034 | Doğru Bilme Sayısı: 0/10
+Soru: counting_&_probability_08714 | Doğru Bilme Sayısı: 3/10
+Soru: prealgebra_05825 | Doğru Bilme Sayısı: 2/10
+Soru: prealgebra_11781 | Doğru Bilme Sayısı: 2/10
+Soru: counting_&_probability_02244 | Doğru Bilme Sayısı: 0/10
+Soru: geometry_02612 | Doğru Bilme Sayısı: 5/10
+Soru: algebra_08553 | Doğru Bilme Sayısı: 2/10
+Soru: number_theory_05395 | Doğru Bilme Sayısı: 4/10
+Soru: intermediate_algebra_09657 | Doğru Bilme Sayısı: 1/10
+Soru: prealgebra_06679 | Doğru Bilme Sayısı: 0/10
+Soru: algebra_08122 | Doğru Bilme Sayısı: 7/10
+Soru: algebra_08296 | Doğru Bilme Sayısı: 7/10
+Soru: algebra_00209 | Doğru Bilme Sayısı: 6/10
+Soru: prealgebra_06263 | Doğru Bilme Sayısı: 1/10
+Soru: prealgebra_05679 | Doğru Bilme Sayısı: 0/10
+Soru: algebra_00318 | Doğru Bilme Sayısı: 9/10
+Soru: precalculus_12237 | Doğru Bilme Sayısı: 7/10
+Soru: intermediate_algebra_04232 | Doğru Bilme Sayısı: 6/10
+Soru: intermediate_algebra_09840 | Doğru Bilme Sayısı: 5/10
+Soru: algebra_08293 | Doğru Bilme Sayısı: 0/10
+Soru: number_theory_10608 | Doğru Bilme Sayısı: 0/10
+Soru: number_theory_11063 | Doğru Bilme Sayısı: 3/10
+Soru: intermediate_algebra_10469 | Doğru Bilme Sayısı: 0/10
+Soru: precalculus_07147 | Doğru Bilme Sayısı: 0/10
+Soru: algebra_07984 | Doğru Bilme Sayısı: 6/10
+Soru: number_theory_05304 | Doğru Bilme Sayısı: 2/10
+Soru: counting_&_probability_08778 | Doğru Bilme Sayısı: 5/10
+Soru: precalculus_07019 | Doğru Bilme Sayısı: 3/10
+Soru: algebra_07981 | Doğru Bilme Sayısı: 1/10
+Soru: intermediate_algebra_03956 | Doğru Bilme Sayısı: 4/10
+Soru: intermediate_algebra_09871 | Doğru Bilme Sayısı: 2/10
+Soru: counting_&_probability_09097 | Doğru Bilme Sayısı: 0/10
+Soru: intermediate_algebra_04424 | Doğru Bilme Sayısı: 4/10
+Soru: algebra_00155 | Doğru Bilme Sayısı: 9/10
+Soru: algebra_00031 | Doğru Bilme Sayısı: 1/10
+Soru: geometry_02940 | Doğru Bilme Sayısı: 0/10
+Soru: prealgebra_06576 | Doğru Bilme Sayısı: 2/10
+Soru: counting_&_probability_01919 | Doğru Bilme Sayısı: 2/10
+Soru: algebra_07728 | Doğru Bilme Sayısı: 3/10
+Soru: counting_&_probability_02158 | Doğru Bilme Sayısı: 0/10
+Soru: prealgebra_05575 | Doğru Bilme Sayısı: 0/10
+Soru: number_theory_10838 | Doğru Bilme Sayısı: 1/10
+Soru: intermediate_algebra_03779 | Doğru Bilme Sayısı: 8/10
+Soru: precalculus_06992 | Doğru Bilme Sayısı: 8/10
+Soru: prealgebra_11713 | Doğru Bilme Sayısı: 1/10
+Soru: counting_&_probability_01871 | Doğru Bilme Sayısı: 1/10
+Soru: geometry_09214 | Doğru Bilme Sayısı: 0/10
+Soru: intermediate_algebra_04386 | Doğru Bilme Sayısı: 0/10
+Soru: precalculus_07217 | Doğru Bilme Sayısı: 6/10
+Soru: prealgebra_06745 | Doğru Bilme Sayısı: 3/10
+Soru: intermediate_algebra_04233 | Doğru Bilme Sayısı: 1/10
+Soru: intermediate_algebra_03487 | Doğru Bilme Sayısı: 6/10
+Soru: intermediate_algebra_09723 | Doğru Bilme Sayısı: 0/10
+Soru: algebra_08354 | Doğru Bilme Sayısı: 1/10
+Soru: number_theory_05306 | Doğru Bilme Sayısı: 8/10
+Soru: geometry_09331 | Doğru Bilme Sayısı: 0/10
+Soru: intermediate_algebra_10350 | Doğru Bilme Sayısı: 0/10
+Soru: prealgebra_05936 | Doğru Bilme Sayısı: 4/10
+Soru: prealgebra_05582 | Doğru Bilme Sayısı: 3/10
+Soru: intermediate_algebra_04473 | Doğru Bilme Sayısı: 0/10
+Soru: algebra_00082 | Doğru Bilme Sayısı: 2/10
+Soru: prealgebra_11182 | Doğru Bilme Sayısı: 2/10
+Soru: number_theory_10870 | Doğru Bilme Sayısı: 2/10
+Soru: algebra_08331 | Doğru Bilme Sayısı: 0/10
+Soru: algebra_01153 | Doğru Bilme Sayısı: 2/10
+Soru: intermediate_algebra_03707 | Doğru Bilme Sayısı: 0/10
+Soru: precalculus_07161 | Doğru Bilme Sayısı: 3/10
+Soru: number_theory_05506 | Doğru Bilme Sayısı: 5/10
+Soru: algebra_08024 | Doğru Bilme Sayısı: 1/10
+Soru: counting_&_probability_02161 | Doğru Bilme Sayısı: 1/10
+Soru: geometry_02947 | Doğru Bilme Sayısı: 0/10
+Soru: precalculus_07414 | Doğru Bilme Sayısı: 5/10
+Soru: algebra_08353 | Doğru Bilme Sayısı: 8/10
+Soru: geometry_02740 | Doğru Bilme Sayısı: 0/10
+Soru: precalculus_07351 | Doğru Bilme Sayısı: 4/10
+Soru: algebra_08328 | Doğru Bilme Sayısı: 3/10
+Soru: algebra_00140 | Doğru Bilme Sayısı: 4/10
+Soru: algebra_00221 | Doğru Bilme Sayısı: 2/10
+Soru: number_theory_10864 | Doğru Bilme Sayısı: 2/10
+Soru: algebra_00055 | Doğru Bilme Sayısı: 0/10
+Soru: number_theory_10665 | Doğru Bilme Sayısı: 1/10
+Soru: number_theory_05361 | Doğru Bilme Sayısı: 0/10
+Soru: intermediate_algebra_04269 | Doğru Bilme Sayısı: 5/10
+Soru: algebra_01573 | Doğru Bilme Sayısı: 0/10
+Soru: precalculus_12250 | Doğru Bilme Sayısı: 6/10
+Soru: geometry_02949 | Doğru Bilme Sayısı: 2/10
+Soru: number_theory_04728 | Doğru Bilme Sayısı: 1/10
+Soru: prealgebra_11490 | Doğru Bilme Sayısı: 2/10
+Soru: counting_&_probability_08830 | Doğru Bilme Sayısı: 0/10
+Soru: number_theory_05009 | Doğru Bilme Sayısı: 2/10
+
+Başarılı! accuracy_dict dosyası şuraya kaydedildi: quick_start/gen_7b_base/results/accuracy_dict_generated.pkl
+--- EVALUATION: ANY INCORRECT (STRICT) ---
+Tasks: 100
+Mean accuracy: 0.2600
+AUROC: nan
+AUARC: 0.2024
+
+--- EVALUATION: MAJORITY INCORRECT (RELAXED) ---
+Tasks: 100
+Mean accuracy: 0.2600
+AUROC: 0.3936
+AUARC: 0.2024
+MATU GENERATION AND PIPELINE DONE FOR 7b_base!
