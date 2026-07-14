@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH -J matu-7b_base_noncoder
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=romer3
+#SBATCH --nodelist=adep2
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/gen_7b_base_noncoder-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/gen_7b_base_noncoder-%j.err
