@@ -4,8 +4,12 @@ from pathlib import Path
 from matu.evaluate_uncertainty import score_from_value, accuracy_from_labels
 
 def get_detailed_uncertainty(model_name):
-    unc_path = Path(f"quick_start/{model_name}/results/uncertainty_generated.pkl")
-    acc_path = Path(f"quick_start/{model_name}/results/accuracy_dict_generated.pkl")
+    if model_name == "Math_qwen2.5_baseline":
+        unc_path = Path("quick_start/results/uncertainty_Math_qwen2.5.pkl")
+        acc_path = Path("quick_start/results/accuracy_dict_Math_qwen2.5.pkl")
+    else:
+        unc_path = Path(f"quick_start/{model_name}/results/uncertainty_generated.pkl")
+        acc_path = Path(f"quick_start/{model_name}/results/accuracy_dict_generated.pkl")
     
     if not unc_path.exists() or not acc_path.exists():
         return None
@@ -22,7 +26,7 @@ def get_detailed_uncertainty(model_name):
     keys = set(unc_data.keys()) & set(acc_data.keys())
     
     for k in keys:
-        score = score_from_value(unc_data[k], "raw")
+        score = score_from_value(unc_data[k], "auto")
         acc = accuracy_from_labels(acc_data[k])
         
         all_scores.append(score)
@@ -42,7 +46,7 @@ def get_detailed_uncertainty(model_name):
     }
 
 def main():
-    models = ["gen_3b_base", "gen_3b_evolved", "gen_7b_base", "gen_7b_evolved", "gen_14b_base", "gen_14b_evolved"]
+    models = ["Math_qwen2.5_baseline", "gen_3b_base", "gen_3b_evolved", "gen_7b_base", "gen_7b_evolved", "gen_14b_base", "gen_14b_evolved"]
     print("="*75)
     print("DETAYLI BELIRSIZLIK (UNCERTAINTY AMOUNT) ANALIZI")
     print("="*75)
