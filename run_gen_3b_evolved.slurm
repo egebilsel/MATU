@@ -37,7 +37,7 @@ python -m matu.embed_logs \
   --logs quick_start/gen_3b_evolved/conversation_logs_hf_qwen.json \
   --out_dir quick_start/gen_3b_evolved/embeddings \
   --roles user assistant \
-  --model "Qwen/Qwen3-Embedding-0.6B"
+  --model "Qwen/Qwen3-Embedding-4B"
 
 echo ""
 echo "=== Step 02: CP-2 Tensor Decomposition (CPU) ==="
