@@ -74,7 +74,7 @@ def get_detailed_uncertainty(model_name):
     }
 
 def main():
-    models = ["gen_3b_base", "gen_3b_evolved", "gen_7b_base", "gen_7b_evolved", "gen_14b_base", "gen_14b_evolved"]
+    models = ["gen_7b_base_noncoder", "gen_7b_evolved_noncoder"]
     print("="*75)
     print("EIGV (NLI) BELIRSIZLIK (UNCERTAINTY AMOUNT) ANALIZI")
     print("="*75)
