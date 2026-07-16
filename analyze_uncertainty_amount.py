@@ -46,7 +46,7 @@ def get_detailed_uncertainty(model_name):
     }
 
 def main():
-    models = ["Math_qwen2.5_baseline", "gen_3b_base", "gen_3b_evolved", "gen_3b_base_embedding", "gen_3b_evolved_embedding", "gen_7b_base", "gen_7b_evolved", "gen_7b_base_noncoder", "gen_7b_evolved_noncoder", "gen_14b_base", "gen_14b_evolved"]
+    models = ["Math_qwen2.5_baseline", "gen_3b_base", "gen_3b_evolved", "gen_3b_base_embedding", "gen_3b_evolved_embedding", "gen_3b_base_cleaned", "gen_3b_evolved_cleaned", "gen_7b_base", "gen_7b_evolved", "gen_7b_base_noncoder", "gen_7b_evolved_noncoder", "gen_14b_base", "gen_14b_evolved"]
     print("="*75)
     print("DETAYLI BELIRSIZLIK (UNCERTAINTY AMOUNT) ANALIZI")
     print("="*75)
