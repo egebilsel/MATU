@@ -125,6 +125,7 @@ def build_matrix_list(
     *,
     combine_mode: str,
     normalize: bool,
+    time_weighting: str = "none",
 ) -> list[np.ndarray]:
     role_runs = [d[key] for d in embedding_dicts if key in d]
     if not role_runs:
@@ -151,6 +152,16 @@ def build_matrix_list(
     for matrix in matrices:
         if matrix.size == 0:
             continue
+            
+        if time_weighting in ("linear", "exp"):
+            T = matrix.shape[0]
+            if T > 1:
+                if time_weighting == "linear":
+                    weights = np.linspace(0.1, 1.0, T).reshape(-1, 1)
+                elif time_weighting == "exp":
+                    weights = np.exp(np.linspace(-3, 0, T)).reshape(-1, 1)
+                matrix = matrix * weights
+                
         if normalize:
             denom = np.linalg.norm(matrix)
             matrix = matrix / denom if denom > 0 else matrix
@@ -169,6 +180,7 @@ def main() -> None:
     parser.add_argument("--tol", type=float, default=1e-6)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--combine_mode", choices=["interleave", "concat_steps"], default="interleave")
+    parser.add_argument("--time_weighting", choices=["none", "linear", "exp"], default="none")
     parser.add_argument("--no_normalize", action="store_true", help="Disable per-matrix L2 normalization.")
     parser.add_argument("--legacy_fit_out", type=Path, default=None, help="Optional output matching old fit_dict format.")
     args = parser.parse_args()
@@ -188,6 +200,7 @@ def main() -> None:
             key,
             combine_mode=args.combine_mode,
             normalize=not args.no_normalize,
+            time_weighting=args.time_weighting,
         )
         fit_values = []
         losses = []

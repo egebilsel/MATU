@@ -90,6 +90,14 @@ def parse_args() -> argparse.Namespace:
         default="interleave",
     )
     parser.add_argument(
+        "--time-weighting",
+        "--time_weighting",
+        dest="time_weighting",
+        choices=["none", "linear", "exp"],
+        default="none",
+        help="Apply time-decay weighting to trajectory steps.",
+    )
+    parser.add_argument(
         "--no-normalize",
         "--no_normalize",
         dest="no_normalize",
@@ -193,6 +201,8 @@ def main() -> None:
         str(args.seed),
         "--combine_mode",
         args.combine_mode,
+        "--time_weighting",
+        args.time_weighting,
     ]
     if args.no_normalize:
         cmd.append("--no_normalize")
