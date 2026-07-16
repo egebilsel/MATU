@@ -22,22 +22,22 @@ cd /dl_scratch2/ege/ege/repos/MATU
 mkdir -p quick_start/gen_3b_evolved_embedding/embeddings
 mkdir -p quick_start/gen_3b_evolved_embedding/results
 
-echo "=== Step 01: Embed Logs (GPU) ==="
-python -m matu.embed_logs \
-  --logs quick_start/gen_3b_evolved/conversation_logs_hf_qwen.json \
-  --out_dir quick_start/gen_3b_evolved_embedding/embeddings \
-  --roles user assistant \
-  --model "Qwen/Qwen3-Embedding-4B"
+# echo "=== Step 01: Embed Logs (GPU) ==="
+# python -m matu.embed_logs \
+#   --logs quick_start/gen_3b_evolved/conversation_logs_hf_qwen.json \
+#   --out_dir quick_start/gen_3b_evolved_embedding/embeddings \
+#   --roles user assistant \
+#   --model "Qwen/Qwen3-Embedding-4B"
 
-echo ""
-echo "=== Step 02: CP-2 Tensor Decomposition (CPU) ==="
-python quick_start/code/02_run_cp2_from_generated_embeddings.py \
-  --embedding-source gen_3b_evolved_embedding \
-  --max_rank 50
+# echo ""
+# echo "=== Step 02: CP-2 Tensor Decomposition (CPU) ==="
+# python quick_start/code/02_run_cp2_from_generated_embeddings.py \
+#   --embedding-source gen_3b_evolved_embedding \
+#   --max_rank 50
 
-echo ""
-echo "=== Step 03: Fit to Uncertainty ==="
-python quick_start/code/03_fit_to_uncertainty_generated.py gen_3b_evolved_embedding
+# echo ""
+# echo "=== Step 03: Fit to Uncertainty ==="
+# python quick_start/code/03_fit_to_uncertainty_generated.py gen_3b_evolved_embedding
 
 echo ""
 echo "=== Step 04: Evaluate Generated ==="
