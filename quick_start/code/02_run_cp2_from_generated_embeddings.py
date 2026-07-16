@@ -127,10 +127,14 @@ def resolve_cli_path(path: Path) -> Path:
 def generated_embeddings(args: argparse.Namespace) -> list[Path]:
     source_dir = args.embedding_source if args.embedding_source != "provided" else "generated"
     emb_dir = QUICK_START / source_dir / "embeddings"
-    return [
+    candidates = [
         emb_dir / "user_embedding_matrices.pkl",
         emb_dir / "assistant_embedding_matrices.pkl",
     ]
+    existing = [p for p in candidates if p.exists()]
+    if not existing:
+        return candidates
+    return existing
 
 
 def resolve_embeddings(args: argparse.Namespace) -> list[Path]:
