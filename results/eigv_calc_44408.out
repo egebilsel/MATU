@@ -1,0 +1,63 @@
+===========================================================================
+EIGV (NLI) BELIRSIZLIK (UNCERTAINTY AMOUNT) ANALIZI
+===========================================================================
+[gen_3b_base] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_3b_base] EigV hesaplamasi basariyla bitti.
+
+--- GEN_3B_BASE ---
+Genel Median Belirsizlik      : 59.4143
+Genel Ortalama Belirsizlik    : 59.2807
+DOGRU Sorularin Belirsizligi  ( 25 soru): 59.3131 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 75 soru): 59.2699 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : -0.0432  <-- Bu sayi ne kadar buyukse o kadar iyi!
+
+[gen_3b_evolved] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_3b_evolved] EigV hesaplamasi basariyla bitti.
+
+--- GEN_3B_EVOLVED ---
+Genel Median Belirsizlik      : 61.9030
+Genel Ortalama Belirsizlik    : 62.5046
+DOGRU Sorularin Belirsizligi  ( 29 soru): 60.8488 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 71 soru): 63.1809 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : 2.3322  <-- Bu sayi ne kadar buyukse o kadar iyi!
+
+[gen_7b_base] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_7b_base] EigV hesaplamasi basariyla bitti.
+
+--- GEN_7B_BASE ---
+Genel Median Belirsizlik      : 58.0385
+Genel Ortalama Belirsizlik    : 57.3933
+DOGRU Sorularin Belirsizligi  ( 25 soru): 58.3309 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 75 soru): 57.0807 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : -1.2502  <-- Bu sayi ne kadar buyukse o kadar iyi!
+
+[gen_7b_evolved] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_7b_evolved] EigV hesaplamasi basariyla bitti.
+
+--- GEN_7B_EVOLVED ---
+Genel Median Belirsizlik      : 56.4860
+Genel Ortalama Belirsizlik    : 57.0241
+DOGRU Sorularin Belirsizligi  ( 34 soru): 55.9056 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 66 soru): 57.6004 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : 1.6948  <-- Bu sayi ne kadar buyukse o kadar iyi!
+
+[gen_14b_base] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_14b_base] EigV hesaplamasi basariyla bitti.
+
+--- GEN_14B_BASE ---
+Genel Median Belirsizlik      : 57.3159
+Genel Ortalama Belirsizlik    : 56.8438
+DOGRU Sorularin Belirsizligi  ( 37 soru): 55.0592 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 63 soru): 57.8919 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : 2.8327  <-- Bu sayi ne kadar buyukse o kadar iyi!
+
+[gen_14b_evolved] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_14b_evolved] EigV hesaplamasi basariyla bitti.
+
+--- GEN_14B_EVOLVED ---
+Genel Median Belirsizlik      : 60.4851
+Genel Ortalama Belirsizlik    : 59.9761
+DOGRU Sorularin Belirsizligi  ( 24 soru): 58.2416 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 76 soru): 60.5239 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : 2.2823  <-- Bu sayi ne kadar buyukse o kadar iyi!
+

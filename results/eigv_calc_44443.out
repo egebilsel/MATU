@@ -1,0 +1,23 @@
+===========================================================================
+EIGV (NLI) BELIRSIZLIK (UNCERTAINTY AMOUNT) ANALIZI
+===========================================================================
+[gen_7b_base_noncoder] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_7b_base_noncoder] EigV hesaplamasi basariyla bitti.
+
+--- GEN_7B_BASE_NONCODER ---
+Genel Median Belirsizlik      : 56.4781
+Genel Ortalama Belirsizlik    : 55.9204
+DOGRU Sorularin Belirsizligi  ( 49 soru): 54.9395 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 51 soru): 56.8629 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : 1.9234  <-- Bu sayi ne kadar buyukse o kadar iyi!
+
+[gen_7b_evolved_noncoder] EigV (NLI) skorlari hesaplaniyor (bu islem biraz surebilir)...
+[gen_7b_evolved_noncoder] EigV hesaplamasi basariyla bitti.
+
+--- GEN_7B_EVOLVED_NONCODER ---
+Genel Median Belirsizlik      : 59.4438
+Genel Ortalama Belirsizlik    : 59.3140
+DOGRU Sorularin Belirsizligi  ( 48 soru): 58.2483 (Beklenen: Dusuk)
+YANLIS Sorularin Belirsizligi ( 52 soru): 60.2976 (Beklenen: Yuksek)
+FARK (Yanlis - Dogru Gap)     : 2.0493  <-- Bu sayi ne kadar buyukse o kadar iyi!
+

@@ -1,0 +1,12 @@
+=== Step 01: Embed Logs (GPU) ===
+
+=== Step 02: CP-2 Tensor Decomposition (CPU) ===
+
+=== Step 03: Fit to Uncertainty ===
+
+=== Step 04: Evaluate Generated ===
+Loglar okunuyor...
+--- EVALUATION: ANY INCORRECT (STRICT) ---
+
+--- EVALUATION: MAJORITY INCORRECT (RELAXED) ---
+MATU GENERATION AND PIPELINE DONE FOR 3b_evolved_embedding!
