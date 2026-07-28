@@ -153,13 +153,26 @@ def build_matrix_list(
         if matrix.size == 0:
             continue
             
-        if time_weighting in ("linear", "exp"):
+        if time_weighting in ("linear", "exp", "sigmoid", "cutoff", "log"):
             T = matrix.shape[0]
             if T > 1:
                 if time_weighting == "linear":
                     weights = np.linspace(0.1, 1.0, T).reshape(-1, 1)
                 elif time_weighting == "exp":
                     weights = np.exp(np.linspace(-3, 0, T)).reshape(-1, 1)
+                elif time_weighting == "sigmoid":
+                    k = 10 / T
+                    mid = T / 2
+                    t_vals = np.arange(T)
+                    weights = (1 / (1 + np.exp(-k * (t_vals - mid)))).reshape(-1, 1)
+                elif time_weighting == "cutoff":
+                    weights = np.full((T, 1), 0.05)
+                    K = min(5, T)
+                    weights[-K:] = 1.0
+                elif time_weighting == "log":
+                    t_vals = np.arange(1, T + 1)
+                    weights = (np.log(t_vals) / np.log(T)).reshape(-1, 1)
+                    weights = np.clip(weights, 0.1, 1.0)
                 matrix = matrix * weights
                 
         if normalize:
@@ -180,7 +193,7 @@ def main() -> None:
     parser.add_argument("--tol", type=float, default=1e-6)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--combine_mode", choices=["interleave", "concat_steps"], default="interleave")
-    parser.add_argument("--time_weighting", choices=["none", "linear", "exp"], default="none")
+    parser.add_argument("--time_weighting", choices=["none", "linear", "exp", "sigmoid", "cutoff", "log"], default="none")
     parser.add_argument("--no_normalize", action="store_true", help="Disable per-matrix L2 normalization.")
     parser.add_argument("--legacy_fit_out", type=Path, default=None, help="Optional output matching old fit_dict format.")
     args = parser.parse_args()

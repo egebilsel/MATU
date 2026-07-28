@@ -93,7 +93,7 @@ def parse_args() -> argparse.Namespace:
         "--time-weighting",
         "--time_weighting",
         dest="time_weighting",
-        choices=["none", "linear", "exp"],
+        choices=["none", "linear", "exp", "sigmoid", "cutoff", "log"],
         default="none",
         help="Apply time-decay weighting to trajectory steps.",
     )
