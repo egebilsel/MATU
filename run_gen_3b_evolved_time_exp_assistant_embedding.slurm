@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH -J matu-3b_evol
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=adep2
+#SBATCH --nodelist=adep1
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/gen_3b_evolved_time_exp_assistant_embedding-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/gen_3b_evolved_time_exp_assistant_embedding-%j.err
