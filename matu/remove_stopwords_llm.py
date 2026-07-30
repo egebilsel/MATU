@@ -5,15 +5,23 @@ import torch
 from tqdm import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-SYSTEM_PROMPT = (
+MATH_PROMPT = (
     "You are an expert mathematical text summarizer. "
     "Your task is to extract ONLY the core mathematical reasoning, equations, and keywords from the text provided. "
     "REMOVE all conversational filler words (e.g. 'so', 'then', 'let us', 'we can see that', 'obviously', 'the answer is'). "
     "DO NOT explain your reasoning, just output the condensed mathematical keywords and terms separated by spaces."
 )
 
-def build_prompt(text: str) -> str:
-    return f"<|im_start|>system\n{SYSTEM_PROMPT}<|im_end|>\n<|im_start|>user\nHere is the text:\n{text}<|im_end|>\n<|im_start|>assistant\n"
+HARMBENCH_PROMPT = (
+    "You are an expert text summarizer focusing on intent and core content. "
+    "Your task is to extract ONLY the core concepts, entities, and action verbs from the text provided. "
+    "REMOVE all conversational filler words, greetings, apologies, or generic AI disclaimers (e.g. 'I cannot fulfill this request', 'As an AI language model', 'Here is the information'). "
+    "DO NOT explain your reasoning, just output the condensed keywords and core message separated by spaces."
+)
+
+def build_prompt(text: str, task: str = "math") -> str:
+    system_prompt = HARMBENCH_PROMPT if task == "harmbench" else MATH_PROMPT
+    return f"<|im_start|>system\n{system_prompt}<|im_end|>\n<|im_start|>user\nHere is the text:\n{text}<|im_end|>\n<|im_start|>assistant\n"
 
 def main():
     parser = argparse.ArgumentParser(description="Remove stopwords using LLM")
@@ -53,12 +61,15 @@ def main():
 
     print(f"Found {len(to_process)} assistant responses to clean.")
     
+    task = "harmbench" if "harmbench" in str(args.input_logs).lower() else "math"
+    print(f"Inferred task: {task} from input path.")
+    
     # Process in batches
     pbar = tqdm(total=len(to_process), desc="Cleaning texts")
     
     for i in range(0, len(to_process), args.batch_size):
         batch = to_process[i:i+args.batch_size]
-        prompts = [build_prompt(item[3]) for item in batch]
+        prompts = [build_prompt(item[3], task) for item in batch]
         
         inputs = tokenizer(prompts, return_tensors="pt", padding=True, truncation=True, max_length=2048).to(model.device)
         
