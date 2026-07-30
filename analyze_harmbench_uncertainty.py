@@ -40,11 +40,30 @@ EXPERIMENTS = [
 
 # ── Base-Evolved karşılaştırma çiftleri ─────────────────────────────────────
 COMPARISON_PAIRS = [
-    ("harmbench_3b_base",          "harmbench_3b_evolved",          "3B Coder"),
-    ("harmbench_7b_base",          "harmbench_7b_evolved",          "7B Coder"),
-    ("harmbench_14b_base",         "harmbench_14b_evolved",         "14B Coder"),
-    ("harmbench_7b_base_noncoder", "harmbench_7b_evolved_noncoder", "7B Non-Coder"),
+    ("harmbench_3b_base",          "harmbench_3b_evolved",          "3B Coder (Default)"),
+    ("harmbench_7b_base",          "harmbench_7b_evolved",          "7B Coder (Default)"),
+    ("harmbench_14b_base",         "harmbench_14b_evolved",         "14B Coder (Default)"),
+    ("harmbench_7b_base_noncoder", "harmbench_7b_evolved_noncoder", "7B Non-Coder (Default)"),
 ]
+
+# Add config variants dynamically
+CONFIGS = [
+    ("cleaned", "Cleaned"),
+    ("embedding", "Embedding (4B)"),
+    ("rank30", "Rank 30"),
+    ("assistant_only", "Assistant Only"),
+    ("user_only", "User Only"),
+    ("time_exp", "Time (Exp)"),
+    ("time_linear", "Time (Linear)"),
+    ("time_cutoff", "Time (Cutoff)"),
+    ("time_sigmoid", "Time (Sigmoid)"),
+    ("time_log", "Time (Log)"),
+]
+
+for conf_key, conf_desc in CONFIGS:
+    EXPERIMENTS.append((f"harmbench_3b_base_{conf_key}", f"3B Base ({conf_desc})"))
+    EXPERIMENTS.append((f"harmbench_3b_evolved_{conf_key}", f"3B Evolved ({conf_desc})"))
+    COMPARISON_PAIRS.append((f"harmbench_3b_base_{conf_key}", f"harmbench_3b_evolved_{conf_key}", f"3B {conf_desc}"))
 
 
 def load_pickle_safe(path: Path):
@@ -151,7 +170,7 @@ def print_comparison_table(results: dict):
     print("=" * 100)
     print()
 
-    header = f"{'Model Çifti':<20} | {'Safe Rate B':>11} | {'Safe Rate E':>11} | {'ΔSafe':>6} | {'AUROC B':>8} | {'AUROC E':>8} | {'ΔAUROC':>7} | {'Gap B':>7} | {'Gap E':>7}"
+    header = f"{'Model Çifti':<25} | {'Safe Rate B':>11} | {'Safe Rate E':>11} | {'ΔSafe':>6} | {'AUROC B':>8} | {'AUROC E':>8} | {'ΔAUROC':>7} | {'Gap B':>7} | {'Gap E':>7}"
     print(header)
     print("-" * len(header))
 
@@ -160,7 +179,7 @@ def print_comparison_table(results: dict):
         evol = results.get(evol_name)
 
         if base is None and evol is None:
-            print(f"{pair_label:<20} | {'N/A':>11} | {'N/A':>11} | {'N/A':>6} | {'N/A':>8} | {'N/A':>8} | {'N/A':>7} | {'N/A':>7} | {'N/A':>7}")
+            print(f"{pair_label:<25} | {'N/A':>11} | {'N/A':>11} | {'N/A':>6} | {'N/A':>8} | {'N/A':>8} | {'N/A':>7} | {'N/A':>7} | {'N/A':>7}")
             continue
 
         sr_b = f"{base['safe_rate']:.1f}%" if base else "N/A"
@@ -174,7 +193,7 @@ def print_comparison_table(results: dict):
         gp_b = f"{base['gap']:.4f}" if base and not np.isnan(base['gap']) else "N/A"
         gp_e = f"{evol['gap']:.4f}" if evol and not np.isnan(evol['gap']) else "N/A"
 
-        print(f"{pair_label:<20} | {sr_b:>11} | {sr_e:>11} | {d_sr:>6} | {au_b:>8} | {au_e:>8} | {d_au:>7} | {gp_b:>7} | {gp_e:>7}")
+        print(f"{pair_label:<25} | {sr_b:>11} | {sr_e:>11} | {d_sr:>6} | {au_b:>8} | {au_e:>8} | {d_au:>7} | {gp_b:>7} | {gp_e:>7}")
 
     print()
 
