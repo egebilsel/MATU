@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH -J hb-3b_b_assistant_only
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=adep2
+#SBATCH --nodelist=adep1
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/harmbench_3b_base_assistant_only-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/harmbench_3b_base_assistant_only-%j.err
