@@ -46,7 +46,7 @@ python quick_start/code/03_fit_to_uncertainty_generated.py harmbench_3b_base_ass
 echo ""
 echo "=== Step 04: Grade Safety ==="
 python quick_start/code/grade_harmbench.py quick_start/harmbench_3b_base_assistant_only \
-  --judge keyword
+  --judge llm_judge
 
 echo "--- EVALUATION: ANY UNSAFE (STRICT) ---"
 python -m matu.evaluate_uncertainty \
