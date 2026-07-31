@@ -61,7 +61,7 @@ def main():
 
     print(f"Found {len(to_process)} assistant responses to clean.")
     
-    task = "harmbench" if "harmbench" in str(args.input_logs).lower() else "math"
+    task = "harmbench" if ("harmbench" in str(args.input_logs).lower() or "saladbench" in str(args.input_logs).lower()) else "math"
     print(f"Inferred task: {task} from input path.")
     
     # Process in batches
