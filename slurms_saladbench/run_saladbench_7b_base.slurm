@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH -J sb-7b_base
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=adep1
+#SBATCH --nodelist=adep2
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/saladbench_7b_base-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/saladbench_7b_base-%j.err
