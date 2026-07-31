@@ -37,8 +37,8 @@ echo "=== Step 01: Embed Logs (GPU) ==="
 python -m matu.embed_logs \
   --logs quick_start/saladbench_14b_evolved/conversation_logs_saladbench.json \
   --out_dir quick_start/saladbench_14b_evolved/embeddings \
-  --roles assistant \
-  --model "Qwen/Qwen3-Embedding-4B"
+  --roles user assistant \
+  --model "Qwen/Qwen3-Embedding-0.6B"
 
 echo ""
 echo "=== Step 02: CP-2 Tensor Decomposition (CPU) ==="
