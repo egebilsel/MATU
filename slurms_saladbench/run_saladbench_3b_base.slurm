@@ -23,10 +23,9 @@ mkdir -p quick_start/saladbench_3b_base/embeddings
 mkdir -p quick_start/saladbench_3b_base/results
 mkdir -p quick_start/data/saladbench
 
-echo "=== Step 00: Generate HarmBench Logs (GPU) ==="
+echo "=== Step 00: Generate SaladBench Logs (GPU) ==="
 python examples/generate_logs_saladbench.py \
   --model "Qwen/Qwen2.5-Coder-3B-Instruct" \
-  --data_path quick_start/data/saladbench/saladbench_behaviors_text_all.csv \
   --max_items 100 \
   --runs 10 \
   --seed 42 \
