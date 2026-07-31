@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH -J hb-14b_base
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=adep2
+#SBATCH --nodelist=romer3
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/harmbench_14b_base-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/harmbench_14b_base-%j.err
