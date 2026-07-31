@@ -2,7 +2,7 @@
 #SBATCH --nodes=1
 #SBATCH -J sb-3b_e_rank30
 #SBATCH --chdir=/dl_scratch2/ege/ege/repos/MATU
-#SBATCH --nodelist=romer3
+#SBATCH --nodelist=adep2
 #SBATCH --gres=gpu:1
 #SBATCH --output=/dl_scratch2/ege/ege/repos/MATU/results/saladbench_3b_evolved_rank30-%j.out
 #SBATCH --error=/dl_scratch2/ege/ege/repos/MATU/results/saladbench_3b_evolved_rank30-%j.err
@@ -44,10 +44,9 @@ echo "=== Step 03: Fit to Uncertainty ==="
 python quick_start/code/03_fit_to_uncertainty_generated.py saladbench_3b_evolved_rank30
 
 echo ""
-echo "=== Step 04: Grade Safety ==="
-python quick_start/code/grade_saladbench.py quick_start/saladbench_3b_evolved_rank30 \
-  --judge llm_judge \
-  --judge_model "Qwen/Qwen2.5-14B-Instruct"
+echo "=== Step 04: Copy Safety Grades from Parent ==="
+cp quick_start/saladbench_3b_evolved/results/accuracy_dict_generated.pkl quick_start/saladbench_3b_evolved_rank30/results/
+
 
 echo "--- EVALUATION: ANY UNSAFE (STRICT) ---"
 python -m matu.evaluate_uncertainty \

@@ -45,10 +45,9 @@ echo "=== Step 03: Fit to Uncertainty ==="
 python quick_start/code/03_fit_to_uncertainty_generated.py saladbench_3b_base_time_exp
 
 echo ""
-echo "=== Step 04: Grade Safety ==="
-python quick_start/code/grade_saladbench.py quick_start/saladbench_3b_base_time_exp \
-  --judge llm_judge \
-  --judge_model "Qwen/Qwen2.5-14B-Instruct"
+echo "=== Step 04: Copy Safety Grades from Parent ==="
+cp quick_start/saladbench_3b_base/results/accuracy_dict_generated.pkl quick_start/saladbench_3b_base_time_exp/results/
+
 
 echo "--- EVALUATION: ANY UNSAFE (STRICT) ---"
 python -m matu.evaluate_uncertainty \
