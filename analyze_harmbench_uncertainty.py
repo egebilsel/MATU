@@ -92,6 +92,7 @@ def analyze_experiment(exp_name: str):
     accuracies = np.array([accuracy_from_labels(acc_data[k]) for k in keys])
 
     # Safe/Unsafe counts
+    total = len(keys)
     strict_safe = np.sum(accuracies == 1.0)
     strict_unsafe = total - strict_safe
     
