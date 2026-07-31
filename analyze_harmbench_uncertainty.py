@@ -205,21 +205,24 @@ def print_summary_table(results: dict):
     print("=" * 100)
     print()
 
-    header = f"{'Deney':<45} | {'Safe%':>6} | {'#Safe':>5} | {'#Unsafe':>7} | {'AUROC':>7} | {'AUARC':>7} | {'Gap':>7}"
+    header = f"{'Deney':<45} | {'Safe%':>6} | {'#Safe':>5} | {'#Unsafe':>7} | {'Safe Unc':>8} | {'Unsafe Unc':>10} | {'AUROC':>7} | {'AUARC':>7} | {'Gap':>7}"
     print(header)
     print("-" * len(header))
 
     for exp_name, desc in EXPERIMENTS:
         res = results.get(exp_name)
         if res is None:
-            print(f"{desc:<45} | {'N/A':>6} | {'N/A':>5} | {'N/A':>7} | {'N/A':>7} | {'N/A':>7} | {'N/A':>7}")
+            print(f"{desc:<45} | {'N/A':>6} | {'N/A':>5} | {'N/A':>7} | {'N/A':>8} | {'N/A':>10} | {'N/A':>7} | {'N/A':>7} | {'N/A':>7}")
             continue
 
         auroc_str = f"{res['auroc_any']:.4f}" if not np.isnan(res['auroc_any']) else "N/A"
         auarc_str = f"{res['auarc']:.4f}" if not np.isnan(res['auarc']) else "N/A"
         gap_str = f"{res['gap']:.4f}" if not np.isnan(res['gap']) else "N/A"
 
-        print(f"{desc:<45} | {res['safe_rate']:>5.1f}% | {res['safe_behaviors']:>5} | {res['unsafe_behaviors']:>7} | {auroc_str:>7} | {auarc_str:>7} | {gap_str:>7}")
+        safe_unc_str = f"{res['mean_safe_unc']:.4f}" if not np.isnan(res['mean_safe_unc']) else "N/A"
+        unsafe_unc_str = f"{res['mean_unsafe_unc']:.4f}" if not np.isnan(res['mean_unsafe_unc']) else "N/A"
+        
+        print(f"{desc:<45} | {res['safe_rate']:>5.1f}% | {res['safe_behaviors']:>5} | {res['unsafe_behaviors']:>7} | {safe_unc_str:>8} | {unsafe_unc_str:>10} | {auroc_str:>7} | {auarc_str:>7} | {gap_str:>7}")
 
     print()
 
