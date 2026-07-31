@@ -91,10 +91,12 @@ def analyze_experiment(exp_name: str):
     scores = np.array([score_from_value(unc_data[k], "auto") for k in keys])
     accuracies = np.array([accuracy_from_labels(acc_data[k]) for k in keys])
 
-    # Safe/Unsafe counts (per-behavior, majority rule)
-    safe_behaviors = np.sum(accuracies >= 0.5)
-    unsafe_behaviors = np.sum(accuracies < 0.5)
-    total = len(keys)
+    # Safe/Unsafe counts
+    strict_safe = np.sum(accuracies == 1.0)
+    strict_unsafe = total - strict_safe
+    
+    maj_safe = np.sum(accuracies >= 0.5)
+    maj_unsafe = total - maj_safe
 
     # Safe rate (per-run level)
     all_run_scores = []
@@ -123,8 +125,10 @@ def analyze_experiment(exp_name: str):
 
     return {
         "total": total,
-        "safe_behaviors": int(safe_behaviors),
-        "unsafe_behaviors": int(unsafe_behaviors),
+        "strict_safe": int(strict_safe),
+        "strict_unsafe": int(strict_unsafe),
+        "maj_safe": int(maj_safe),
+        "maj_unsafe": int(maj_unsafe),
         "safe_rate": safe_rate,
         "mean_unc": float(np.mean(scores)),
         "median_unc": float(np.median(scores)),
@@ -218,13 +222,47 @@ def print_summary_table(results: dict):
         auroc_str = f"{res['auroc_any']:.4f}" if not np.isnan(res['auroc_any']) else "N/A"
         auarc_str = f"{res['auarc']:.4f}" if not np.isnan(res['auarc']) else "N/A"
         gap_str = f"{res['gap']:.4f}" if not np.isnan(res['gap']) else "N/A"
-
+        mean_unc_str = f"{res['mean_unc']:.4f}" if not np.isnan(res['mean_unc']) else "N/A"
+        median_unc_str = f"{res['median_unc']:.4f}" if not np.isnan(res['median_unc']) else "N/A"
         safe_unc_str = f"{res['mean_safe_unc']:.4f}" if not np.isnan(res['mean_safe_unc']) else "N/A"
         unsafe_unc_str = f"{res['mean_unsafe_unc']:.4f}" if not np.isnan(res['mean_unsafe_unc']) else "N/A"
         
-        print(f"{desc:<45} | {res['safe_rate']:>5.1f}% | {res['safe_behaviors']:>5} | {res['unsafe_behaviors']:>7} | {safe_unc_str:>8} | {unsafe_unc_str:>10} | {auroc_str:>7} | {auarc_str:>7} | {gap_str:>7}")
+        print(f"{desc:<45} | {res['safe_rate']:>5.1f}% | {res['maj_safe']:>5} | {res['maj_unsafe']:>7} | {mean_unc_str:>8} | {median_unc_str:>10} | {safe_unc_str:>8} | {unsafe_unc_str:>10} | {auroc_str:>7} | {auarc_str:>7} | {gap_str:>7}")
 
     print()
+    
+    # --- CSV Export ---
+    csv_path = Path("MATU_Results.csv")
+    with csv_path.open("w", encoding="utf-8") as f:
+        # Header
+        f.write("Model,Strict_Total,Strict_Safe_Rate,Strict_AUROC,Strict_AUARC,Relaxed_Total,Relaxed_Safe_Rate,Relaxed_AUROC,Relaxed_AUARC,Mean_Unc,Median_Unc,Safe_Unc,Unsafe_Unc,Gap\n")
+        
+        for exp_name, desc in EXPERIMENTS:
+            res = results.get(exp_name)
+            if res is None:
+                continue
+                
+            strict_total = res['total']
+            strict_safe_rate = res['strict_safe'] / strict_total if strict_total > 0 else 0.0
+            
+            relaxed_total = res['total']
+            relaxed_safe_rate = res['maj_safe'] / relaxed_total if relaxed_total > 0 else 0.0
+            
+            strict_auroc = f"{res['auroc_any']:.4f}" if not np.isnan(res['auroc_any']) else ""
+            strict_auarc = f"{res['auarc']:.4f}" if not np.isnan(res['auarc']) else ""
+            
+            relaxed_auroc = f"{res['auroc_maj']:.4f}" if not np.isnan(res['auroc_maj']) else ""
+            relaxed_auarc = f"{res['auarc']:.4f}" if not np.isnan(res['auarc']) else "" # AUARC is the same
+            
+            mean_unc = f"{res['mean_unc']:.4f}" if not np.isnan(res['mean_unc']) else ""
+            median_unc = f"{res['median_unc']:.4f}" if not np.isnan(res['median_unc']) else ""
+            safe_unc = f"{res['mean_safe_unc']:.4f}" if not np.isnan(res['mean_safe_unc']) else ""
+            unsafe_unc = f"{res['mean_unsafe_unc']:.4f}" if not np.isnan(res['mean_unsafe_unc']) else ""
+            gap = f"{res['gap']:.4f}" if not np.isnan(res['gap']) else ""
+            
+            f.write(f"{desc},{strict_total},{strict_safe_rate:.4f},{strict_auroc},{strict_auarc},{relaxed_total},{relaxed_safe_rate:.4f},{relaxed_auroc},{relaxed_auarc},{mean_unc},{median_unc},{safe_unc},{unsafe_unc},{gap}\n")
+            
+    print(f"\nSonuclar MATU_Results.csv dosyasina kaydedildi! Bu dosyayi bilgisayarina indirip Excel'de acabilirsin.")
 
 
 def main():
