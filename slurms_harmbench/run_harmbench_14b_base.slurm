@@ -24,13 +24,13 @@ mkdir -p quick_start/harmbench_14b_base/results
 mkdir -p quick_start/data/harmbench
 
 echo "=== Step 00: Generate HarmBench Logs (GPU) ==="
-python examples/generate_logs_harmbench.py \
-  --model "Qwen/Qwen2.5-Coder-14B-Instruct" \
-  --data_path quick_start/data/harmbench/harmbench_behaviors_text_all.csv \
-  --max_items 100 \
-  --runs 10 \
-  --seed 42 \
-  --out quick_start/harmbench_14b_base/conversation_logs_harmbench.json
+# python examples/generate_logs_harmbench.py \
+#   --model "Qwen/Qwen2.5-Coder-14B-Instruct" \
+#   --data_path quick_start/data/harmbench/harmbench_behaviors_text_all.csv \
+#   --max_items 100 \
+#   --runs 10 \
+#   --seed 42 \
+#   --out quick_start/harmbench_14b_base/conversation_logs_harmbench.json
 
 echo ""
 echo "=== Step 01: Embed Logs (GPU) ==="
