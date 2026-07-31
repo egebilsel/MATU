@@ -17,8 +17,8 @@ export TRANSFORMERS_CACHE=$HF_HOME/transformers
 
 cd /dl_scratch2/ege/ege/repos/MATU
 
-# Tüm HarmBench deneylerini sadece LLM judge ile yeniden notlandır
-EXPERIMENTS=(
+# 1. Ana (Base/Evolved) Modeller - Bunlar için LLM Judge çalışacak
+MAIN_EXPERIMENTS=(
   "harmbench_3b_base"
   "harmbench_3b_evolved"
   "harmbench_7b_base"
@@ -27,6 +27,10 @@ EXPERIMENTS=(
   "harmbench_14b_evolved"
   "harmbench_7b_base_noncoder"
   "harmbench_7b_evolved_noncoder"
+)
+
+# 2. Türev Configler - Bunlar Ana modelin grading (not) sonucunu direkt kopyalayacak
+CONFIG_EXPERIMENTS=(
   "harmbench_3b_base_cleaned"
   "harmbench_3b_evolved_cleaned"
   "harmbench_3b_base_embedding"
@@ -51,23 +55,18 @@ EXPERIMENTS=(
   "harmbench_3b_evolved_assistant_embedding"
 )
 
-for EXP in "${EXPERIMENTS[@]}"; do
+# A. ANA DENEYLERİ NOTLANDIR
+for EXP in "${MAIN_EXPERIMENTS[@]}"; do
   DIR="quick_start/${EXP}"
   
-  # Loglar var mı kontrol et
-  LOG_FILE="${DIR}/conversation_logs_harmbench.json"
-  if [ ! -f "$LOG_FILE" ]; then
-    # Config deneylerinde log farklı isimde olabilir
-    LOG_FILE="${DIR}/cleaned_conversation_logs.json"
-    if [ ! -f "$LOG_FILE" ]; then
-      echo "SKIP: ${EXP} (log file not found)"
-      continue
-    fi
+  if [ ! -f "${DIR}/conversation_logs_harmbench.json" ]; then
+    echo "SKIP MAIN: ${EXP} (log file not found)"
+    continue
   fi
 
   echo ""
   echo "================================================================"
-  echo "RE-GRADING: ${EXP}"
+  echo "RE-GRADING MAIN: ${EXP}"
   echo "================================================================"
   
   python quick_start/code/grade_harmbench.py "${DIR}" \
@@ -81,15 +80,51 @@ for EXP in "${EXPERIMENTS[@]}"; do
     --score_mode raw \
     --error_rule any_incorrect
 
-  echo ""
   echo "--- EVALUATION: MAJORITY UNSAFE (RELAXED) ---"
   python -m matu.evaluate_uncertainty \
     --uncertainty "${DIR}/results/uncertainty_generated.pkl" \
     --labels "${DIR}/results/accuracy_dict_generated.pkl" \
     --score_mode raw \
     --error_rule majority_incorrect
+done
 
-  echo "DONE: ${EXP}"
+# B. TÜREV DENEYLERİ HIZLICA DEĞERLENDİR (SADECE EVALUATE)
+for EXP in "${CONFIG_EXPERIMENTS[@]}"; do
+  DIR="quick_start/${EXP}"
+  
+  if [ ! -f "${DIR}/results/uncertainty_generated.pkl" ]; then
+    echo "SKIP CONFIG: ${EXP} (uncertainty not found)"
+    continue
+  fi
+
+  echo ""
+  echo "================================================================"
+  echo "FAST EVALUATING CONFIG: ${EXP}"
+  echo "================================================================"
+  
+  # Ana modelin adını bul (ör. harmbench_3b_base_time_exp -> harmbench_3b_base)
+  if [[ "$EXP" == *"_base_"* ]]; then
+    SOURCE_DIR="quick_start/harmbench_3b_base"
+  else
+    SOURCE_DIR="quick_start/harmbench_3b_evolved"
+  fi
+
+  # Sadece accuracy (not) tablosunu kopyala
+  cp "${SOURCE_DIR}/results/accuracy_dict_generated.pkl" "${DIR}/results/"
+
+  echo "--- EVALUATION: ANY UNSAFE (STRICT) ---"
+  python -m matu.evaluate_uncertainty \
+    --uncertainty "${DIR}/results/uncertainty_generated.pkl" \
+    --labels "${DIR}/results/accuracy_dict_generated.pkl" \
+    --score_mode raw \
+    --error_rule any_incorrect
+
+  echo "--- EVALUATION: MAJORITY UNSAFE (RELAXED) ---"
+  python -m matu.evaluate_uncertainty \
+    --uncertainty "${DIR}/results/uncertainty_generated.pkl" \
+    --labels "${DIR}/results/accuracy_dict_generated.pkl" \
+    --score_mode raw \
+    --error_rule majority_incorrect
 done
 
 echo ""
