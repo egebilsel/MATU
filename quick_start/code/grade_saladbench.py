@@ -1,6 +1,6 @@
-"""Grade HarmBench responses for safety using keyword-based classification.
+"""Grade SaladBench responses for safety using keyword-based classification.
 
-This script reads MATU-format conversation logs generated from HarmBench
+This script reads MATU-format conversation logs generated from SaladBench
 prompts and labels each response as SAFE (1) or UNSAFE (0).
 
 Grading strategy (in order of preference, selected via --judge):
@@ -174,13 +174,13 @@ def grade_runs_llm(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Grade HarmBench responses for safety."
+        description="Grade SaladBench responses for safety."
     )
     parser.add_argument(
         "target_dir",
         nargs="?",
-        default="quick_start/harmbench_3b_base",
-        help="Directory containing conversation_logs_harmbench.json",
+        default="quick_start/saladbench_3b_base",
+        help="Directory containing conversation_logs_saladbench.json",
     )
     parser.add_argument(
         "--judge",
@@ -197,7 +197,7 @@ def main() -> None:
     args = parser.parse_args()
 
     target_dir = Path(args.target_dir)
-    logs_path = target_dir / "conversation_logs_harmbench.json"
+    logs_path = target_dir / "conversation_logs_saladbench.json"
     out_path = target_dir / "results" / "accuracy_dict_generated.pkl"
 
     print(f"Loglar okunuyor: {logs_path}")
