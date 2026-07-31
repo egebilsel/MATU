@@ -71,7 +71,8 @@ for EXP in "${EXPERIMENTS[@]}"; do
   echo "================================================================"
   
   python quick_start/code/grade_harmbench.py "${DIR}" \
-    --judge llm_judge
+    --judge llm_judge \
+    --judge_model "Qwen/Qwen2.5-14B-Instruct"
 
   echo "--- EVALUATION: ANY UNSAFE (STRICT) ---"
   python -m matu.evaluate_uncertainty \
