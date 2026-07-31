@@ -4,187 +4,507 @@ HARMBENCH MATU GÜVENLIK BELİRSİZLİK ANALİZİ
 
 --- Qwen2.5-Coder-3B-Instruct (Base) (harmbench_3b_base) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 78.7%
-  Safe Behavior (majority): 88/100
-  Unsafe Behavior         : 12/100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
 
-  Genel Ortalama Unc.     : 4.7000
-  Genel Median Unc.       : 4.7677
-  SAFE  Sorular Unc.      : 4.6921
-  UNSAFE Sorular Unc.     : 4.7576
-  GAP (Unsafe - Safe)     : 0.0655  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 4.5355
+  Genel Median Unc.       : 4.5902
+  SAFE  Sorular Unc.      : 4.5604
+  UNSAFE Sorular Unc.     : 4.2056
+  GAP (Unsafe - Safe)     : -0.3548  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.6995
-  AUROC (majority_incorr) : 0.5047
-  AUARC                   : 0.8360
+  AUROC (any_incorrect)   : 0.4220
+  AUROC (majority_incorr) : 0.2704
+  AUARC                   : 0.8236
 
 --- AZR-Coder-3b (Evolved) (harmbench_3b_evolved) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 40.0%
-  Safe Behavior (majority): 41/100
-  Unsafe Behavior         : 59/100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
 
-  Genel Ortalama Unc.     : 4.3551
-  Genel Median Unc.       : 4.2765
-  SAFE  Sorular Unc.      : 4.3281
-  UNSAFE Sorular Unc.     : 4.3739
-  GAP (Unsafe - Safe)     : 0.0458  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 4.1552
+  Genel Median Unc.       : 4.1292
+  SAFE  Sorular Unc.      : 4.4121
+  UNSAFE Sorular Unc.     : 3.7699
+  GAP (Unsafe - Safe)     : -0.6422  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.4547
-  AUROC (majority_incorr) : 0.5316
-  AUARC                   : 0.4044
+  AUROC (any_incorrect)   : 0.1733
+  AUROC (majority_incorr) : 0.1950
+  AUARC                   : 0.3850
 
 --- Qwen2.5-Coder-7B-Instruct (Base) (harmbench_7b_base) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 85.5%
-  Safe Behavior (majority): 89/100
-  Unsafe Behavior         : 11/100
+  Safe Rate (per-run)     : 96.9%
+  Safe Behavior (majority): 99/100
+  Unsafe Behavior         : 1/100
 
-  Genel Ortalama Unc.     : 3.4682
-  Genel Median Unc.       : 3.7848
-  SAFE  Sorular Unc.      : 3.3344
-  UNSAFE Sorular Unc.     : 4.5503
-  GAP (Unsafe - Safe)     : 1.2158  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 3.7636
+  Genel Median Unc.       : 4.0708
+  SAFE  Sorular Unc.      : 3.7567
+  UNSAFE Sorular Unc.     : 4.4453
+  GAP (Unsafe - Safe)     : 0.6886  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.8460
-  AUROC (majority_incorr) : 0.7763
-  AUARC                   : 0.9404
+  AUROC (any_incorrect)   : 0.7807
+  AUROC (majority_incorr) : 0.7980
+  AUARC                   : 0.9811
 
 --- AZR-Coder-7b (Evolved) (harmbench_7b_evolved) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 49.2%
-  Safe Behavior (majority): 50/100
-  Unsafe Behavior         : 50/100
+  Safe Rate (per-run)     : 65.6%
+  Safe Behavior (majority): 73/100
+  Unsafe Behavior         : 27/100
 
-  Genel Ortalama Unc.     : 4.1571
-  Genel Median Unc.       : 3.9986
-  SAFE  Sorular Unc.      : 4.0297
-  UNSAFE Sorular Unc.     : 4.2845
-  GAP (Unsafe - Safe)     : 0.2548  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 4.1724
+  Genel Median Unc.       : 4.1849
+  SAFE  Sorular Unc.      : 4.3487
+  UNSAFE Sorular Unc.     : 3.6958
+  GAP (Unsafe - Safe)     : -0.6529  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.5120
-  AUROC (majority_incorr) : 0.5936
-  AUARC                   : 0.5645
+  AUROC (any_incorrect)   : 0.3307
+  AUROC (majority_incorr) : 0.2253
+  AUARC                   : 0.4784
 
 --- Qwen2.5-Coder-14B-Instruct (Base) (harmbench_14b_base) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 84.8%
-  Safe Behavior (majority): 91/100
-  Unsafe Behavior         : 9/100
+  Safe Rate (per-run)     : 99.6%
+  Safe Behavior (majority): 100/100
+  Unsafe Behavior         : 0/100
 
-  Genel Ortalama Unc.     : 3.5541
-  Genel Median Unc.       : 3.6161
-  SAFE  Sorular Unc.      : 3.5043
-  UNSAFE Sorular Unc.     : 4.0573
-  GAP (Unsafe - Safe)     : 0.5530  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 3.8098
+  Genel Median Unc.       : 4.0099
+  SAFE  Sorular Unc.      : 3.8098
+  UNSAFE Sorular Unc.     : nan
+  GAP (Unsafe - Safe)     : nan  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.7027
-  AUROC (majority_incorr) : 0.6691
-  AUARC                   : 0.9103
+  AUROC (any_incorrect)   : 0.7109
+  AUROC (majority_incorr) : nan
+  AUARC                   : 0.9884
 
 --- AZR-Coder-14b (Evolved) (harmbench_14b_evolved) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 46.9%
-  Safe Behavior (majority): 47/100
-  Unsafe Behavior         : 53/100
+  Safe Rate (per-run)     : 60.2%
+  Safe Behavior (majority): 64/100
+  Unsafe Behavior         : 36/100
 
-  Genel Ortalama Unc.     : 3.9061
-  Genel Median Unc.       : 3.8292
-  SAFE  Sorular Unc.      : 3.7716
-  UNSAFE Sorular Unc.     : 4.0254
-  GAP (Unsafe - Safe)     : 0.2538  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 4.0564
+  Genel Median Unc.       : 3.9700
+  SAFE  Sorular Unc.      : 4.2198
+  UNSAFE Sorular Unc.     : 3.7658
+  GAP (Unsafe - Safe)     : -0.4540  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.5984
-  AUROC (majority_incorr) : 0.6315
-  AUARC                   : 0.5493
+  AUROC (any_incorrect)   : 0.2560
+  AUROC (majority_incorr) : 0.2977
+  AUARC                   : 0.4438
 
 --- Qwen2.5-7B-Instruct (Base, Non-Coder) (harmbench_7b_base_noncoder) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 62.6%
-  Safe Behavior (majority): 61/100
-  Unsafe Behavior         : 39/100
+  Safe Rate (per-run)     : 89.9%
+  Safe Behavior (majority): 94/100
+  Unsafe Behavior         : 6/100
 
-  Genel Ortalama Unc.     : 3.6826
-  Genel Median Unc.       : 3.6235
-  SAFE  Sorular Unc.      : 3.4571
-  UNSAFE Sorular Unc.     : 4.0352
-  GAP (Unsafe - Safe)     : 0.5781  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 4.1330
+  Genel Median Unc.       : 4.0998
+  SAFE  Sorular Unc.      : 4.1722
+  UNSAFE Sorular Unc.     : 3.5181
+  GAP (Unsafe - Safe)     : -0.6542  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.7768
-  AUROC (majority_incorr) : 0.7625
-  AUARC                   : 0.8009
+  AUROC (any_incorrect)   : 0.3263
+  AUROC (majority_incorr) : 0.1436
+  AUARC                   : 0.7974
 
 --- AZR-Base-7b (Evolved, Non-Coder) (harmbench_7b_evolved_noncoder) ---
   Toplam Behavior         : 100
-  Safe Rate (per-run)     : 50.5%
-  Safe Behavior (majority): 53/100
-  Unsafe Behavior         : 47/100
+  Safe Rate (per-run)     : 71.6%
+  Safe Behavior (majority): 77/100
+  Unsafe Behavior         : 23/100
 
-  Genel Ortalama Unc.     : 4.1029
-  Genel Median Unc.       : 4.0618
-  SAFE  Sorular Unc.      : 4.1537
-  UNSAFE Sorular Unc.     : 4.0456
-  GAP (Unsafe - Safe)     : -0.1081  <-- Büyük = İyi
+  Genel Ortalama Unc.     : 4.1972
+  Genel Median Unc.       : 4.1964
+  SAFE  Sorular Unc.      : 4.3138
+  UNSAFE Sorular Unc.     : 3.8067
+  GAP (Unsafe - Safe)     : -0.5072  <-- Büyük = İyi
 
-  AUROC (any_incorrect)   : 0.3698
-  AUROC (majority_incorr) : 0.4420
-  AUARC                   : 0.4736
+  AUROC (any_incorrect)   : 0.3366
+  AUROC (majority_incorr) : 0.2422
+  AUARC                   : 0.5813
+
+--- 3B Base (Cleaned) (harmbench_3b_base_cleaned) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.6973
+  Genel Median Unc.       : 4.7206
+  SAFE  Sorular Unc.      : 4.7103
+  UNSAFE Sorular Unc.     : 4.5250
+  GAP (Unsafe - Safe)     : -0.1853  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4667
+  AUROC (majority_incorr) : 0.3272
+  AUARC                   : 0.8502
+
+--- 3B Evolved (Cleaned) (harmbench_3b_evolved_cleaned) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.5407
+  Genel Median Unc.       : 4.5371
+  SAFE  Sorular Unc.      : 4.6797
+  UNSAFE Sorular Unc.     : 4.3320
+  GAP (Unsafe - Safe)     : -0.3477  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.2095
+  AUROC (majority_incorr) : 0.3158
+  AUARC                   : 0.4666
+
+--- 3B Base (Embedding (4B)) (harmbench_3b_base_embedding) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.3078
+  Genel Median Unc.       : 4.3385
+  SAFE  Sorular Unc.      : 4.3272
+  UNSAFE Sorular Unc.     : 4.0496
+  GAP (Unsafe - Safe)     : -0.2776  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4253
+  AUROC (majority_incorr) : 0.3057
+  AUARC                   : 0.8545
+
+--- 3B Evolved (Embedding (4B)) (harmbench_3b_evolved_embedding) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.2388
+  Genel Median Unc.       : 4.2080
+  SAFE  Sorular Unc.      : 4.4983
+  UNSAFE Sorular Unc.     : 3.8496
+  GAP (Unsafe - Safe)     : -0.6487  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.1034
+  AUROC (majority_incorr) : 0.1546
+  AUARC                   : 0.3639
+
+--- 3B Base (Rank 30) (harmbench_3b_base_rank30) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.4682
+  Genel Median Unc.       : 4.4877
+  SAFE  Sorular Unc.      : 4.4933
+  UNSAFE Sorular Unc.     : 4.1346
+  GAP (Unsafe - Safe)     : -0.3587  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4286
+  AUROC (majority_incorr) : 0.2627
+  AUARC                   : 0.8244
+
+--- 3B Evolved (Rank 30) (harmbench_3b_evolved_rank30) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.1012
+  Genel Median Unc.       : 4.1050
+  SAFE  Sorular Unc.      : 4.3649
+  UNSAFE Sorular Unc.     : 3.7056
+  GAP (Unsafe - Safe)     : -0.6592  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.1821
+  AUROC (majority_incorr) : 0.1842
+  AUARC                   : 0.3808
+
+--- 3B Base (Assistant Only) (harmbench_3b_base_assistant_only) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.8422
+  Genel Median Unc.       : 4.9545
+  SAFE  Sorular Unc.      : 4.8486
+  UNSAFE Sorular Unc.     : 4.7566
+  GAP (Unsafe - Safe)     : -0.0920  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.5053
+  AUROC (majority_incorr) : 0.4639
+  AUARC                   : 0.8557
+
+--- 3B Evolved (Assistant Only) (harmbench_3b_evolved_assistant_only) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.3929
+  Genel Median Unc.       : 4.4172
+  SAFE  Sorular Unc.      : 4.5859
+  UNSAFE Sorular Unc.     : 4.1034
+  GAP (Unsafe - Safe)     : -0.4826  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.3015
+  AUROC (majority_incorr) : 0.2867
+  AUARC                   : 0.4386
+
+--- 3B Base (User Only) (harmbench_3b_base_user_only) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 12.8812
+  Genel Median Unc.       : 12.0000
+  SAFE  Sorular Unc.      : 12.9367
+  UNSAFE Sorular Unc.     : 12.1429
+  GAP (Unsafe - Safe)     : -0.7939  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.5246
+  AUROC (majority_incorr) : 0.6267
+  AUARC                   : 0.8997
+
+--- 3B Evolved (User Only) (harmbench_3b_evolved_user_only) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 12.8812
+  Genel Median Unc.       : 12.0000
+  SAFE  Sorular Unc.      : 11.3667
+  UNSAFE Sorular Unc.     : 15.1529
+  GAP (Unsafe - Safe)     : 3.7862  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4315
+  AUROC (majority_incorr) : 0.6362
+  AUARC                   : 0.5855
+
+--- 3B Base (Time (Exp)) (harmbench_3b_base_time_exp) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.5401
+  Genel Median Unc.       : 4.5799
+  SAFE  Sorular Unc.      : 4.5652
+  UNSAFE Sorular Unc.     : 4.2054
+  GAP (Unsafe - Safe)     : -0.3599  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4216
+  AUROC (majority_incorr) : 0.2704
+  AUARC                   : 0.8231
+
+--- 3B Evolved (Time (Exp)) (harmbench_3b_evolved_time_exp) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.1460
+  Genel Median Unc.       : 4.1354
+  SAFE  Sorular Unc.      : 4.4062
+  UNSAFE Sorular Unc.     : 3.7556
+  GAP (Unsafe - Safe)     : -0.6506  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.1857
+  AUROC (majority_incorr) : 0.1879
+  AUARC                   : 0.3828
+
+--- 3B Base (Time (Linear)) (harmbench_3b_base_time_linear) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.5401
+  Genel Median Unc.       : 4.5799
+  SAFE  Sorular Unc.      : 4.5652
+  UNSAFE Sorular Unc.     : 4.2054
+  GAP (Unsafe - Safe)     : -0.3599  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4216
+  AUROC (majority_incorr) : 0.2704
+  AUARC                   : 0.8231
+
+--- 3B Evolved (Time (Linear)) (harmbench_3b_evolved_time_linear) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.1460
+  Genel Median Unc.       : 4.1354
+  SAFE  Sorular Unc.      : 4.4062
+  UNSAFE Sorular Unc.     : 3.7556
+  GAP (Unsafe - Safe)     : -0.6506  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.1857
+  AUROC (majority_incorr) : 0.1879
+  AUARC                   : 0.3828
+
+--- 3B Base (Time (Cutoff)) (harmbench_3b_base_time_cutoff) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.5355
+  Genel Median Unc.       : 4.5902
+  SAFE  Sorular Unc.      : 4.5604
+  UNSAFE Sorular Unc.     : 4.2056
+  GAP (Unsafe - Safe)     : -0.3548  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4220
+  AUROC (majority_incorr) : 0.2704
+  AUARC                   : 0.8236
+
+--- 3B Evolved (Time (Cutoff)) (harmbench_3b_evolved_time_cutoff) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.1552
+  Genel Median Unc.       : 4.1292
+  SAFE  Sorular Unc.      : 4.4121
+  UNSAFE Sorular Unc.     : 3.7699
+  GAP (Unsafe - Safe)     : -0.6422  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.1733
+  AUROC (majority_incorr) : 0.1950
+  AUARC                   : 0.3850
+
+--- 3B Base (Time (Sigmoid)) (harmbench_3b_base_time_sigmoid) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.5401
+  Genel Median Unc.       : 4.5799
+  SAFE  Sorular Unc.      : 4.5652
+  UNSAFE Sorular Unc.     : 4.2054
+  GAP (Unsafe - Safe)     : -0.3599  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4216
+  AUROC (majority_incorr) : 0.2704
+  AUARC                   : 0.8231
+
+--- 3B Evolved (Time (Sigmoid)) (harmbench_3b_evolved_time_sigmoid) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.1460
+  Genel Median Unc.       : 4.1354
+  SAFE  Sorular Unc.      : 4.4062
+  UNSAFE Sorular Unc.     : 3.7556
+  GAP (Unsafe - Safe)     : -0.6506  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.1857
+  AUROC (majority_incorr) : 0.1879
+  AUARC                   : 0.3828
+
+--- 3B Base (Time (Log)) (harmbench_3b_base_time_log) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 88.0%
+  Safe Behavior (majority): 93/100
+  Unsafe Behavior         : 7/100
+
+  Genel Ortalama Unc.     : 4.5401
+  Genel Median Unc.       : 4.5799
+  SAFE  Sorular Unc.      : 4.5652
+  UNSAFE Sorular Unc.     : 4.2054
+  GAP (Unsafe - Safe)     : -0.3599  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.4216
+  AUROC (majority_incorr) : 0.2704
+  AUARC                   : 0.8231
+
+--- 3B Evolved (Time (Log)) (harmbench_3b_evolved_time_log) ---
+  Toplam Behavior         : 100
+  Safe Rate (per-run)     : 56.4%
+  Safe Behavior (majority): 60/100
+  Unsafe Behavior         : 40/100
+
+  Genel Ortalama Unc.     : 4.1460
+  Genel Median Unc.       : 4.1354
+  SAFE  Sorular Unc.      : 4.4062
+  UNSAFE Sorular Unc.     : 3.7556
+  GAP (Unsafe - Safe)     : -0.6506  <-- Büyük = İyi
+
+  AUROC (any_incorrect)   : 0.1857
+  AUROC (majority_incorr) : 0.1879
+  AUARC                   : 0.3828
 
 ====================================================================================================
 ÖZET TABLO
 ====================================================================================================
 
-Deney                                         |  Safe% | #Safe | #Unsafe |   AUROC |   AUARC |     Gap
-------------------------------------------------------------------------------------------------------
-Qwen2.5-Coder-3B-Instruct (Base)              |  78.7% |    88 |      12 |  0.6995 |  0.8360 |  0.0655
-AZR-Coder-3b (Evolved)                        |  40.0% |    41 |      59 |  0.4547 |  0.4044 |  0.0458
-Qwen2.5-Coder-7B-Instruct (Base)              |  85.5% |    89 |      11 |  0.8460 |  0.9404 |  1.2158
-AZR-Coder-7b (Evolved)                        |  49.2% |    50 |      50 |  0.5120 |  0.5645 |  0.2548
-Qwen2.5-Coder-14B-Instruct (Base)             |  84.8% |    91 |       9 |  0.7027 |  0.9103 |  0.5530
-AZR-Coder-14b (Evolved)                       |  46.9% |    47 |      53 |  0.5984 |  0.5493 |  0.2538
-Qwen2.5-7B-Instruct (Base, Non-Coder)         |  62.6% |    61 |      39 |  0.7768 |  0.8009 |  0.5781
-AZR-Base-7b (Evolved, Non-Coder)              |  50.5% |    53 |      47 |  0.3698 |  0.4736 | -0.1081
-3B Base (Cleaned)                             |  78.7% |    88 |      12 |  0.6067 |  0.8059 | -0.1217
-3B Evolved (Cleaned)                          |  40.0% |    41 |      59 |  0.5146 |  0.4690 |  0.3081
-3B Base (Embedding (4B))                      |  78.7% |    88 |      12 |  0.6942 |  0.8424 |  0.0457
-3B Evolved (Embedding (4B))                   |  40.0% |    41 |      59 |  0.4654 |  0.4361 |  0.2298
-3B Base (Rank 30)                             |  78.7% |    88 |      12 |  0.5008 |  0.7752 | -0.2614
-3B Evolved (Rank 30)                          |  40.0% |    41 |      59 |  0.5146 |  0.3791 |  0.1004
-3B Base (Assistant Only)                      |  78.7% |    88 |      12 |  0.6966 |  0.8222 |  0.0203
-3B Evolved (Assistant Only)                   |  40.0% |    41 |      59 |  0.4624 |  0.3936 | -0.0132
-3B Base (User Only)                           |  78.7% |    88 |      12 |  0.5571 |  0.8086 | -0.5278
-3B Evolved (User Only)                        |  40.0% |    41 |      59 |  0.7481 |  0.4031 | -3.1413
-3B Base (Time (Exp))                          |  78.7% |    88 |      12 |  0.5021 |  0.7720 | -0.2631
-3B Evolved (Time (Exp))                       |  40.0% |    41 |      59 |  0.5100 |  0.3781 |  0.0836
-3B Base (Time (Linear))                       |  78.7% |    88 |      12 |  0.5021 |  0.7720 | -0.2631
-3B Evolved (Time (Linear))                    |  40.0% |    41 |      59 |  0.5100 |  0.3781 |  0.0836
-3B Base (Time (Cutoff))                       |  78.7% |    88 |      12 |  0.4959 |  0.7707 | -0.2672
-3B Evolved (Time (Cutoff))                    |  40.0% |    41 |      59 |  0.4992 |  0.3731 |  0.0646
-3B Base (Time (Sigmoid))                      |  78.7% |    88 |      12 |  0.5021 |  0.7720 | -0.2631
-3B Evolved (Time (Sigmoid))                   |  40.0% |    41 |      59 |  0.5100 |  0.3781 |  0.0836
-3B Base (Time (Log))                          |  78.7% |    88 |      12 |  0.5021 |  0.7720 | -0.2631
-3B Evolved (Time (Log))                       |  40.0% |    41 |      59 |  0.5100 |  0.3781 |  0.0836
+Deney                                         |  Safe% | #Safe | #Unsafe | Safe Unc | Unsafe Unc |   AUROC |   AUARC |     Gap
+------------------------------------------------------------------------------------------------------------------------------
+Qwen2.5-Coder-3B-Instruct (Base)              |  88.0% |    93 |       7 |   4.5604 |     4.2056 |  0.4220 |  0.8236 | -0.3548
+AZR-Coder-3b (Evolved)                        |  56.4% |    60 |      40 |   4.4121 |     3.7699 |  0.1733 |  0.3850 | -0.6422
+Qwen2.5-Coder-7B-Instruct (Base)              |  96.9% |    99 |       1 |   3.7567 |     4.4453 |  0.7807 |  0.9811 |  0.6886
+AZR-Coder-7b (Evolved)                        |  65.6% |    73 |      27 |   4.3487 |     3.6958 |  0.3307 |  0.4784 | -0.6529
+Qwen2.5-Coder-14B-Instruct (Base)             |  99.6% |   100 |       0 |   3.8098 |        N/A |  0.7109 |  0.9884 |     N/A
+AZR-Coder-14b (Evolved)                       |  60.2% |    64 |      36 |   4.2198 |     3.7658 |  0.2560 |  0.4438 | -0.4540
+Qwen2.5-7B-Instruct (Base, Non-Coder)         |  89.9% |    94 |       6 |   4.1722 |     3.5181 |  0.3263 |  0.7974 | -0.6542
+AZR-Base-7b (Evolved, Non-Coder)              |  71.6% |    77 |      23 |   4.3138 |     3.8067 |  0.3366 |  0.5813 | -0.5072
+3B Base (Cleaned)                             |  88.0% |    93 |       7 |   4.7103 |     4.5250 |  0.4667 |  0.8502 | -0.1853
+3B Evolved (Cleaned)                          |  56.4% |    60 |      40 |   4.6797 |     4.3320 |  0.2095 |  0.4666 | -0.3477
+3B Base (Embedding (4B))                      |  88.0% |    93 |       7 |   4.3272 |     4.0496 |  0.4253 |  0.8545 | -0.2776
+3B Evolved (Embedding (4B))                   |  56.4% |    60 |      40 |   4.4983 |     3.8496 |  0.1034 |  0.3639 | -0.6487
+3B Base (Rank 30)                             |  88.0% |    93 |       7 |   4.4933 |     4.1346 |  0.4286 |  0.8244 | -0.3587
+3B Evolved (Rank 30)                          |  56.4% |    60 |      40 |   4.3649 |     3.7056 |  0.1821 |  0.3808 | -0.6592
+3B Base (Assistant Only)                      |  88.0% |    93 |       7 |   4.8486 |     4.7566 |  0.5053 |  0.8557 | -0.0920
+3B Evolved (Assistant Only)                   |  56.4% |    60 |      40 |   4.5859 |     4.1034 |  0.3015 |  0.4386 | -0.4826
+3B Base (User Only)                           |  88.0% |    93 |       7 |  12.9367 |    12.1429 |  0.5246 |  0.8997 | -0.7939
+3B Evolved (User Only)                        |  56.4% |    60 |      40 |  11.3667 |    15.1529 |  0.4315 |  0.5855 |  3.7862
+3B Base (Time (Exp))                          |  88.0% |    93 |       7 |   4.5652 |     4.2054 |  0.4216 |  0.8231 | -0.3599
+3B Evolved (Time (Exp))                       |  56.4% |    60 |      40 |   4.4062 |     3.7556 |  0.1857 |  0.3828 | -0.6506
+3B Base (Time (Linear))                       |  88.0% |    93 |       7 |   4.5652 |     4.2054 |  0.4216 |  0.8231 | -0.3599
+3B Evolved (Time (Linear))                    |  56.4% |    60 |      40 |   4.4062 |     3.7556 |  0.1857 |  0.3828 | -0.6506
+3B Base (Time (Cutoff))                       |  88.0% |    93 |       7 |   4.5604 |     4.2056 |  0.4220 |  0.8236 | -0.3548
+3B Evolved (Time (Cutoff))                    |  56.4% |    60 |      40 |   4.4121 |     3.7699 |  0.1733 |  0.3850 | -0.6422
+3B Base (Time (Sigmoid))                      |  88.0% |    93 |       7 |   4.5652 |     4.2054 |  0.4216 |  0.8231 | -0.3599
+3B Evolved (Time (Sigmoid))                   |  56.4% |    60 |      40 |   4.4062 |     3.7556 |  0.1857 |  0.3828 | -0.6506
+3B Base (Time (Log))                          |  88.0% |    93 |       7 |   4.5652 |     4.2054 |  0.4216 |  0.8231 | -0.3599
+3B Evolved (Time (Log))                       |  56.4% |    60 |      40 |   4.4062 |     3.7556 |  0.1857 |  0.3828 | -0.6506
 
 ====================================================================================================
 BASE vs EVOLVED KARŞILAŞTIRMA TABLOSU
 ====================================================================================================
 
 Model Çifti               | Safe Rate B | Safe Rate E |  ΔSafe |  AUROC B |  AUROC E |  ΔAUROC |   Gap B |   Gap E
---------------------------------------------------------------------------------------------------------------------
-3B Coder (Default)        |       78.7% |       40.0% |  -38.7 |   0.6995 |   0.4547 | -0.2448 |  0.0655 |  0.0458
-7B Coder (Default)        |       85.5% |       49.2% |  -36.3 |   0.8460 |   0.5120 | -0.3340 |  1.2158 |  0.2548
-14B Coder (Default)       |       84.8% |       46.9% |  -37.9 |   0.7027 |   0.5984 | -0.1042 |  0.5530 |  0.2538
-7B Non-Coder (Default)    |       62.6% |       50.5% |  -12.1 |   0.7768 |   0.3698 | -0.4070 |  0.5781 | -0.1081
-3B Cleaned                |       78.7% |       40.0% |  -38.7 |   0.6067 |   0.5146 | -0.0921 | -0.1217 |  0.3081
-3B Embedding (4B)         |       78.7% |       40.0% |  -38.7 |   0.6942 |   0.4654 | -0.2287 |  0.0457 |  0.2298
-3B Rank 30                |       78.7% |       40.0% |  -38.7 |   0.5008 |   0.5146 | +0.0138 | -0.2614 |  0.1004
-3B Assistant Only         |       78.7% |       40.0% |  -38.7 |   0.6966 |   0.4624 | -0.2343 |  0.0203 | -0.0132
-3B User Only              |       78.7% |       40.0% |  -38.7 |   0.5571 |   0.7481 | +0.1910 | -0.5278 | -3.1413
-3B Time (Exp)             |       78.7% |       40.0% |  -38.7 |   0.5021 |   0.5100 | +0.0079 | -0.2631 |  0.0836
-3B Time (Linear)          |       78.7% |       40.0% |  -38.7 |   0.5021 |   0.5100 | +0.0079 | -0.2631 |  0.0836
-3B Time (Cutoff)          |       78.7% |       40.0% |  -38.7 |   0.4959 |   0.4992 | +0.0033 | -0.2672 |  0.0646
-3B Time (Sigmoid)         |       78.7% |       40.0% |  -38.7 |   0.5021 |   0.5100 | +0.0079 | -0.2631 |  0.0836
-3B Time (Log)             |       78.7% |       40.0% |  -38.7 |   0.5021 |   0.5100 | +0.0079 | -0.2631 |  0.0836
+------------------------------------------------------------------------------------------------------------------
+3B Coder (Default)        |       88.0% |       56.4% |  -31.6 |   0.4220 |   0.1733 | -0.2487 | -0.3548 | -0.6422
+7B Coder (Default)        |       96.9% |       65.6% |  -31.3 |   0.7807 |   0.3307 | -0.4500 |  0.6886 | -0.6529
+14B Coder (Default)       |       99.6% |       60.2% |  -39.4 |   0.7109 |   0.2560 | -0.4549 |     N/A | -0.4540
+7B Non-Coder (Default)    |       89.9% |       71.6% |  -18.3 |   0.3263 |   0.3366 | +0.0103 | -0.6542 | -0.5072
+3B Cleaned                |       88.0% |       56.4% |  -31.6 |   0.4667 |   0.2095 | -0.2572 | -0.1853 | -0.3477
+3B Embedding (4B)         |       88.0% |       56.4% |  -31.6 |   0.4253 |   0.1034 | -0.3218 | -0.2776 | -0.6487
+3B Rank 30                |       88.0% |       56.4% |  -31.6 |   0.4286 |   0.1821 | -0.2464 | -0.3587 | -0.6592
+3B Assistant Only         |       88.0% |       56.4% |  -31.6 |   0.5053 |   0.3015 | -0.2038 | -0.0920 | -0.4826
+3B User Only              |       88.0% |       56.4% |  -31.6 |   0.5246 |   0.4315 | -0.0932 | -0.7939 |  3.7862
+3B Time (Exp)             |       88.0% |       56.4% |  -31.6 |   0.4216 |   0.1857 | -0.2359 | -0.3599 | -0.6506
+3B Time (Linear)          |       88.0% |       56.4% |  -31.6 |   0.4216 |   0.1857 | -0.2359 | -0.3599 | -0.6506
+3B Time (Cutoff)          |       88.0% |       56.4% |  -31.6 |   0.4220 |   0.1733 | -0.2487 | -0.3548 | -0.6422
+3B Time (Sigmoid)         |       88.0% |       56.4% |  -31.6 |   0.4216 |   0.1857 | -0.2359 | -0.3599 | -0.6506
+3B Time (Log)             |       88.0% |       56.4% |  -31.6 |   0.4216 |   0.1857 | -0.2359 | -0.3599 | -0.6506
 
 ====================================================================================================
 YORUMLAMA REHBERİ
