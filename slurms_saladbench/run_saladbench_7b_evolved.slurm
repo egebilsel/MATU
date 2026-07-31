@@ -27,7 +27,6 @@ echo "=== Step 00: Generate SaladBench Logs (GPU) ==="
 python examples/generate_logs_saladbench.py \
   --max_items 100 \
   --model "andrewzh/Absolute_Zero_Reasoner-Coder-7b" \
-  --max_items 100 \
   --runs 10 \
   --seed 42 \
   --out quick_start/saladbench_7b_evolved/conversation_logs_saladbench.json
