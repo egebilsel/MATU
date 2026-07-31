@@ -96,9 +96,9 @@ def load_saladbench_items(
     """
     print("Loading OpenSafetyLab/Salad-Data from HuggingFace datasets...")
     try:
-        ds = load_dataset("OpenSafetyLab/Salad-Data", split="test")
+        ds = load_dataset("OpenSafetyLab/Salad-Data", "base_set", split="test")
     except Exception:
-        ds = load_dataset("OpenSafetyLab/Salad-Data", split="train")
+        ds = load_dataset("OpenSafetyLab/Salad-Data", "base_set", split="train")
         
     items = list(ds)
     rng = random.Random(seed)
