@@ -125,6 +125,7 @@ def build_matrix_list(
     *,
     combine_mode: str,
     normalize: bool,
+    # Time weighting methods: none, linear, exp, sigmoid, cutoff, log
     time_weighting: str = "none",
 ) -> list[np.ndarray]:
     role_runs = [d[key] for d in embedding_dicts if key in d]
@@ -152,7 +153,7 @@ def build_matrix_list(
     for matrix in matrices:
         if matrix.size == 0:
             continue
-            
+        # Apply time weighting if specified
         if time_weighting in ("linear", "exp", "sigmoid", "cutoff", "log"):
             T = matrix.shape[0]
             if T > 1:
@@ -193,6 +194,7 @@ def main() -> None:
     parser.add_argument("--tol", type=float, default=1e-6)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--combine_mode", choices=["interleave", "concat_steps"], default="interleave")
+    # Time weighting options
     parser.add_argument("--time_weighting", choices=["none", "linear", "exp", "sigmoid", "cutoff", "log"], default="none")
     parser.add_argument("--no_normalize", action="store_true", help="Disable per-matrix L2 normalization.")
     parser.add_argument("--legacy_fit_out", type=Path, default=None, help="Optional output matching old fit_dict format.")
@@ -213,6 +215,7 @@ def main() -> None:
             key,
             combine_mode=args.combine_mode,
             normalize=not args.no_normalize,
+            # Apply time weighting if specified
             time_weighting=args.time_weighting,
         )
         fit_values = []
