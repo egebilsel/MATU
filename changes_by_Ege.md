@@ -1,3 +1,20 @@
+# Code Changes
+analysis/analyze_harmbench_uncertainty.py:
+- created by Ege for HarmBench
+- added to calculate AUROC, AUARC, safe rate, and base vs evolved comparisons for HarmBench experiments
+
+analysis/analyze_saladbench_uncertainty.py:
+- created by Ege for SaladBench experiments
+- added to calculate AUROC, AUARC, safe rate, and base vs evolved comparisons for SaladBench experiments
+
+analysis/analyze_math_uncertainty.py:
+- created by Ege for MATH experiments
+- added to calculate AUROC, AUARC, safe rate, and base vs evolved comparisons for MATH experiments
+
+baselines/run_eigv_analysis.py:
+- created by Ege 
+- added to calculate Eigenvalue (EigV) / NLI uncertainty metric for MATH experiments to compare the MATU and EigV
+
 examples/generate_logs_harmbench.py:
 - created by Ege for harmbench experiments
 - used for generating logs for harmbench
@@ -55,26 +72,32 @@ quick_start/code/grade_saladbench.py:
 - supports both fast keyword-based matching and LLM Judge evaluation
 - recently updated to default to the LLM judge and fixed hardcoded paths
 
-analysis/analyze_harmbench_uncertainty.py:
+
+# Directories
+quick_start/data/
+- changed by Ege
+- SaladBench and HarmBench is downloaded under this directory
+
+quick_start/math/
 - created by Ege
-- added to calculate AUROC, AUARC, safe rate, and base vs evolved comparisons for HarmBench experiments
+- it includes the logs of the math experiments
 
-analysis/analyze_saladbench_uncertainty.py:
+quick_start/harmbench/
 - created by Ege
-- added to calculate AUROC, AUARC, safe rate, and base vs evolved comparisons for SaladBench experiments
+- it includes the logs of the harmbench experiments
 
-analysis/analyze_math_uncertainty.py:
+quick_start/saladbench/
 - created by Ege
-- added to calculate AUROC, AUARC, safe rate, and base vs evolved comparisons for MATH experiments
+- it includes the logs of the saladbench experiments
 
-baselines/run_eigv_analysis.py:
-- created by Ege 
-- added to calculate Eigenvalue (EigV) / NLI uncertainty metric for MATH experiments
+quick_start/reference_results/
+- created by Ege
+- it includes the results of the reference experiments
 
+results/
+- created by Ege
+- it includes the results of the experiments
 
-## 14 August 2026
-- `quick_start/` klasörü altındaki deney çıktı klasörleri 3 ana klasör altına ayrıldı (`math`, `harmbench`, `saladbench`). Ortak veriler (`data/`, `results/`) olduğu gibi bırakıldı.
-- Generator scriptleri (`generate_harmbench_slurms.py`, `generate_saladbench_slurms.py`, `generate_time_weighting_slurms.py`) silinmişti, git üzerinden kurtarılıp output pathleri düzenlendi ve slurm dosyaları yeni pathlere göre yeniden üretildi.
-- Bütün `slurms/` altındaki `.slurm` dosyalarının içeriğindeki `quick_start/` pathleri otomatik bir script aracılığıyla ilgili deney klasörlerini işaret edecek şekilde (`math/`, `harmbench/`, `saladbench/`) güncellendi.
-- Analiz scriptleri (`analysis/analyze_*.py`), değerlendirme (grader) scriptleri (`grade_*.py`) ve plot scriptleri yeni dizin yapısını destekleyecek şekilde güncellendi.
-- `README.md` içerisindeki eski `quick_start/generated` örnekleri, yeni `quick_start/math/generated` klasörünü gösterecek şekilde güncellendi.
+scatter_plots/
+- created by Ege
+- it includes the scatter plots of the experiments
