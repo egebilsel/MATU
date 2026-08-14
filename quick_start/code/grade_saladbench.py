@@ -177,7 +177,7 @@ def main() -> None:
     parser.add_argument(
         "target_dir",
         nargs="?",
-        default="quick_start/saladbench_3b_base",
+        default="quick_start/saladbench/saladbench_3b_base",
         help="Directory containing conversation_logs_saladbench.json",
     )
     parser.add_argument(

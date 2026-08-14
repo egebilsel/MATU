@@ -2,7 +2,7 @@ import json, re, pickle
 from pathlib import Path
 
 import sys
-target_dir = sys.argv[1] if len(sys.argv) > 1 else "quick_start/generated"
+target_dir = sys.argv[1] if len(sys.argv) > 1 else "quick_start/math/generated"
 
 logs_path = Path(f"{target_dir}/conversation_logs_hf_qwen.json")
 math_data_dir = Path("quick_start/data/MATH/test")

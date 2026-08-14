@@ -177,7 +177,7 @@ def main() -> None:
     parser.add_argument(
         "target_dir",
         nargs="?",
-        default="quick_start/harmbench_3b_base",
+        default="quick_start/harmbench/harmbench_3b_base",
         help="Directory containing conversation_logs_harmbench.json",
     )
     parser.add_argument(

@@ -1,0 +1,8 @@
+{
+  "embedding_model": "Qwen/Qwen3-Embedding-4B",
+  "embedding_dim": 2560,
+  "roles": [
+    "user",
+    "assistant"
+  ]
+}
