@@ -7,9 +7,9 @@ from matu.evaluate_uncertainty import score_from_value, accuracy_from_labels
 
 def get_detailed_uncertainty(model_name):
     # Log and Output Paths
-    log_path = Path(f"quick_start/{model_name}/conversation_logs_hf_qwen.json")
-    unc_path = Path(f"quick_start/{model_name}/results/eigv_uncertainty.pkl")
-    acc_path = Path(f"quick_start/{model_name}/results/accuracy_dict_generated.pkl")
+    log_path = Path(f"quick_start/math/{model_name}/conversation_logs_hf_qwen.json")
+    unc_path = Path(f"quick_start/math/{model_name}/results/eigv_uncertainty.pkl")
+    acc_path = Path(f"quick_start/math/{model_name}/results/accuracy_dict_generated.pkl")
     
     # If the EigV pkl does not exist, calculate it using baselines/eigv.py
     if not unc_path.exists():
