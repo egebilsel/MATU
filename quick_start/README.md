@@ -56,11 +56,11 @@ wrappers.
 
 | File | Description |
 | --- | --- |
-| `data/conversation_logs_Math_qwen2.5.json` | Ready-to-use MATH repeated conversation logs. |
-| `data/conversation_logs_MMLU_Autogen_qwen2.5.json` | MMLU AutoGen conversation log sample for the quick-start setting. |
-| `data/embeddings_Math_qwen2.5_qwen3.zip` | Zipped Qwen3 role embedding matrices for MATH. |
-| `data/embeddings_MMLU_Autogen_qwen2.5.zip` | Zipped AutoGen analyst, verifier, and star embedding matrices for MMLU. |
-| `data/embedding_metadata.json` | Embedding model metadata. |
+| `data/samples/conversation_logs_Math_qwen2.5.json` | Ready-to-use MATH repeated conversation logs. |
+| `data/samples/conversation_logs_MMLU_Autogen_qwen2.5.json` | MMLU AutoGen conversation log sample for the quick-start setting. |
+| `data/samples/embeddings_Math_qwen2.5_qwen3.zip` | Zipped Qwen3 role embedding matrices for MATH. |
+| `data/samples/embeddings_MMLU_Autogen_qwen2.5.zip` | Zipped AutoGen analyst, verifier, and star embedding matrices for MMLU. |
+| `data/samples/embedding_metadata.json` | Embedding model metadata. |
 | `results/fit_dict_Math_qwen2.5_qwen3embedding.pkl` | Ready-to-use MATU fit curves for MATH. |
 | `results/uncertainty_Math_qwen2.5.pkl` | Ready-to-use scalar MATU uncertainty for MATH. |
 | `results/accuracy_dict_Math_qwen2.5.pkl` | MATH repeated-run correctness labels. |
@@ -73,8 +73,8 @@ wrappers.
 
 | Step | Command | What It Does | Required? | Output |
 | --- | --- | --- | --- | --- |
-| 00: Generate logs | `python quick_start/code/00_generate_logs_*.py` | Collects new logs when users want to replace the included samples. | Optional; included logs are already in `data/`. | New logs under `quick_start/generated/`. |
-| 01: Embed logs | `python quick_start/code/01_embed_reference_logs.py` | Stages the provided MATH embeddings by default, or recomputes Qwen3 embeddings when external model settings are enabled. | Optional; reference embeddings are already zipped in `data/`. | `quick_start/generated/embeddings/*.pkl`. |
+| 00: Generate logs | `python quick_start/code/00_generate_logs_*.py` | Collects new logs when users want to replace the included samples. | Optional; included logs are already in `data/samples/`. | New logs under `quick_start/generated/`. |
+| 01: Embed logs | `python quick_start/code/01_embed_reference_logs.py` | Stages the provided MATH embeddings by default, or recomputes Qwen3 embeddings when external model settings are enabled. | Optional; reference embeddings are already zipped in `data/samples/`. | `quick_start/generated/embeddings/*.pkl`. |
 | 02: Run CP-2 | `python quick_start/code/02_run_cp2_from_generated_embeddings.py --embedding-source provided` | Recomputes MATU fit curves from provided, generated, or explicitly passed embeddings. | Optional; reference fit curves are already in `results/`. | `quick_start/generated/results/matu_scores.pkl` and `fit_dict_generated.pkl`. |
 | 03: Convert fit curves | `python quick_start/code/03_fit_to_uncertainty_*.py` | Converts MATU fit curves to scalar uncertainty. | Optional for included files; needed after generated CP-2. | Included or generated uncertainty `.pkl`. |
 | 04: Evaluate MATU | `python quick_start/code/04_evaluate_reference_results.py --sample all` | Loads included MATU results and labels, then prints MATH and MMLU metrics. | Yes, for fastest verification. | Console AUROC/AUARC. |
@@ -82,7 +82,7 @@ wrappers.
 
 ## 00: Optional Generate New Logs
 
-The included logs are already available in `quick_start/data/`, so generation is
+The included logs are already available in `quick_start/data/samples/`, so generation is
 not needed for the quick-start result. Run these only to collect new logs.
 
 **Important:** `00_generate_logs_camel_gpt.py` requires `OPENAI_API_KEY` in
@@ -234,7 +234,7 @@ included in this quick start:
 
 ```bash
 python baselines/eigv.py \
-  --logs quick_start/data/conversation_logs_Math_qwen2.5.json \
+  --logs quick_start/data/samples/conversation_logs_Math_qwen2.5.json \
   --mode final \
   --out quick_start/generated/results/eigv_final.pkl
 ```

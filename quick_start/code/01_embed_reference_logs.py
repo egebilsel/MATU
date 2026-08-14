@@ -26,7 +26,7 @@ def main() -> None:
         "-m",
         "matu.embed_logs",
         "--logs",
-        str(QUICK_START / "data" / "conversation_logs_Math_qwen2.5.json"),
+        str(QUICK_START / "data" / "samples" / "conversation_logs_Math_qwen2.5.json"),
         "--out_dir",
         str(OUT_DIR),
         "--roles",

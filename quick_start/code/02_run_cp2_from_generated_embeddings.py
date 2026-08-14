@@ -17,7 +17,7 @@ QUICK_START = Path(__file__).resolve().parents[1]
 REPO_ROOT = QUICK_START.parent
 EMB_DIR = QUICK_START / "generated" / "embeddings"
 REFERENCE_EMB_DIR = QUICK_START / "generated" / "reference_embeddings" / "math"
-REFERENCE_ZIP = QUICK_START / "data" / "embeddings_Math_qwen2.5_qwen3.zip"
+REFERENCE_ZIP = QUICK_START / "data" / "samples" / "embeddings_Math_qwen2.5_qwen3.zip"
 OUT_DIR = QUICK_START / "generated" / "results"
 REFERENCE_EMBEDDINGS = (
     (

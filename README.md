@@ -137,10 +137,10 @@ embeddings automatically when needed.
 
 | File | Description |
 | --- | --- |
-| `quick_start/data/conversation_logs_Math_qwen2.5.json` | MATH repeated conversation logs for the public quick-start sample. |
-| `quick_start/data/conversation_logs_MMLU_Autogen_qwen2.5.json` | MMLU AutoGen conversation log sample for the quick-start setting. |
-| `quick_start/data/embeddings_Math_qwen2.5_qwen3.zip` | Zipped Qwen3 role embedding matrices for the MATH sample. Extract before inspecting or reusing the raw matrices. |
-| `quick_start/data/embeddings_MMLU_Autogen_qwen2.5.zip` | Zipped AutoGen analyst, verifier, and star embedding matrices for the MMLU sample. Extract before inspecting or reusing the raw matrices. |
+| `quick_start/data/samples/conversation_logs_Math_qwen2.5.json` | MATH repeated conversation logs for the public quick-start sample. |
+| `quick_start/data/samples/conversation_logs_MMLU_Autogen_qwen2.5.json` | MMLU AutoGen conversation log sample for the quick-start setting. |
+| `quick_start/data/samples/embeddings_Math_qwen2.5_qwen3.zip` | Zipped Qwen3 role embedding matrices for the MATH sample. Extract before inspecting or reusing the raw matrices. |
+| `quick_start/data/samples/embeddings_MMLU_Autogen_qwen2.5.zip` | Zipped AutoGen analyst, verifier, and star embedding matrices for the MMLU sample. Extract before inspecting or reusing the raw matrices. |
 | `quick_start/results/fit_dict_Math_qwen2.5_qwen3embedding.pkl` | Included MATU fit curves for MATH. |
 | `quick_start/results/uncertainty_Math_qwen2.5.pkl` | Included scalar MATU uncertainty for MATH. |
 | `quick_start/results/accuracy_dict_Math_qwen2.5.pkl` | MATH repeated-run correctness labels. |
@@ -161,7 +161,7 @@ cp quick_start/.env.example quick_start/.env
 ```
 
 Step `00` is optional log generation. The public logs are already included in
-`quick_start/data/`, so users only run these scripts when they want to create
+`quick_start/data/samples/`, so users only run these scripts when they want to create
 new conversation logs.
 
 **Important:** `00_generate_logs_camel_gpt.py` requires `OPENAI_API_KEY` in
@@ -173,15 +173,15 @@ Hugging Face model access through `MATU_QWEN_MODEL` and, if needed,
 **You may skip this optional `00` step if you do not have API_key or GPU**
 
 ```bash
-# 00: MATH + CAMEL/OpenAI example -> new logs under quick_start/generated/
+# 00: MATH + CAMEL/OpenAI example -> new logs under quick_start/math/generated/
 python quick_start/code/00_generate_logs_camel_gpt.py
 
-# 00: MATH + HF/Qwen example -> new logs under quick_start/generated/
+# 00: MATH + HF/Qwen example -> new logs under quick_start/math/generated/
 python quick_start/code/00_generate_logs_hf_qwen.py
 ```
 
 Step `01` prepares embedding matrices under
-`quick_start/generated/embeddings/`. By default, it stages the provided MATH
+`quick_start/math/generated/embeddings/`. By default, it stages the provided MATH
 embeddings without downloading a model. Set `MATU_RUN_EXTERNAL=1` or
 `MATU_MODEL_CACHE` if you want to recompute Qwen3 embeddings from the included
 MATH conversation log.
@@ -200,18 +200,18 @@ repository does not carry large raw embedding `.pkl` files. When Step `02`
 stages the MATH archive with `--embedding-source provided`, or when you extract
 the archive manually, the role files are:
 
-- User-role embeddings: `quick_start/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl`
-- Assistant-role embeddings: `quick_start/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl`
+- User-role embeddings: `quick_start/math/generated/reference_embeddings/math/user_embedding_matrices_Math_qwen2.5_qwen3.pkl`
+- Assistant-role embeddings: `quick_start/math/generated/reference_embeddings/math/assistant_embedding_matrices_Math_qwen2.5_qwen3.pkl`
 
 The MMLU AutoGen archive provides one embedding-matrix file per AutoGen role:
 
-- Analyst-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_analyst_embedding_matrices_MMLU_HF_qwen2.5.pkl`
-- Verifier-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_verifier_embedding_matrices_MMLU_HF_qwen2.5.pkl`
-- Star-role embeddings: `quick_start/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedding_matrices_MMLU_HF_qwen2.5.pkl`
+- Analyst-role embeddings: `quick_start/math/generated/reference_embeddings/mmlu_autogen_qwen/autogen_analyst_embedding_matrices_MMLU_HF_qwen2.5.pkl`
+- Verifier-role embeddings: `quick_start/math/generated/reference_embeddings/mmlu_autogen_qwen/autogen_verifier_embedding_matrices_MMLU_HF_qwen2.5.pkl`
+- Star-role embeddings: `quick_start/math/generated/reference_embeddings/mmlu_autogen_qwen/autogen_star_embedding_matrices_MMLU_HF_qwen2.5.pkl`
 
 Step `02` reruns CP-2 through the quick-start wrapper. It can read our provided
 MATH embeddings, Step `01` generated embeddings, or explicit embedding pickle
-paths. It writes regenerated outputs under `quick_start/generated/results/`;
+paths. It writes regenerated outputs under `quick_start/math/generated/results/`;
 the included reference fit curves remain in `quick_start/results/`.
 
 ```bash
@@ -237,7 +237,7 @@ python quick_start/code/02_run_cp2_from_generated_embeddings.py \
 Step `03` converts fit curves into scalar uncertainty. The reference script
 rebuilds the included MATH uncertainty file in `quick_start/results/`; the
 generated script converts the optional CP-2 output in
-`quick_start/generated/results/`.
+`quick_start/math/generated/results/`.
 
 ```bash
 # 03: included MATH fit_dict -> included scalar uncertainty
@@ -292,27 +292,27 @@ Run the same core stages through the CLI:
 ```bash
 # MATH + Qwen2.5 logs -> Qwen3 role embeddings
 matu embed \
-  --logs quick_start/data/conversation_logs_Math_qwen2.5.json \
-  --out_dir quick_start/generated/embeddings \
+  --logs quick_start/data/samples/conversation_logs_Math_qwen2.5.json \
+  --out_dir quick_start/math/generated/embeddings \
   --roles user assistant
 
 # MATH + generated Qwen3 embeddings -> CP-2 fit curves
 matu cp2 \
   --embeddings \
-  quick_start/generated/embeddings/user_embedding_matrices.pkl \
-  quick_start/generated/embeddings/assistant_embedding_matrices.pkl \
-  --out quick_start/generated/results/matu_scores.pkl \
-  --legacy_fit_out quick_start/generated/results/fit_dict_generated.pkl \
+  quick_start/math/generated/embeddings/user_embedding_matrices.pkl \
+  quick_start/math/generated/embeddings/assistant_embedding_matrices.pkl \
+  --out quick_start/math/generated/results/matu_scores.pkl \
+  --legacy_fit_out quick_start/math/generated/results/fit_dict_generated.pkl \
   --max_rank 50
 
 # MATH + CP-2 fit curves -> scalar MATU uncertainty
 matu fit \
-  --fit_dict quick_start/generated/results/matu_scores.pkl \
-  --out quick_start/generated/results/uncertainty_generated.pkl
+  --fit_dict quick_start/math/generated/results/matu_scores.pkl \
+  --out quick_start/math/generated/results/uncertainty_generated.pkl
 
 # MATH + generated uncertainty -> AUROC/AUARC against included labels
 matu eval \
-  --uncertainty quick_start/generated/results/uncertainty_generated.pkl \
+  --uncertainty quick_start/math/generated/results/uncertainty_generated.pkl \
   --labels quick_start/results/accuracy_dict_Math_qwen2.5.pkl \
   --score_mode raw
 ```
