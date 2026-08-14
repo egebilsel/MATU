@@ -3,7 +3,7 @@ import numpy as np
 from pathlib import Path
 from matu.evaluate_uncertainty import score_from_value, accuracy_from_labels
 
-QUICK_START = Path(__file__).resolve().parents[1] / "quick_start"
+QUICK_START = Path(__file__).resolve().parents[1] / "quick_start" / "math"
 
 def get_detailed_uncertainty(model_name):
     if model_name == "Math_qwen2.5_baseline":

@@ -22,7 +22,7 @@ except ImportError:
 from matu.evaluate_uncertainty import score_from_value, accuracy_from_labels, auroc_binary, auarc
 
 
-QUICK_START = Path(__file__).resolve().parents[1] / "quick_start"
+QUICK_START = Path(__file__).resolve().parents[1] / "quick_start" / "harmbench"
 
 # ── HarmBench experiments ─────────────────────────────────────────────────────
 EXPERIMENTS = [

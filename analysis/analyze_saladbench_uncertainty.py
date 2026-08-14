@@ -23,7 +23,7 @@ except ImportError:
 from matu.evaluate_uncertainty import score_from_value, accuracy_from_labels, auroc_binary, auarc
 
 
-QUICK_START = Path("quick_start")
+QUICK_START = Path("quick_start/saladbench")
 
 # ── SaladBench experiments (Only main models, excluding configs) ──────────────
 EXPERIMENTS = [
