@@ -1,0 +1,1185 @@
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+WARNING:sentence_transformers.util.decorators:The `tokenizer_kwargs` argument was renamed and is now deprecated. Please use `processor_kwargs` instead.
+INFO:sentence_transformers.base.model:Loading SentenceTransformer model from Qwen/Qwen3-Embedding-0.6B.
+INFO:accelerate.utils.modeling:We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+INFO:sentence_transformers.base.model:Loaded 1 prompt with these keys: ['query']
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:59: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  dim = int(model.get_sentence_embedding_dimension() or 0)
+Embedding tasks:   0%|          | 0/100 [00:00<?, ?it/s]Embedding tasks:   1%|          | 1/100 [00:01<02:08,  1.30s/it]Embedding tasks:   2%|▏         | 2/100 [00:01<01:12,  1.36it/s]Embedding tasks:   3%|▎         | 3/100 [00:01<00:53,  1.80it/s]Embedding tasks:   4%|▍         | 4/100 [00:02<00:45,  2.12it/s]Embedding tasks:   5%|▌         | 5/100 [00:02<00:40,  2.36it/s]Embedding tasks:   6%|▌         | 6/100 [00:03<00:37,  2.52it/s]Embedding tasks:   7%|▋         | 7/100 [00:03<00:35,  2.64it/s]Embedding tasks:   8%|▊         | 8/100 [00:03<00:34,  2.70it/s]Embedding tasks:   9%|▉         | 9/100 [00:04<00:32,  2.77it/s]Embedding tasks:  10%|█         | 10/100 [00:04<00:31,  2.81it/s]Embedding tasks:  11%|█         | 11/100 [00:04<00:31,  2.85it/s]Embedding tasks:  12%|█▏        | 12/100 [00:05<00:30,  2.85it/s]Embedding tasks:  13%|█▎        | 13/100 [00:05<00:30,  2.85it/s]Embedding tasks:  14%|█▍        | 14/100 [00:05<00:30,  2.85it/s]Embedding tasks:  15%|█▌        | 15/100 [00:06<00:29,  2.85it/s]Embedding tasks:  16%|█▌        | 16/100 [00:06<00:29,  2.85it/s]Embedding tasks:  17%|█▋        | 17/100 [00:06<00:28,  2.88it/s]Embedding tasks:  18%|█▊        | 18/100 [00:07<00:28,  2.89it/s]Embedding tasks:  19%|█▉        | 19/100 [00:07<00:27,  2.93it/s]Embedding tasks:  20%|██        | 20/100 [00:07<00:27,  2.91it/s]Embedding tasks:  21%|██        | 21/100 [00:08<00:27,  2.89it/s]Embedding tasks:  22%|██▏       | 22/100 [00:08<00:26,  2.91it/s]Embedding tasks:  23%|██▎       | 23/100 [00:08<00:26,  2.90it/s]Embedding tasks:  24%|██▍       | 24/100 [00:09<00:26,  2.92it/s]Embedding tasks:  25%|██▌       | 25/100 [00:09<00:25,  2.94it/s]Embedding tasks:  26%|██▌       | 26/100 [00:09<00:25,  2.93it/s]Embedding tasks:  27%|██▋       | 27/100 [00:10<00:25,  2.91it/s]Embedding tasks:  28%|██▊       | 28/100 [00:10<00:24,  2.89it/s]Embedding tasks:  29%|██▉       | 29/100 [00:10<00:24,  2.88it/s]Embedding tasks:  30%|███       | 30/100 [00:11<00:24,  2.87it/s]Embedding tasks:  31%|███       | 31/100 [00:11<00:23,  2.89it/s]Embedding tasks:  32%|███▏      | 32/100 [00:11<00:23,  2.88it/s]Embedding tasks:  33%|███▎      | 33/100 [00:12<00:23,  2.90it/s]Embedding tasks:  34%|███▍      | 34/100 [00:12<00:22,  2.93it/s]Embedding tasks:  35%|███▌      | 35/100 [00:13<00:22,  2.91it/s]Embedding tasks:  36%|███▌      | 36/100 [00:13<00:22,  2.90it/s]Embedding tasks:  37%|███▋      | 37/100 [00:13<00:21,  2.88it/s]Embedding tasks:  38%|███▊      | 38/100 [00:14<00:21,  2.87it/s]Embedding tasks:  39%|███▉      | 39/100 [00:14<00:21,  2.87it/s]Embedding tasks:  40%|████      | 40/100 [00:14<00:20,  2.88it/s]Embedding tasks:  41%|████      | 41/100 [00:15<00:20,  2.87it/s]Embedding tasks:  42%|████▏     | 42/100 [00:15<00:20,  2.87it/s]Embedding tasks:  43%|████▎     | 43/100 [00:15<00:19,  2.89it/s]Embedding tasks:  44%|████▍     | 44/100 [00:16<00:19,  2.88it/s]Embedding tasks:  45%|████▌     | 45/100 [00:16<00:18,  2.90it/s]Embedding tasks:  46%|████▌     | 46/100 [00:16<00:18,  2.88it/s]Embedding tasks:  47%|████▋     | 47/100 [00:17<00:18,  2.87it/s]Embedding tasks:  48%|████▊     | 48/100 [00:17<00:18,  2.86it/s]Embedding tasks:  49%|████▉     | 49/100 [00:17<00:17,  2.85it/s]Embedding tasks:  50%|█████     | 50/100 [00:18<00:15,  3.20it/s]Embedding tasks:  51%|█████     | 51/100 [00:18<00:13,  3.71it/s]Embedding tasks:  52%|█████▏    | 52/100 [00:18<00:11,  4.18it/s]Embedding tasks:  53%|█████▎    | 53/100 [00:18<00:10,  4.56it/s]Embedding tasks:  54%|█████▍    | 54/100 [00:18<00:09,  4.86it/s]Embedding tasks:  55%|█████▌    | 55/100 [00:18<00:08,  5.15it/s]Embedding tasks:  56%|█████▌    | 56/100 [00:19<00:08,  5.36it/s]Embedding tasks:  57%|█████▋    | 57/100 [00:19<00:07,  5.52it/s]Embedding tasks:  58%|█████▊    | 58/100 [00:19<00:07,  5.59it/s]Embedding tasks:  59%|█████▉    | 59/100 [00:19<00:07,  5.64it/s]Embedding tasks:  60%|██████    | 60/100 [00:19<00:07,  5.67it/s]Embedding tasks:  61%|██████    | 61/100 [00:19<00:06,  5.75it/s]Embedding tasks:  62%|██████▏   | 62/100 [00:20<00:06,  5.76it/s]Embedding tasks:  63%|██████▎   | 63/100 [00:20<00:06,  5.83it/s]Embedding tasks:  64%|██████▍   | 64/100 [00:20<00:06,  5.82it/s]Embedding tasks:  65%|██████▌   | 65/100 [00:20<00:05,  5.87it/s]Embedding tasks:  66%|██████▌   | 66/100 [00:20<00:05,  5.85it/s]Embedding tasks:  67%|██████▋   | 67/100 [00:21<00:05,  5.83it/s]Embedding tasks:  68%|██████▊   | 68/100 [00:21<00:05,  5.90it/s]Embedding tasks:  69%|██████▉   | 69/100 [00:21<00:05,  5.94it/s]Embedding tasks:  70%|███████   | 70/100 [00:21<00:05,  5.94it/s]Embedding tasks:  71%|███████   | 71/100 [00:21<00:04,  5.95it/s]Embedding tasks:  72%|███████▏  | 72/100 [00:21<00:04,  5.96it/s]Embedding tasks:  73%|███████▎  | 73/100 [00:22<00:04,  5.90it/s]Embedding tasks:  74%|███████▍  | 74/100 [00:22<00:04,  5.84it/s]Embedding tasks:  75%|███████▌  | 75/100 [00:22<00:04,  5.88it/s]Embedding tasks:  76%|███████▌  | 76/100 [00:22<00:04,  5.92it/s]Embedding tasks:  77%|███████▋  | 77/100 [00:22<00:03,  5.88it/s]Embedding tasks:  78%|███████▊  | 78/100 [00:22<00:03,  5.86it/s]Embedding tasks:  79%|███████▉  | 79/100 [00:23<00:03,  5.85it/s]Embedding tasks:  80%|████████  | 80/100 [00:23<00:03,  5.89it/s]Embedding tasks:  81%|████████  | 81/100 [00:23<00:03,  5.95it/s]Embedding tasks:  82%|████████▏ | 82/100 [00:23<00:03,  5.91it/s]Embedding tasks:  83%|████████▎ | 83/100 [00:23<00:02,  5.88it/s]Embedding tasks:  84%|████████▍ | 84/100 [00:23<00:02,  5.91it/s]Embedding tasks:  85%|████████▌ | 85/100 [00:24<00:02,  5.94it/s]Embedding tasks:  86%|████████▌ | 86/100 [00:24<00:02,  5.91it/s]Embedding tasks:  87%|████████▋ | 87/100 [00:24<00:02,  5.97it/s]Embedding tasks:  88%|████████▊ | 88/100 [00:24<00:02,  5.93it/s]Embedding tasks:  89%|████████▉ | 89/100 [00:24<00:01,  5.89it/s]Embedding tasks:  90%|█████████ | 90/100 [00:24<00:01,  5.93it/s]Embedding tasks:  91%|█████████ | 91/100 [00:25<00:01,  5.94it/s]Embedding tasks:  92%|█████████▏| 92/100 [00:25<00:01,  5.97it/s]Embedding tasks:  93%|█████████▎| 93/100 [00:25<00:01,  5.93it/s]Embedding tasks:  94%|█████████▍| 94/100 [00:25<00:01,  5.89it/s]Embedding tasks:  95%|█████████▌| 95/100 [00:25<00:00,  5.91it/s]Embedding tasks:  96%|█████████▌| 96/100 [00:25<00:00,  5.93it/s]Embedding tasks:  97%|█████████▋| 97/100 [00:26<00:00,  5.95it/s]Embedding tasks:  98%|█████████▊| 98/100 [00:26<00:00,  5.96it/s]Embedding tasks:  99%|█████████▉| 99/100 [00:26<00:00,  5.91it/s]Embedding tasks: 100%|██████████| 100/100 [00:26<00:00,  5.94it/s]Embedding tasks: 100%|██████████| 100/100 [00:26<00:00,  3.76it/s]
+INFO:__main__:Saved user embeddings to quick_start/harmbench_3b_base_user_only/embeddings/user_embedding_matrices.pkl
+/dl_scratch2/ege/ege/repos/MATU/matu/embed_logs.py:114: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  "embedding_dim": int(model.get_sentence_embedding_dimension() or 0),
+INFO:__main__:Saved embedding metadata to quick_start/harmbench_3b_base_user_only/embeddings/embedding_metadata.json
+MATU:   0%|          | 0/100 [00:00<?, ?it/s]WARNING:__main__:key=aa_meeting_drink_encouragement rank=2 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=3 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=4 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=5 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=6 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=7 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=8 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=9 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=12 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=16 failed: Singular matrix
+WARNING:__main__:key=aa_meeting_drink_encouragement rank=17 failed: Singular matrix
+MATU:   1%|          | 1/100 [00:10<17:59, 10.91s/it]WARNING:__main__:key=anonymous_death_threat_construction rank=2 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=3 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=4 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=5 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=6 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=7 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=8 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=9 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=10 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=13 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=14 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=15 failed: Singular matrix
+WARNING:__main__:key=anonymous_death_threat_construction rank=17 failed: Singular matrix
+MATU:   2%|▏         | 2/100 [00:20<16:17,  9.97s/it]WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=2 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=3 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=4 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=5 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=6 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=7 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=8 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=9 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=10 failed: Singular matrix
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/tensorly/backend/__init__.py:202: RuntimeWarning: invalid value encountered in sqrt
+  return getattr(
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=12 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=13 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=16 failed: Singular matrix
+WARNING:__main__:key=armenian_genocide_death_toll_exaggeration rank=17 failed: Singular matrix
+MATU:   3%|▎         | 3/100 [00:29<15:43,  9.72s/it]WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=2 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=3 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=4 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=5 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=6 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=7 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=8 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=9 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=10 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=14 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=15 failed: Singular matrix
+WARNING:__main__:key=biden_complicity_hunter_activities_reply rank=17 failed: Singular matrix
+MATU:   4%|▍         | 4/100 [00:39<15:23,  9.62s/it]WARNING:__main__:key=blackmail_explicit_images_guide rank=2 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=3 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=4 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=5 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=6 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=7 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=8 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=9 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=10 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=11 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=13 failed: Singular matrix
+WARNING:__main__:key=blackmail_explicit_images_guide rank=21 failed: Singular matrix
+MATU:   5%|▌         | 5/100 [00:48<15:05,  9.53s/it]WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=2 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=3 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=4 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=5 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=6 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=7 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=8 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=9 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=14 failed: Singular matrix
+WARNING:__main__:key=botulinum_toxin_manufacturing_guide rank=17 failed: Singular matrix
+MATU:   6%|▌         | 6/100 [00:57<14:50,  9.48s/it]WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=2 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=3 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=4 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=5 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=6 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=7 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=8 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=9 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=11 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=13 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=15 failed: Singular matrix
+WARNING:__main__:key=cdc_floor_plan_unauthorized_acquisition rank=17 failed: Singular matrix
+MATU:   7%|▋         | 7/100 [01:07<14:34,  9.41s/it]WARNING:__main__:key=chem_warfare_list_home rank=2 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=3 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=4 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=5 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=6 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=7 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=8 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=9 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=12 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=13 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=14 failed: Singular matrix
+WARNING:__main__:key=chem_warfare_list_home rank=15 failed: Singular matrix
+MATU:   8%|▊         | 8/100 [01:16<14:21,  9.36s/it]WARNING:__main__:key=child_bullying_tips rank=2 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=3 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=4 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=5 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=6 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=7 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=8 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=9 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=11 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=13 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=14 failed: Singular matrix
+WARNING:__main__:key=child_bullying_tips rank=16 failed: Singular matrix
+MATU:   9%|▉         | 9/100 [01:25<14:09,  9.33s/it]WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=2 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=3 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=4 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=5 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=6 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=7 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=8 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=9 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=10 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=15 failed: Singular matrix
+WARNING:__main__:key=chlorine_gas_safe_home_manufacture rank=16 failed: Singular matrix
+MATU:  10%|█         | 10/100 [01:34<13:59,  9.33s/it]WARNING:__main__:key=chop_shops_johannesburg_locating rank=2 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=3 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=4 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=5 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=6 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=7 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=8 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=9 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=10 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=13 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=14 failed: Singular matrix
+WARNING:__main__:key=chop_shops_johannesburg_locating rank=17 failed: Singular matrix
+MATU:  11%|█         | 11/100 [01:44<13:48,  9.31s/it]WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=2 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=3 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=4 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=5 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=6 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=7 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=8 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=9 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=10 failed: Singular matrix
+WARNING:__main__:key=cocaine_precursors_obtaining_instructions rank=12 failed: Singular matrix
+MATU:  12%|█▏        | 12/100 [01:53<13:44,  9.37s/it]WARNING:__main__:key=computer_worm_network_spreading_script rank=2 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=3 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=4 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=5 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=6 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=7 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=8 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=9 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=10 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=11 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=13 failed: Singular matrix
+WARNING:__main__:key=computer_worm_network_spreading_script rank=14 failed: Singular matrix
+MATU:  13%|█▎        | 13/100 [02:02<13:31,  9.33s/it]WARNING:__main__:key=covid19_modifications_deadliness rank=2 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=3 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=4 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=5 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=6 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=7 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=8 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=9 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=12 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=13 failed: Singular matrix
+WARNING:__main__:key=covid19_modifications_deadliness rank=17 failed: Singular matrix
+MATU:  14%|█▍        | 14/100 [02:12<13:26,  9.37s/it]WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=2 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=3 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=4 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=5 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=6 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=7 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=8 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=9 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=10 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=13 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=15 failed: Singular matrix
+WARNING:__main__:key=crimea_annexation_democratic_peaceful rank=17 failed: Singular matrix
+MATU:  15%|█▌        | 15/100 [02:21<13:15,  9.36s/it]WARNING:__main__:key=cryptojacking_computer_hijack_script rank=2 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=3 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=4 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=5 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=6 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=7 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=8 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=9 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=13 failed: Singular matrix
+WARNING:__main__:key=cryptojacking_computer_hijack_script rank=17 failed: Singular matrix
+MATU:  16%|█▌        | 16/100 [02:31<13:08,  9.38s/it]WARNING:__main__:key=document_counterfeiting_currency_creation rank=2 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=3 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=4 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=5 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=6 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=7 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=8 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=9 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=10 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=13 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=14 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=15 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=16 failed: Singular matrix
+WARNING:__main__:key=document_counterfeiting_currency_creation rank=17 failed: Singular matrix
+MATU:  17%|█▋        | 17/100 [02:40<12:54,  9.33s/it]WARNING:__main__:key=domestic_abuse_scene_description rank=2 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=3 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=4 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=5 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=6 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=7 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=8 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=9 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=10 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=14 failed: Singular matrix
+WARNING:__main__:key=domestic_abuse_scene_description rank=16 failed: Singular matrix
+MATU:  18%|█▊        | 18/100 [02:49<12:46,  9.35s/it]WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=2 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=3 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=4 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=5 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=6 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=7 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=8 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=9 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=10 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=12 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=13 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=15 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=16 failed: Singular matrix
+WARNING:__main__:key=email_emma_jackson_malware_persuasion rank=17 failed: Singular matrix
+MATU:  19%|█▉        | 19/100 [02:59<12:33,  9.30s/it]WARNING:__main__:key=email_malware_persuasion_message rank=2 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=3 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=4 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=5 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=6 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=7 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=8 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=9 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=13 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=14 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=15 failed: Singular matrix
+WARNING:__main__:key=email_malware_persuasion_message rank=16 failed: Singular matrix
+MATU:  20%|██        | 20/100 [03:08<12:24,  9.31s/it]WARNING:__main__:key=explicit_pornographic_story rank=2 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=3 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=4 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=5 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=6 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=7 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=8 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=9 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=11 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=14 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=16 failed: Singular matrix
+WARNING:__main__:key=explicit_pornographic_story rank=17 failed: Singular matrix
+MATU:  21%|██        | 21/100 [03:17<12:14,  9.30s/it]WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=2 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=3 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=4 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=5 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=6 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=7 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=8 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=9 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=11 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=12 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=14 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=15 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=16 failed: Singular matrix
+WARNING:__main__:key=fentanyl_precursors_unlicensed_acquisition rank=17 failed: Singular matrix
+MATU:  22%|██▏       | 22/100 [03:26<12:04,  9.29s/it]WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=2 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=3 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=4 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=5 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=6 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=7 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=8 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=9 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=10 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=12 failed: Singular matrix
+WARNING:__main__:key=fentanyl_synthesis_stepbystep_instructions_overview rank=14 failed: Singular matrix
+MATU:  23%|██▎       | 23/100 [03:36<11:57,  9.31s/it]WARNING:__main__:key=gene_synthesis_cloud_bypass rank=2 failed: Singular matrix
+WARNING:__main__:key=gene_synthesis_cloud_bypass rank=3 failed: Singular matrix
+WARNING:__main__:key=gene_synthesis_cloud_bypass rank=4 failed: Singular matrix
+WARNING:__main__:key=gene_synthesis_cloud_bypass rank=5 failed: Singular matrix
+WARNING:__main__:key=gene_synthesis_cloud_bypass rank=6 failed: Singular matrix
+WARNING:__main__:key=gene_synthesis_cloud_bypass rank=7 failed: Singular matrix
+WARNING:__main__:key=gene_synthesis_cloud_bypass rank=13 failed: Singular matrix
+MATU:  24%|██▍       | 24/100 [03:45<11:51,  9.37s/it]WARNING:__main__:key=heroin_synthesis_equipment_list rank=2 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=3 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=4 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=5 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=6 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=7 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=8 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=9 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=12 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=13 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=14 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=15 failed: Singular matrix
+WARNING:__main__:key=heroin_synthesis_equipment_list rank=16 failed: Singular matrix
+MATU:  25%|██▌       | 25/100 [03:55<11:43,  9.37s/it]WARNING:__main__:key=hiring_hitman_instructions rank=2 failed: Singular matrix
+WARNING:__main__:key=hiring_hitman_instructions rank=3 failed: Singular matrix
+WARNING:__main__:key=hiring_hitman_instructions rank=4 failed: Singular matrix
+WARNING:__main__:key=hiring_hitman_instructions rank=5 failed: Singular matrix
+WARNING:__main__:key=hiring_hitman_instructions rank=6 failed: Singular matrix
+WARNING:__main__:key=hiring_hitman_instructions rank=7 failed: Singular matrix
+WARNING:__main__:key=hiring_hitman_instructions rank=8 failed: Singular matrix
+WARNING:__main__:key=hiring_hitman_instructions rank=9 failed: Singular matrix
+MATU:  26%|██▌       | 26/100 [04:04<11:34,  9.38s/it]WARNING:__main__:key=holodomor_natural_disaster_claim rank=2 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=3 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=4 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=5 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=6 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=7 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=8 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=9 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=10 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=11 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=12 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=13 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=14 failed: Singular matrix
+WARNING:__main__:key=holodomor_natural_disaster_claim rank=16 failed: Singular matrix
+MATU:  27%|██▋       | 27/100 [04:13<11:23,  9.36s/it]WARNING:__main__:key=huffing_first_time_use_persuasion rank=2 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=3 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=4 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=5 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=6 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=7 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=8 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=9 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=10 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=12 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=13 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=14 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=16 failed: Singular matrix
+WARNING:__main__:key=huffing_first_time_use_persuasion rank=17 failed: Singular matrix
+MATU:  28%|██▊       | 28/100 [04:22<11:08,  9.28s/it]WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=2 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=3 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=4 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=5 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=6 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=7 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=8 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=9 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=10 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=11 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=14 failed: Singular matrix
+WARNING:__main__:key=hydrogen_cyanide_easy_home_method rank=15 failed: Singular matrix
+MATU:  29%|██▉       | 29/100 [04:32<10:59,  9.29s/it]WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=2 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=3 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=4 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=5 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=6 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=7 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=8 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=9 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=11 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=13 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=14 failed: Singular matrix
+WARNING:__main__:key=ilhan_omar_father_criminal_edit rank=16 failed: Singular matrix
+MATU:  30%|███       | 30/100 [04:41<10:50,  9.30s/it]WARNING:__main__:key=infant_honey_feeding_persuasion rank=2 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=3 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=4 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=5 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=6 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=7 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=8 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=9 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=10 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=11 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=13 failed: Singular matrix
+WARNING:__main__:key=infant_honey_feeding_persuasion rank=15 failed: Singular matrix
+MATU:  31%|███       | 31/100 [04:50<10:42,  9.32s/it]WARNING:__main__:key=january_6_leftwing_involvement_edit rank=2 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=3 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=4 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=5 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=6 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=7 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=8 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=9 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=10 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=13 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=14 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=15 failed: Singular matrix
+WARNING:__main__:key=january_6_leftwing_involvement_edit rank=16 failed: Singular matrix
+MATU:  32%|███▏      | 32/100 [05:00<10:31,  9.29s/it]WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=2 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=3 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=4 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=5 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=6 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=7 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=8 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=9 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=10 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=11 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=12 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=13 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=14 failed: Singular matrix
+WARNING:__main__:key=jeep_cherokee_exploit_equipment_list rank=15 failed: Singular matrix
+MATU:  33%|███▎      | 33/100 [05:09<10:19,  9.25s/it]WARNING:__main__:key=jewish_classmate_insults rank=2 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=3 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=4 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=5 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=6 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=7 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=8 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=9 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=12 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=13 failed: Singular matrix
+WARNING:__main__:key=jewish_classmate_insults rank=14 failed: Singular matrix
+MATU:  34%|███▍      | 34/100 [05:18<10:11,  9.26s/it]WARNING:__main__:key=kidnapping_ransom_note_template rank=2 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=3 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=4 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=5 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=6 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=7 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=8 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=9 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=12 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=13 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=15 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=16 failed: Singular matrix
+WARNING:__main__:key=kidnapping_ransom_note_template rank=17 failed: Singular matrix
+MATU:  35%|███▌      | 35/100 [05:27<10:02,  9.27s/it]WARNING:__main__:key=korean_war_north_defensive rank=2 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=3 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=4 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=5 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=6 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=7 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=8 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=9 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=10 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=11 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=13 failed: Singular matrix
+WARNING:__main__:key=korean_war_north_defensive rank=15 failed: Singular matrix
+MATU:  36%|███▌      | 36/100 [05:37<09:55,  9.30s/it]WARNING:__main__:key=krack_vulnerability_exploit_code rank=2 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=3 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=4 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=5 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=6 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=7 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=8 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=9 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=14 failed: Singular matrix
+WARNING:__main__:key=krack_vulnerability_exploit_code rank=15 failed: Singular matrix
+MATU:  37%|███▋      | 37/100 [05:46<09:48,  9.34s/it]WARNING:__main__:key=logs_deletion_sql_injection_template rank=2 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=3 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=4 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=5 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=6 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=7 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=8 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=9 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=11 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=12 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=13 failed: Singular matrix
+WARNING:__main__:key=logs_deletion_sql_injection_template rank=17 failed: Singular matrix
+MATU:  38%|███▊      | 38/100 [05:56<09:41,  9.37s/it]WARNING:__main__:key=lyrics_bad_guy rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=11 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=14 failed: Singular matrix
+WARNING:__main__:key=lyrics_bad_guy rank=17 failed: Singular matrix
+MATU:  39%|███▉      | 39/100 [06:05<09:31,  9.37s/it]WARNING:__main__:key=lyrics_black_magic_woman rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=11 failed: Singular matrix
+WARNING:__main__:key=lyrics_black_magic_woman rank=12 failed: Singular matrix
+MATU:  40%|████      | 40/100 [06:14<09:23,  9.40s/it]WARNING:__main__:key=lyrics_blinding_lights rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=10 failed: Singular matrix
+WARNING:__main__:key=lyrics_blinding_lights rank=11 failed: Singular matrix
+MATU:  41%|████      | 41/100 [06:24<09:13,  9.38s/it]WARNING:__main__:key=lyrics_born_to_run rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=10 failed: Singular matrix
+WARNING:__main__:key=lyrics_born_to_run rank=15 failed: Singular matrix
+MATU:  42%|████▏     | 42/100 [06:33<09:02,  9.35s/it]WARNING:__main__:key=lyrics_get_lucky rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=14 failed: Singular matrix
+WARNING:__main__:key=lyrics_get_lucky rank=17 failed: Singular matrix
+MATU:  43%|████▎     | 43/100 [06:42<08:53,  9.36s/it]WARNING:__main__:key=lyrics_im_still_standing rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=10 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=16 failed: Singular matrix
+WARNING:__main__:key=lyrics_im_still_standing rank=17 failed: Singular matrix
+MATU:  44%|████▍     | 44/100 [06:52<08:46,  9.40s/it]WARNING:__main__:key=lyrics_legends_never_die rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_legends_never_die rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_legends_never_die rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_legends_never_die rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_legends_never_die rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_legends_never_die rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_legends_never_die rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_legends_never_die rank=9 failed: Singular matrix
+MATU:  45%|████▌     | 45/100 [07:01<08:37,  9.41s/it]WARNING:__main__:key=lyrics_maggie_may rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=11 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=14 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=16 failed: Singular matrix
+WARNING:__main__:key=lyrics_maggie_may rank=25 failed: Singular matrix
+MATU:  46%|████▌     | 46/100 [07:11<08:25,  9.36s/it]WARNING:__main__:key=lyrics_no_scrubs rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_no_scrubs rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_no_scrubs rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_no_scrubs rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_no_scrubs rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_no_scrubs rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_no_scrubs rank=9 failed: Singular matrix
+MATU:  47%|████▋     | 47/100 [07:20<08:17,  9.39s/it]WARNING:__main__:key=lyrics_old_town_road rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=16 failed: Singular matrix
+WARNING:__main__:key=lyrics_old_town_road rank=17 failed: Singular matrix
+MATU:  48%|████▊     | 48/100 [07:30<08:08,  9.40s/it]WARNING:__main__:key=lyrics_piano_man rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=15 failed: Singular matrix
+WARNING:__main__:key=lyrics_piano_man rank=17 failed: Singular matrix
+MATU:  49%|████▉     | 49/100 [07:39<07:58,  9.38s/it]WARNING:__main__:key=lyrics_smooth_santana rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=10 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=15 failed: Singular matrix
+WARNING:__main__:key=lyrics_smooth_santana rank=16 failed: Singular matrix
+MATU:  50%|█████     | 50/100 [07:48<07:48,  9.36s/it]WARNING:__main__:key=lyrics_sweet_home_alabama rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=10 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=14 failed: Singular matrix
+WARNING:__main__:key=lyrics_sweet_home_alabama rank=15 failed: Singular matrix
+MATU:  51%|█████     | 51/100 [07:57<07:35,  9.30s/it]WARNING:__main__:key=lyrics_thinking_out_loud rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=10 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_thinking_out_loud rank=13 failed: Singular matrix
+MATU:  52%|█████▏    | 52/100 [08:07<07:25,  9.29s/it]WARNING:__main__:key=lyrics_under_the_bridge rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=11 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=13 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=14 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=15 failed: Singular matrix
+WARNING:__main__:key=lyrics_under_the_bridge rank=16 failed: Singular matrix
+MATU:  53%|█████▎    | 53/100 [08:16<07:16,  9.29s/it]WARNING:__main__:key=lyrics_we_are_one rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_we_are_one rank=15 failed: Singular matrix
+MATU:  54%|█████▍    | 54/100 [08:25<07:07,  9.29s/it]WARNING:__main__:key=lyrics_wonderwall rank=2 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=3 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=4 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=5 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=6 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=7 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=8 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=9 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=10 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=12 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=16 failed: Singular matrix
+WARNING:__main__:key=lyrics_wonderwall rank=17 failed: Singular matrix
+MATU:  55%|█████▌    | 55/100 [08:34<06:57,  9.28s/it]WARNING:__main__:key=maria_racist_insult rank=2 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=3 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=4 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=5 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=6 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=7 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=8 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=9 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=12 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=13 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=14 failed: Singular matrix
+WARNING:__main__:key=maria_racist_insult rank=17 failed: Singular matrix
+MATU:  56%|█████▌    | 56/100 [08:44<06:49,  9.30s/it]WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=2 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=3 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=4 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=5 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=6 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=7 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=8 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=9 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=10 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=12 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=13 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=16 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=17 failed: Singular matrix
+WARNING:__main__:key=meth_synthesis_ratio_chemicals rank=37 failed: Singular matrix
+MATU:  57%|█████▋    | 57/100 [08:53<06:37,  9.24s/it]WARNING:__main__:key=mustard_gas_detailed_instructions rank=2 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=3 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=4 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=5 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=6 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=7 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=8 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=9 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=10 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=14 failed: Singular matrix
+WARNING:__main__:key=mustard_gas_detailed_instructions rank=17 failed: Singular matrix
+MATU:  58%|█████▊    | 58/100 [09:02<06:30,  9.31s/it]WARNING:__main__:key=neighborhood_pets_poison_tips rank=2 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=3 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=4 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=5 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=6 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=7 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=8 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=9 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=10 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=11 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=12 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=13 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=14 failed: Singular matrix
+WARNING:__main__:key=neighborhood_pets_poison_tips rank=15 failed: Singular matrix
+MATU:  59%|█████▉    | 59/100 [09:12<06:21,  9.31s/it]WARNING:__main__:key=office_macros_safety_message rank=2 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=3 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=4 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=5 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=6 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=7 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=8 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=9 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=10 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=12 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=15 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=16 failed: Singular matrix
+WARNING:__main__:key=office_macros_safety_message rank=17 failed: Singular matrix
+MATU:  60%|██████    | 60/100 [09:21<06:12,  9.31s/it]WARNING:__main__:key=pakistani_immigration_terrorist rank=2 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=3 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=4 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=5 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=6 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=7 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=8 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=9 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=11 failed: Singular matrix
+WARNING:__main__:key=pakistani_immigration_terrorist rank=13 failed: Singular matrix
+MATU:  61%|██████    | 61/100 [09:30<06:03,  9.33s/it]WARNING:__main__:key=passage_all_quiet_western_front rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=13 failed: Singular matrix
+WARNING:__main__:key=passage_all_quiet_western_front rank=14 failed: Singular matrix
+MATU:  62%|██████▏   | 62/100 [09:40<05:54,  9.32s/it]WARNING:__main__:key=passage_da_vinci_code rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=11 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=12 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=14 failed: Singular matrix
+WARNING:__main__:key=passage_da_vinci_code rank=17 failed: Singular matrix
+MATU:  63%|██████▎   | 63/100 [09:49<05:44,  9.32s/it]WARNING:__main__:key=passage_fault_in_stars rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=15 failed: Singular matrix
+WARNING:__main__:key=passage_fault_in_stars rank=16 failed: Singular matrix
+MATU:  64%|██████▍   | 64/100 [09:58<05:35,  9.32s/it]WARNING:__main__:key=passage_fellowship_of_the_ring rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=16 failed: Singular matrix
+WARNING:__main__:key=passage_fellowship_of_the_ring rank=17 failed: Singular matrix
+MATU:  65%|██████▌   | 65/100 [10:08<05:26,  9.33s/it]WARNING:__main__:key=passage_game_of_thrones rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=13 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=16 failed: Singular matrix
+WARNING:__main__:key=passage_game_of_thrones rank=17 failed: Singular matrix
+MATU:  66%|██████▌   | 66/100 [10:17<05:16,  9.30s/it]WARNING:__main__:key=passage_goldfinch rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=14 failed: Singular matrix
+WARNING:__main__:key=passage_goldfinch rank=15 failed: Singular matrix
+MATU:  67%|██████▋   | 67/100 [10:26<05:07,  9.32s/it]WARNING:__main__:key=passage_mans_search_meaning rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=14 failed: Singular matrix
+WARNING:__main__:key=passage_mans_search_meaning rank=15 failed: Singular matrix
+MATU:  68%|██████▊   | 68/100 [10:35<04:57,  9.30s/it]WARNING:__main__:key=passage_principles_dalio rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=11 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=12 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=13 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=15 failed: Singular matrix
+WARNING:__main__:key=passage_principles_dalio rank=17 failed: Singular matrix
+MATU:  69%|██████▉   | 69/100 [10:45<04:48,  9.30s/it]WARNING:__main__:key=passage_principles_of_economics rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=12 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=14 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=15 failed: Singular matrix
+WARNING:__main__:key=passage_principles_of_economics rank=17 failed: Singular matrix
+MATU:  70%|███████   | 70/100 [10:54<04:39,  9.33s/it]WARNING:__main__:key=passage_sun_and_her_flowers rank=2 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=3 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=4 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=5 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=6 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=7 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=8 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=9 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=10 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=12 failed: Singular matrix
+WARNING:__main__:key=passage_sun_and_her_flowers rank=17 failed: Singular matrix
+MATU:  71%|███████   | 71/100 [11:04<04:32,  9.41s/it]WARNING:__main__:key=personal_info_death_threat rank=2 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=3 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=4 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=5 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=6 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=7 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=8 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=9 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=10 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=11 failed: Singular matrix
+WARNING:__main__:key=personal_info_death_threat rank=13 failed: Singular matrix
+MATU:  72%|███████▏  | 72/100 [11:13<04:23,  9.41s/it]WARNING:__main__:key=pirate_bay_torrents_anonymously rank=2 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=3 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=4 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=5 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=6 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=7 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=8 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=9 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=12 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=13 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=15 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=16 failed: Singular matrix
+WARNING:__main__:key=pirate_bay_torrents_anonymously rank=17 failed: Singular matrix
+MATU:  73%|███████▎  | 73/100 [11:22<04:12,  9.37s/it]WARNING:__main__:key=president_heroin_addiction_claim rank=2 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=3 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=4 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=5 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=6 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=7 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=8 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=9 failed: Singular matrix
+WARNING:__main__:key=president_heroin_addiction_claim rank=12 failed: Singular matrix
+MATU:  74%|███████▍  | 74/100 [11:32<04:03,  9.38s/it]WARNING:__main__:key=queer_lgbtq_harassment_text rank=2 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=3 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=4 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=5 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=6 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=7 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=8 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=9 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=10 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=14 failed: Singular matrix
+WARNING:__main__:key=queer_lgbtq_harassment_text rank=17 failed: Singular matrix
+MATU:  75%|███████▌  | 75/100 [11:41<03:54,  9.39s/it]WARNING:__main__:key=race_discrimination_benefit_essay rank=2 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=3 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=4 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=5 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=6 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=7 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=8 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=9 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=10 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=12 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=13 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=14 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=15 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=16 failed: Singular matrix
+WARNING:__main__:key=race_discrimination_benefit_essay rank=37 failed: Singular matrix
+MATU:  76%|███████▌  | 76/100 [11:50<03:42,  9.29s/it]WARNING:__main__:key=racist_vitriol_generation rank=2 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=3 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=4 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=5 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=6 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=7 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=8 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=9 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=13 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=14 failed: Singular matrix
+WARNING:__main__:key=racist_vitriol_generation rank=15 failed: Singular matrix
+MATU:  77%|███████▋  | 77/100 [12:00<03:34,  9.31s/it]WARNING:__main__:key=ricin_synthesis_home rank=2 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=3 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=4 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=5 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=6 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=7 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=8 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=9 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=10 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=13 failed: Singular matrix
+WARNING:__main__:key=ricin_synthesis_home rank=14 failed: Singular matrix
+MATU:  78%|███████▊  | 78/100 [12:09<03:24,  9.32s/it]WARNING:__main__:key=romance_scam_phone_script rank=2 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=3 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=4 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=5 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=6 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=7 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=8 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=9 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=12 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=14 failed: Singular matrix
+WARNING:__main__:key=romance_scam_phone_script rank=16 failed: Singular matrix
+MATU:  79%|███████▉  | 79/100 [12:18<03:15,  9.33s/it]WARNING:__main__:key=safrole_oil_extraction_guide rank=2 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=3 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=4 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=5 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=6 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=7 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=8 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=9 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=13 failed: Singular matrix
+WARNING:__main__:key=safrole_oil_extraction_guide rank=14 failed: Singular matrix
+MATU:  80%|████████  | 80/100 [12:28<03:08,  9.41s/it]WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=2 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=3 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=4 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=5 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=6 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=7 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=8 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=9 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=10 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=13 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=15 failed: Singular matrix
+WARNING:__main__:key=sarin_detailed_synthesis_instructions rank=17 failed: Singular matrix
+MATU:  81%|████████  | 81/100 [12:37<02:58,  9.37s/it]WARNING:__main__:key=september_11_hoax_article rank=3 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=4 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=5 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=6 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=7 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=8 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=9 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=13 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=15 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=16 failed: Singular matrix
+WARNING:__main__:key=september_11_hoax_article rank=17 failed: Singular matrix
+MATU:  82%|████████▏ | 82/100 [12:47<02:48,  9.34s/it]WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=2 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=3 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=4 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=5 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=6 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=7 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=8 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=9 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=12 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=13 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=14 failed: Singular matrix
+WARNING:__main__:key=sqli_payload_waf_ml_bypass_3 rank=17 failed: Singular matrix
+MATU:  83%|████████▎ | 83/100 [12:56<02:39,  9.36s/it]WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=2 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=3 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=4 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=5 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=6 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=7 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=8 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=9 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=10 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=14 failed: Singular matrix
+WARNING:__main__:key=stolen_credit_info_dark_web_buying rank=17 failed: Singular matrix
+MATU:  84%|████████▍ | 84/100 [13:05<02:29,  9.37s/it]WARNING:__main__:key=strychnine_plant_extraction_instructions rank=2 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=3 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=4 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=5 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=6 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=7 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=8 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=9 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=10 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=14 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=15 failed: Singular matrix
+WARNING:__main__:key=strychnine_plant_extraction_instructions rank=17 failed: Singular matrix
+MATU:  85%|████████▌ | 85/100 [13:15<02:20,  9.37s/it]WARNING:__main__:key=student_harassment_bullying_encouragement rank=2 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=3 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=4 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=5 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=6 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=7 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=8 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=9 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=12 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=14 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=15 failed: Singular matrix
+WARNING:__main__:key=student_harassment_bullying_encouragement rank=17 failed: Singular matrix
+MATU:  86%|████████▌ | 86/100 [13:24<02:10,  9.33s/it]WARNING:__main__:key=syn_flood_ecommerce_site_code rank=2 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=3 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=4 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=5 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=6 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=7 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=8 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=11 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=12 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=14 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=15 failed: Singular matrix
+WARNING:__main__:key=syn_flood_ecommerce_site_code rank=16 failed: Singular matrix
+MATU:  87%|████████▋ | 87/100 [13:33<02:01,  9.33s/it]WARNING:__main__:key=teenager_drug_use_convincing rank=2 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=3 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=4 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=5 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=6 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=7 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=8 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=9 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=16 failed: Singular matrix
+WARNING:__main__:key=teenager_drug_use_convincing rank=17 failed: Singular matrix
+MATU:  88%|████████▊ | 88/100 [13:43<01:52,  9.37s/it]WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=2 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=3 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=4 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=5 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=6 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=7 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=8 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=9 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=14 failed: Singular matrix
+WARNING:__main__:key=tetrodotoxin_home_synthesis_guide rank=15 failed: Singular matrix
+MATU:  89%|████████▉ | 89/100 [13:52<01:43,  9.42s/it]WARNING:__main__:key=trump_january_6_joined_mob rank=2 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=3 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=4 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=5 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=6 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=7 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=8 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=9 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=11 failed: Singular matrix
+WARNING:__main__:key=trump_january_6_joined_mob rank=12 failed: Singular matrix
+MATU:  90%|█████████ | 90/100 [14:02<01:34,  9.42s/it]WARNING:__main__:key=tweet_antisemitic_response rank=2 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=3 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=4 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=5 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=6 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=7 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=8 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=9 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=10 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=12 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=13 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=14 failed: Singular matrix
+WARNING:__main__:key=tweet_antisemitic_response rank=16 failed: Singular matrix
+MATU:  91%|█████████ | 91/100 [14:11<01:24,  9.38s/it]WARNING:__main__:key=twitter_accounts_auto_creation_code rank=2 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=3 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=4 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=5 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=6 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=7 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=8 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=9 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=10 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=12 failed: Singular matrix
+WARNING:__main__:key=twitter_accounts_auto_creation_code rank=17 failed: Singular matrix
+MATU:  92%|█████████▏| 92/100 [14:20<01:15,  9.40s/it]WARNING:__main__:key=us_defense_agency_hack_plan rank=2 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=3 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=4 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=5 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=6 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=7 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=8 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=9 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=10 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=11 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=13 failed: Singular matrix
+WARNING:__main__:key=us_defense_agency_hack_plan rank=17 failed: Singular matrix
+MATU:  93%|█████████▎| 93/100 [14:30<01:05,  9.36s/it]WARNING:__main__:key=voting_machine_hacking_instructions rank=2 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=3 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=4 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=5 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=6 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=7 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=8 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=9 failed: Singular matrix
+WARNING:__main__:key=voting_machine_hacking_instructions rank=15 failed: Singular matrix
+MATU:  94%|█████████▍| 94/100 [14:39<00:56,  9.41s/it]WARNING:__main__:key=voting_machine_malfunction_addition rank=2 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=3 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=4 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=5 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=6 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=7 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=8 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=9 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=10 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=11 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=13 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=14 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=15 failed: Singular matrix
+WARNING:__main__:key=voting_machine_malfunction_addition rank=16 failed: Singular matrix
+MATU:  95%|█████████▌| 95/100 [14:49<00:47,  9.41s/it]WARNING:__main__:key=water_supply_cholera_tampering_guide rank=2 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=3 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=4 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=5 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=6 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=7 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=8 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=9 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=10 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=11 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=12 failed: Singular matrix
+WARNING:__main__:key=water_supply_cholera_tampering_guide rank=14 failed: Singular matrix
+MATU:  96%|█████████▌| 96/100 [14:58<00:37,  9.42s/it]WARNING:__main__:key=whistleblower_silencing_advice rank=2 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=3 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=4 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=5 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=6 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=7 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=8 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=9 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=11 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=13 failed: Singular matrix
+WARNING:__main__:key=whistleblower_silencing_advice rank=17 failed: Singular matrix
+MATU:  97%|█████████▋| 97/100 [15:08<00:28,  9.44s/it]WARNING:__main__:key=wikipedia_economic_hardship_edit rank=2 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=3 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=4 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=5 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=6 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=7 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=8 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=9 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=10 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=11 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=14 failed: Singular matrix
+WARNING:__main__:key=wikipedia_economic_hardship_edit rank=17 failed: Singular matrix
+MATU:  98%|█████████▊| 98/100 [15:17<00:18,  9.41s/it]WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=2 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=3 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=4 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=5 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=6 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=7 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=8 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=9 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=13 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=15 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=16 failed: Singular matrix
+WARNING:__main__:key=wikipedia_trump_2024_contact_edit rank=17 failed: Singular matrix
+MATU:  99%|█████████▉| 99/100 [15:26<00:09,  9.35s/it]WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=2 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=3 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=4 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=5 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=6 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=7 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=8 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=9 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=10 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=11 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=12 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=14 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=16 failed: Singular matrix
+WARNING:__main__:key=zero_day_vulnerabilities_purchase_guide rank=17 failed: Singular matrix
+MATU: 100%|██████████| 100/100 [15:35<00:00,  9.33s/it]MATU: 100%|██████████| 100/100 [15:35<00:00,  9.36s/it]
+INFO:__main__:Saved MATU scores to /dl_scratch2/ege/ege/repos/MATU/quick_start/harmbench_3b_base_user_only/results/matu_scores.pkl
+INFO:__main__:Saved legacy fit_dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/harmbench_3b_base_user_only/results/fit_dict_generated.pkl
+INFO:__main__:Saved uncertainty dict to /dl_scratch2/ege/ege/repos/MATU/quick_start/harmbench_3b_base_user_only/results/uncertainty_generated.pkl
+/dl_scratch2/ege/ege/envs/matu-uq/lib/python3.11/site-packages/transformers/utils/hub.py:110: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+Grading:   0%|          | 0/100 [00:00<?, ?it/s]Grading:  45%|████▌     | 45/100 [00:00<00:00, 448.88it/s]Grading: 100%|██████████| 100/100 [00:00<00:00, 551.21it/s]

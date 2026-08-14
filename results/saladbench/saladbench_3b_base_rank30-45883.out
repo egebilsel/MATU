@@ -1,0 +1,20 @@
+
+=== Step 01: Embed Logs (GPU) ===
+
+=== Step 02: CP-2 Tensor Decomposition (CPU) ===
+
+=== Step 03: Fit to Uncertainty ===
+
+=== Step 04: Copy Safety Grades from Parent ===
+--- EVALUATION: ANY UNSAFE (STRICT) ---
+Tasks: 100
+Mean accuracy: 0.8280
+AUROC: 0.3912
+AUARC: 0.7503
+
+--- EVALUATION: MAJORITY UNSAFE (RELAXED) ---
+Tasks: 100
+Mean accuracy: 0.8280
+AUROC: 0.2717
+AUARC: 0.7503
+SALADBENCH MATU PIPELINE DONE FOR 3b_base_rank30!
