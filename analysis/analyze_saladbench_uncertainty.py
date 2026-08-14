@@ -27,7 +27,7 @@ QUICK_START = Path("quick_start")
 
 # ── SaladBench experiments (Only main models, excluding configs) ──────────────
 EXPERIMENTS = [
-    # (deney_adı, model_açıklama)
+    # (experiment_name, model)
     ("saladbench_3b_base",              "Qwen2.5-Coder-3B-Instruct (Base)"),
     ("saladbench_3b_evolved",           "AZR-Coder-3b (Evolved)"),
     ("saladbench_7b_base",              "Qwen2.5-Coder-7B-Instruct (Base)"),
